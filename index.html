@@ -10,14 +10,14 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --navy:#1a3A5C;
-  --blue-deep:#1E5A8E;
-  --blue-mid:#2E7FC2;
-  --blue:#4A9FDD;
-  --blue-light:#7EC8F0;
-  --blue-pale:#BAE0F7;
-  --blue-mist:#E8F5FD;
-  --cream:#f7f9fc;
+  --navy:#1B4F72;
+  --blue-deep:#2471A3;
+  --blue-mid:#2E86C1;
+  --blue:#3498DB;
+  --blue-light:#7FB3D3;
+  --blue-pale:#AED6F1;
+  --blue-mist:#D6EAF8;
+  --cream:#F0F7FF;
   --white:#ffffff;
   --charcoal:#1c1c1c;
   --slate:#4a4a4a;
@@ -29,7 +29,7 @@
 html{scroll-behavior:smooth}
 body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:var(--charcoal);line-height:1.7;overflow-x:hidden}
 
-nav{position:sticky;top:0;z-index:100;background:rgba(4,44,83,0.97);backdrop-filter:blur(12px);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:64px}
+nav{position:sticky;top:0;z-index:100;background:rgba(27,79,114,0.97);backdrop-filter:blur(12px);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:64px}
 .nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;color:white;text-decoration:none}
 .nav-links{display:flex;gap:2rem;list-style:none}
 .nav-links a{font-size:0.85rem;font-weight:400;color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s}
@@ -112,14 +112,14 @@ h2 em{font-style:italic;color:var(--blue-mid)}
 .proyecto-card{background:white;border-radius:20px;border:1px solid var(--border);overflow:hidden;transition:all 0.3s}
 .proyecto-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(24,95,165,0.1)}
 .proyecto-preview{height:160px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;position:relative;overflow:hidden}
-.preview-powerbi{background:linear-gradient(135deg,#042C53,#185FA5)}
-.preview-appsheet{background:linear-gradient(135deg,#0C447C,#378ADD)}
+.preview-powerbi{background:linear-gradient(135deg,#1B4F72,#2E86C1)}
+.preview-appsheet{background:linear-gradient(135deg,#2471A3,#3498DB)}
 .preview-excel{background:linear-gradient(135deg,#173404,#3B6D11)}
 .preview-python{background:linear-gradient(135deg,#412402,#BA7517)}
 .proyecto-body{padding:1.5rem}
 .proyecto-tag{display:inline-block;font-size:0.7rem;font-weight:500;padding:3px 10px;border-radius:100px;margin-bottom:10px}
 .tag-powerbi{background:var(--blue-mist);color:var(--blue-deep)}
-.tag-appsheet{background:#E6F1FB;color:#0C447C}
+.tag-appsheet{background:#D6EAF8;color:#2471A3}
 .tag-excel{background:#EAF3DE;color:#27500A}
 .tag-python{background:#FAEEDA;color:#633806}
 .proyecto-body h3{font-size:1rem;font-weight:500;color:var(--navy);margin-bottom:6px}
