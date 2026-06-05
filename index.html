@@ -173,6 +173,7 @@ footer{background:var(--navy);padding:2rem 5%;border-top:1px solid rgba(255,255,
 .tech-strip-item{display:flex;align-items:center;gap:10px;white-space:nowrap;opacity:0.75;transition:opacity 0.2s}
 .tech-strip-item:hover{opacity:1}
 .tech-strip-item svg{width:26px;height:26px;flex-shrink:0;fill:white}
+.tech-strip-item img{width:26px;height:26px;object-fit:contain;filter:brightness(0) invert(1)}
 .tech-strip-item span{font-size:0.95rem;font-weight:500;color:white;letter-spacing:0.03em}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
@@ -251,72 +252,25 @@ footer{background:var(--navy);padding:2rem 5%;border-top:1px solid rgba(255,255,
 
 <div class="tech-strip">
   <div class="tech-strip-track">
-
-    <div class="tech-strip-item">
-      <svg viewBox="0 0 24 24" fill="white"><path d="M0 14.4V24l7.2-4.8V9.6zm7.2-4.8V14.4L14.4 9.6V4.8zm7.2 4.8v4.8L21.6 24V14.4zM14.4 0v4.8L24 9.6V4.8z"/></svg>
-      <span>Power BI</span>
-    </div>
-
-    <div class="tech-strip-item">
-      <svg viewBox="0 0 24 24" fill="white"><path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.13-.1.2-.19.27-.29.31-.37.32-.45.31-.51.29-.56.26-.56.23-.55.18-.53.14-.5.1-.46.06-.42.03H6.5l-.01 2.94-.01.08-.04.13-.09.15-.14.16-.19.17-.25.17H5.3l-.25-.17-.19-.17-.14-.16-.09-.15-.04-.13-.01-.08V2.7l.01-.09.04-.13.09-.15.14-.16.2-.17.24-.17H10.5l.04.01.13.01.2.04.26.07zm-6.7 1.62H5.83v5.7h1.72l.35-.02.34-.06.32-.1.28-.14.23-.18.17-.22.1-.26.03-.3v-.3l-.05-.27-.1-.23-.14-.2-.19-.15-.23-.11-.27-.07-.32-.03zm8.7 4.62l-.01 1.45-.01.47-.05.45-.09.43-.13.42-.17.4-.21.38-.25.36-.29.33-.34.3-.38.27-.42.23-.46.18-.5.14-.53.09-.57.04H8.8l-.01.01v5.77h1.72v-3.54h1.72l.46-.03.44-.07.42-.12.39-.17.36-.22.32-.28.29-.33.25-.38.21-.43.16-.48.11-.53.06-.58.01-.62v-.63l-.03-.43-.07-.39-.12-.36-.16-.32-.21-.29-.26-.25-.3-.22-.34-.18-.38-.14-.42-.1-.45-.06-.49-.03z"/></svg>
-      <span>Python</span>
-    </div>
-
-    <div class="tech-strip-item">
-      <svg viewBox="0 0 24 24" fill="white"><path d="M4.5 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM14.25 8.625a3.375 3.375 0 116.75 0 3.375 3.375 0 01-6.75 0zM1.5 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM17.25 19.128l-.001.144a2.25 2.25 0 01-.233.96 10.088 10.088 0 005.06-1.01.75.75 0 00.42-.643 4.875 4.875 0 00-6.957-4.611 8.586 8.586 0 011.71 5.157v.003z"/></svg>
-      <span>SQL</span>
-    </div>
-
-    <div class="tech-strip-item">
-      <svg viewBox="0 0 24 24" fill="white"><path d="M21.17 3.25Q21.5 3.25 21.76 3.5 22 3.74 22 4.08V19.92Q22 20.26 21.76 20.5 21.5 20.75 21.17 20.75H7.83Q7.5 20.75 7.24 20.5 7 20.26 7 19.92V17H2.83Q2.5 17 2.24 16.76 2 16.5 2 16.17V7.83Q2 7.5 2.24 7.24 2.5 7 2.83 7H7V4.08Q7 3.74 7.24 3.5 7.5 3.25 7.83 3.25M7 13.06L8.18 15.28H9.97L8 12.06 9.93 8.89H8.22L7.13 10.9 7.09 10.96 7.06 11.03Q6.8 10.5 6.5 9.96 6.25 9.43 5.97 8.89H4.16L6.05 12.08 4 15.28H5.78M13.88 19.5V17H8.25V19.5M13.88 15.75V12.63H10.5V15.75M13.88 11.38V8.25H10.5V11.38M13.88 7V4.5H8.25V7M20.75 19.5V17H15.13V19.5M20.75 15.75V12.63H15.13V15.75M20.75 11.38V8.25H15.13V11.38M20.75 7V4.5H15.13V7Z"/></svg>
-      <span>Excel</span>
-    </div>
-
-    <div class="tech-strip-item">
-      <svg viewBox="0 0 24 24" fill="white"><path d="M11.654.182L2.57 14.18H8.44L5.93 24 21.429 7.772h-6.664l3.944-7.59z"/></svg>
-      <span>Tableau</span>
-    </div>
-
-    <div class="tech-strip-item">
-      <svg viewBox="0 0 24 24" fill="white"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 2c4.418 0 8 3.582 8 8s-3.582 8-8 8-8-3.582-8-8 3.582-8 8-8zm-1 3v2H9v2h2v4H9v2h6v-2h-2v-4h2V7h-2V5h-2z"/></svg>
-      <span>AppSheet</span>
-    </div>
-
-    <div class="tech-strip-item">
-      <svg viewBox="0 0 24 24" fill="white"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 14.5h-2v-5h2v5zm0-7h-2V7h2v2.5z"/></svg>
-      <span>n8n</span>
-    </div>
-
+    <div class="tech-strip-item"><img src="dashboard_con_power_bi.svg" alt="Power BI"><span>Power BI</span></div>
+    <div class="tech-strip-item"><img src="python_para_data_analytics.svg" alt="Python"><span>Python</span></div>
+    <div class="tech-strip-item"><img src="bases_de_datos_mysql.svg" alt="SQL"><span>MySQL / SQL</span></div>
+    <div class="tech-strip-item"><img src="plantillas_excel.svg" alt="Excel"><span>Excel</span></div>
+    <div class="tech-strip-item"><img src="googlesheets.svg" alt="Google Sheets"><span>Google Sheets</span></div>
+    <div class="tech-strip-item"><img src="automatizaciones_con_n8n.svg" alt="n8n"><span>n8n</span></div>
+    <div class="tech-strip-item"><img src="looker.svg" alt="Looker"><span>Looker</span></div>
+    <div class="tech-strip-item"><img src="analisis_web_con_googleanalytics.svg" alt="Google Analytics"><span>Google Analytics</span></div>
+    <div class="tech-strip-item"><img src="campañas_ecommerce_googleads.svg" alt="Google Ads"><span>Google Ads</span></div>
     <!-- duplicado loop -->
-    <div class="tech-strip-item">
-      <svg viewBox="0 0 24 24" fill="white"><path d="M0 14.4V24l7.2-4.8V9.6zm7.2-4.8V14.4L14.4 9.6V4.8zm7.2 4.8v4.8L21.6 24V14.4zM14.4 0v4.8L24 9.6V4.8z"/></svg>
-      <span>Power BI</span>
-    </div>
-    <div class="tech-strip-item">
-      <svg viewBox="0 0 24 24" fill="white"><path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.13-.1.2-.19.27-.29.31-.37.32-.45.31-.51.29-.56.26-.56.23-.55.18-.53.14-.5.1-.46.06-.42.03H6.5l-.01 2.94-.01.08-.04.13-.09.15-.14.16-.19.17-.25.17H5.3l-.25-.17-.19-.17-.14-.16-.09-.15-.04-.13-.01-.08V2.7l.01-.09.04-.13.09-.15.14-.16.2-.17.24-.17H10.5l.04.01.13.01.2.04.26.07zm-6.7 1.62H5.83v5.7h1.72l.35-.02.34-.06.32-.1.28-.14.23-.18.17-.22.1-.26.03-.3v-.3l-.05-.27-.1-.23-.14-.2-.19-.15-.23-.11-.27-.07-.32-.03zm8.7 4.62l-.01 1.45-.01.47-.05.45-.09.43-.13.42-.17.4-.21.38-.25.36-.29.33-.34.3-.38.27-.42.23-.46.18-.5.14-.53.09-.57.04H8.8l-.01.01v5.77h1.72v-3.54h1.72l.46-.03.44-.07.42-.12.39-.17.36-.22.32-.28.29-.33.25-.38.21-.43.16-.48.11-.53.06-.58.01-.62v-.63l-.03-.43-.07-.39-.12-.36-.16-.32-.21-.29-.26-.25-.3-.22-.34-.18-.38-.14-.42-.1-.45-.06-.49-.03z"/></svg>
-      <span>Python</span>
-    </div>
-    <div class="tech-strip-item">
-      <svg viewBox="0 0 24 24" fill="white"><path d="M4.5 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM14.25 8.625a3.375 3.375 0 116.75 0 3.375 3.375 0 01-6.75 0zM1.5 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM17.25 19.128l-.001.144a2.25 2.25 0 01-.233.96 10.088 10.088 0 005.06-1.01.75.75 0 00.42-.643 4.875 4.875 0 00-6.957-4.611 8.586 8.586 0 011.71 5.157v.003z"/></svg>
-      <span>SQL</span>
-    </div>
-    <div class="tech-strip-item">
-      <svg viewBox="0 0 24 24" fill="white"><path d="M21.17 3.25Q21.5 3.25 21.76 3.5 22 3.74 22 4.08V19.92Q22 20.26 21.76 20.5 21.5 20.75 21.17 20.75H7.83Q7.5 20.75 7.24 20.5 7 20.26 7 19.92V17H2.83Q2.5 17 2.24 16.76 2 16.5 2 16.17V7.83Q2 7.5 2.24 7.24 2.5 7 2.83 7H7V4.08Q7 3.74 7.24 3.5 7.5 3.25 7.83 3.25M7 13.06L8.18 15.28H9.97L8 12.06 9.93 8.89H8.22L7.13 10.9 7.09 10.96 7.06 11.03Q6.8 10.5 6.5 9.96 6.25 9.43 5.97 8.89H4.16L6.05 12.08 4 15.28H5.78M13.88 19.5V17H8.25V19.5M13.88 15.75V12.63H10.5V15.75M13.88 11.38V8.25H10.5V11.38M13.88 7V4.5H8.25V7M20.75 19.5V17H15.13V19.5M20.75 15.75V12.63H15.13V15.75M20.75 11.38V8.25H15.13V11.38M20.75 7V4.5H15.13V7Z"/></svg>
-      <span>Excel</span>
-    </div>
-    <div class="tech-strip-item">
-      <svg viewBox="0 0 24 24" fill="white"><path d="M11.654.182L2.57 14.18H8.44L5.93 24 21.429 7.772h-6.664l3.944-7.59z"/></svg>
-      <span>Tableau</span>
-    </div>
-    <div class="tech-strip-item">
-      <svg viewBox="0 0 24 24" fill="white"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 2c4.418 0 8 3.582 8 8s-3.582 8-8 8-8-3.582-8-8 3.582-8 8-8zm-1 3v2H9v2h2v4H9v2h6v-2h-2v-4h2V7h-2V5h-2z"/></svg>
-      <span>AppSheet</span>
-    </div>
-    <div class="tech-strip-item">
-      <svg viewBox="0 0 24 24" fill="white"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 14.5h-2v-5h2v5zm0-7h-2V7h2v2.5z"/></svg>
-      <span>n8n</span>
-    </div>
-
+    <div class="tech-strip-item"><img src="dashboard_con_power_bi.svg" alt="Power BI"><span>Power BI</span></div>
+    <div class="tech-strip-item"><img src="python_para_data_analytics.svg" alt="Python"><span>Python</span></div>
+    <div class="tech-strip-item"><img src="bases_de_datos_mysql.svg" alt="SQL"><span>MySQL / SQL</span></div>
+    <div class="tech-strip-item"><img src="plantillas_excel.svg" alt="Excel"><span>Excel</span></div>
+    <div class="tech-strip-item"><img src="googlesheets.svg" alt="Google Sheets"><span>Google Sheets</span></div>
+    <div class="tech-strip-item"><img src="automatizaciones_con_n8n.svg" alt="n8n"><span>n8n</span></div>
+    <div class="tech-strip-item"><img src="looker.svg" alt="Looker"><span>Looker</span></div>
+    <div class="tech-strip-item"><img src="analisis_web_con_googleanalytics.svg" alt="Google Analytics"><span>Google Analytics</span></div>
+    <div class="tech-strip-item"><img src="campañas_ecommerce_googleads.svg" alt="Google Ads"><span>Google Ads</span></div>
   </div>
 </div>
 
