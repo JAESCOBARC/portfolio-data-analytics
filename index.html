@@ -181,8 +181,11 @@ footer{background:var(--navy);padding:2rem 5%;border-top:1px solid rgba(255,255,
 @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
 
 @media(max-width:768px){
-  .hero{grid-template-columns:1fr;min-height:auto;padding:4rem 5%}
-  .hero-visual{display:none}
+  .hero{grid-template-columns:1fr;min-height:auto;padding:3rem 5%}
+  .hero-visual{display:flex;flex-direction:column;align-items:center;margin-bottom:2rem;order:-1}
+  .hero-photo{width:180px;height:180px}
+  .hero-photo-placeholder{width:180px;height:180px}
+  .hero-dif-text{display:none}
   .ind-grid{grid-template-columns:1fr 1fr}
   .proceso-grid{grid-template-columns:1fr 1fr}
   .proceso-grid::before{display:none}
