@@ -37,7 +37,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(27,79,114,0.97);backdrop-f
 .nav-cta{background:var(--blue)!important;color:white!important;padding:8px 20px;border-radius:100px;font-size:0.82rem!important;font-weight:500!important;transition:background 0.2s!important}
 .nav-cta:hover{background:var(--blue-mid)!important}
 
-.hero{min-height:90vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4rem;padding:2.5rem 5% 3rem;background:var(--navy);position:relative;overflow:hidden}
+.hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4rem;padding:2.5rem 5% 3rem;background:var(--navy);position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;top:-300px;right:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(55,138,221,0.15) 0%,transparent 70%);border-radius:50%;pointer-events:none}
 .hero::after{content:'';position:absolute;bottom:-200px;left:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(55,138,221,0.08) 0%,transparent 70%);border-radius:50%;pointer-events:none}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(55,138,221,0.15);color:var(--blue-pale);border:1px solid rgba(55,138,221,0.3);padding:6px 16px;border-radius:100px;font-size:0.78rem;font-weight:500;margin-bottom:1.5rem}
@@ -56,13 +56,15 @@ h1 em{font-style:italic;color:var(--blue-light)}
 .trust-label{font-size:0.75rem;color:rgba(255,255,255,0.45);margin-top:2px}
 .trust-divider{width:1px;height:36px;background:rgba(255,255,255,0.15)}
 
-.hero-visual{display:flex;flex-direction:column;gap:1rem;position:relative;z-index:1}
-.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.stat-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:1.25rem;transition:background 0.3s}
+.hero-visual{display:flex;justify-content:center;align-items:center;position:relative;z-index:1}
+.hero-photo{width:340px;height:400px;border-radius:24px;object-fit:cover;object-position:top;border:3px solid rgba(255,255,255,0.15);box-shadow:0 20px 60px rgba(0,0,0,0.3)}
+.hero-photo-placeholder{width:340px;height:400px;border-radius:24px;background:rgba(255,255,255,0.06);border:2px dashed rgba(255,255,255,0.2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:rgba(255,255,255,0.3);font-size:0.85rem}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:2rem}
+.stat-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:1.25rem;transition:background 0.3s;text-align:center}
 .stat-card:hover{background:rgba(255,255,255,0.1)}
 .stat-icon{font-size:1.2rem;margin-bottom:8px;opacity:0.8}
-.stat-val{font-family:'DM Serif Display',serif;font-size:1.5rem;font-weight:600;color:white;line-height:1}
-.stat-label{font-size:0.75rem;color:rgba(255,255,255,0.5);margin-top:4px}
+.stat-val{font-family:'DM Serif Display',serif;font-size:1.2rem;font-weight:600;color:white;line-height:1}
+.stat-label{font-size:0.72rem;color:rgba(255,255,255,0.5);margin-top:4px}
 .tech-card{background:rgba(55,138,221,0.1);border:1px solid rgba(55,138,221,0.25);border-radius:16px;padding:1.25rem}
 .tech-card-label{font-size:0.7rem;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.4);margin-bottom:10px}
 .tech-pills{display:flex;flex-wrap:wrap;gap:6px}
@@ -75,6 +77,7 @@ h2 em{font-style:italic;color:var(--blue-mid)}
 .section-lead{font-size:1rem;color:var(--slate);max-width:560px;line-height:1.8}
 
 .diferencial{background:var(--navy)}
+.dif-tools{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:2rem}
 .diferencial .section-tag{color:var(--blue-light)}
 .diferencial h2{color:white}
 .diferencial .section-lead{color:rgba(255,255,255,0.6)}
@@ -218,40 +221,10 @@ footer{background:var(--navy);padding:2rem 5%;border-top:1px solid rgba(255,255,
   </div>
 
   <div class="hero-visual">
-    <div class="stat-grid">
-      <div class="stat-card">
-        <div class="stat-icon">📊</div>
-        <div class="stat-val">Power BI</div>
-        <div class="stat-label">Dashboards interactivos</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-icon">🐍</div>
-        <div class="stat-val">Python</div>
-        <div class="stat-label">Análisis y automatización</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-icon">📱</div>
-        <div class="stat-val">AppSheet</div>
-        <div class="stat-label">Apps sin código</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-icon">🗄️</div>
-        <div class="stat-val">SQL</div>
-        <div class="stat-label">Bases de datos</div>
-      </div>
-    </div>
-    <div class="tech-card">
-      <div class="tech-card-label">Stack completo</div>
-      <div class="tech-pills">
-        <span class="tech-pill">Power BI</span>
-        <span class="tech-pill">Tableau</span>
-        <span class="tech-pill">Data Studio</span>
-        <span class="tech-pill">Python</span>
-        <span class="tech-pill">SQL</span>
-        <span class="tech-pill">Excel VBA</span>
-        <span class="tech-pill">AppSheet</span>
-        <span class="tech-pill">n8n</span>
-      </div>
+    <img src="data-analytics-bussines-jhony-escobar.jpg" alt="Jhony Escobar" class="hero-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="hero-photo-placeholder" style="display:none">
+      <span style="font-size:2.5rem">👤</span>
+      <span>Foto de perfil</span>
     </div>
   </div>
 </section>
@@ -260,6 +233,28 @@ footer{background:var(--navy);padding:2rem 5%;border-top:1px solid rgba(255,255,
   <div class="section-tag">Por qué soy diferente</div>
   <h2>No solo soy técnico.<br>Entiendo <em>el negocio.</em></h2>
   <p class="section-lead">He trabajado en producción, finanzas y comercial. Sé qué preguntas hace cada área y qué datos necesita para tomar mejores decisiones.</p>
+  <div class="dif-tools">
+    <div class="stat-card">
+      <div class="stat-icon">📊</div>
+      <div class="stat-val">Power BI</div>
+      <div class="stat-label">Dashboards interactivos</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">🐍</div>
+      <div class="stat-val">Python</div>
+      <div class="stat-label">Análisis y automatización</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">📱</div>
+      <div class="stat-val">AppSheet</div>
+      <div class="stat-label">Apps sin código</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">🗄️</div>
+      <div class="stat-val">SQL</div>
+      <div class="stat-label">Bases de datos</div>
+    </div>
+  </div>
   <div class="dif-grid">
     <div class="dif-card">
       <div class="dif-icon">🏭</div>
