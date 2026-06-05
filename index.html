@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jhony Escobar | Data Analytics & Business Automation</title>
+<meta name="description" content="Consultor de Data Analytics y Automatización de Negocios. Power BI, Python, SQL, AppSheet, VBA. Experiencia en producción, finanzas y comercial.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#042C53;
+  --blue-deep:#0C447C;
+  --blue-mid:#185FA5;
+  --blue:#378ADD;
+  --blue-light:#85B7EB;
+  --blue-pale:#B5D4F4;
+  --blue-mist:#E6F1FB;
+  --cream:#faf8f3;
+  --white:#ffffff;
+  --charcoal:#1c1c1c;
+  --slate:#4a4a4a;
+  --muted:#7a7a7a;
+  --border:rgba(0,0,0,0.08);
+  --gold:#BA7517;
+  --green:#3B6D11;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:var(--charcoal);line-height:1.7;overflow-x:hidden}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(4,44,83,0.97);backdrop-filter:blur(12px);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;color:white;text-decoration:none}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:0.85rem;font-weight:400;color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:white}
+.nav-cta{background:var(--blue)!important;color:white!important;padding:8px 20px;border-radius:100px;font-size:0.82rem!important;font-weight:500!important;transition:background 0.2s!important}
+.nav-cta:hover{background:var(--blue-mid)!important}
+
+.hero{min-height:90vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4rem;padding:6rem 5% 4rem;background:var(--navy);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-300px;right:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(55,138,221,0.15) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-200px;left:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(55,138,221,0.08) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(55,138,221,0.15);color:var(--blue-pale);border:1px solid rgba(55,138,221,0.3);padding:6px 16px;border-radius:100px;font-size:0.78rem;font-weight:500;margin-bottom:1.5rem}
+h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4vw,3.4rem);font-weight:400;line-height:1.15;color:white;margin-bottom:1.5rem}
+h1 em{font-style:italic;color:var(--blue-light)}
+.hero-desc{font-size:1rem;color:rgba(255,255,255,0.65);line-height:1.8;max-width:500px;margin-bottom:2.5rem}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.btn-primary{background:var(--blue);color:white;padding:14px 32px;border-radius:100px;text-decoration:none;font-weight:500;font-size:0.92rem;transition:all 0.2s;display:inline-block;box-shadow:0 4px 20px rgba(55,138,221,0.3)}
+.btn-primary:hover{background:var(--blue-mid);transform:translateY(-1px)}
+.btn-ghost{color:var(--blue-pale);font-size:0.88rem;font-weight:400;text-decoration:none;display:flex;align-items:center;gap:6px;transition:gap 0.2s}
+.btn-ghost:hover{gap:10px}
+.btn-ghost::after{content:'→'}
+.hero-trust{margin-top:3rem;display:flex;gap:2rem;align-items:center}
+.trust-item{display:flex;flex-direction:column;align-items:flex-start}
+.trust-num{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:600;color:var(--blue-light);line-height:1}
+.trust-label{font-size:0.75rem;color:rgba(255,255,255,0.45);margin-top:2px}
+.trust-divider{width:1px;height:36px;background:rgba(255,255,255,0.15)}
+
+.hero-visual{display:flex;flex-direction:column;gap:1rem;position:relative;z-index:1}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stat-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:1.25rem;transition:background 0.3s}
+.stat-card:hover{background:rgba(255,255,255,0.1)}
+.stat-icon{font-size:1.2rem;margin-bottom:8px;opacity:0.8}
+.stat-val{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:600;color:white;line-height:1}
+.stat-label{font-size:0.75rem;color:rgba(255,255,255,0.5);margin-top:4px}
+.tech-card{background:rgba(55,138,221,0.1);border:1px solid rgba(55,138,221,0.25);border-radius:16px;padding:1.25rem}
+.tech-card-label{font-size:0.7rem;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.4);margin-bottom:10px}
+.tech-pills{display:flex;flex-wrap:wrap;gap:6px}
+.tech-pill{background:rgba(55,138,221,0.2);border:1px solid rgba(55,138,221,0.3);color:var(--blue-pale);padding:4px 12px;border-radius:100px;font-size:0.75rem;font-weight:500}
+
+section{padding:5rem 5%}
+.section-tag{display:inline-block;font-size:0.75rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue-mid);margin-bottom:1rem}
+h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:400;color:var(--navy);line-height:1.2;margin-bottom:1rem}
+h2 em{font-style:italic;color:var(--blue-mid)}
+.section-lead{font-size:1rem;color:var(--slate);max-width:560px;line-height:1.8}
+
+.diferencial{background:var(--navy)}
+.diferencial .section-tag{color:var(--blue-light)}
+.diferencial h2{color:white}
+.diferencial .section-lead{color:rgba(255,255,255,0.6)}
+.dif-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-top:3rem}
+.dif-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:1.75rem 1.5rem;transition:background 0.3s}
+.dif-card:hover{background:rgba(255,255,255,0.07)}
+.dif-icon{width:40px;height:40px;border-radius:12px;background:rgba(55,138,221,0.15);display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:1rem}
+.dif-card h3{font-size:0.95rem;font-weight:500;color:white;margin-bottom:0.5rem}
+.dif-card p{font-size:0.85rem;color:rgba(255,255,255,0.5);line-height:1.7}
+
+.servicios{background:var(--cream)}
+.servicios-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:3rem}
+.servicio-card{background:white;border-radius:20px;border:1px solid var(--border);padding:2rem;transition:all 0.3s;position:relative;overflow:hidden}
+.servicio-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue-mid),var(--blue));opacity:0;transition:opacity 0.3s}
+.servicio-card:hover{transform:translateY(-4px);border-color:var(--blue-mist)}
+.servicio-card:hover::before{opacity:1}
+.servicio-icon{width:48px;height:48px;border-radius:14px;background:var(--blue-mist);border:1px solid var(--blue-pale);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1.25rem}
+.servicio-card h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:400;color:var(--navy);margin-bottom:0.75rem}
+.servicio-card p{font-size:0.88rem;color:var(--slate);line-height:1.7}
+.servicio-card ul{list-style:none;margin-top:1rem;display:flex;flex-direction:column;gap:6px}
+.servicio-card ul li{font-size:0.82rem;color:var(--slate);display:flex;align-items:flex-start;gap:8px}
+.servicio-card ul li::before{content:'✓';color:var(--blue-mid);font-weight:600;flex-shrink:0;margin-top:1px}
+.servicio-popular{position:absolute;top:1.25rem;right:1.25rem;background:var(--blue-mist);color:var(--blue-mid);padding:4px 12px;border-radius:100px;font-size:0.7rem;font-weight:500}
+
+.industrias{background:white}
+.ind-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.5rem}
+.ind-card{background:var(--blue-mist);border-radius:16px;padding:1.5rem;text-align:center;transition:all 0.3s;border:1px solid var(--blue-pale)}
+.ind-card:hover{background:var(--blue-pale);transform:translateY(-2px)}
+.ind-icon{font-size:1.8rem;margin-bottom:0.75rem}
+.ind-card h4{font-size:0.9rem;font-weight:500;color:var(--navy);margin-bottom:4px}
+.ind-card p{font-size:0.8rem;color:var(--blue-deep)}
+
+.portfolio{background:var(--cream)}
+.portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:3rem}
+.proyecto-card{background:white;border-radius:20px;border:1px solid var(--border);overflow:hidden;transition:all 0.3s}
+.proyecto-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(24,95,165,0.1)}
+.proyecto-preview{height:160px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;position:relative;overflow:hidden}
+.preview-powerbi{background:linear-gradient(135deg,#042C53,#185FA5)}
+.preview-appsheet{background:linear-gradient(135deg,#0C447C,#378ADD)}
+.preview-excel{background:linear-gradient(135deg,#173404,#3B6D11)}
+.preview-python{background:linear-gradient(135deg,#412402,#BA7517)}
+.proyecto-body{padding:1.5rem}
+.proyecto-tag{display:inline-block;font-size:0.7rem;font-weight:500;padding:3px 10px;border-radius:100px;margin-bottom:10px}
+.tag-powerbi{background:var(--blue-mist);color:var(--blue-deep)}
+.tag-appsheet{background:#E6F1FB;color:#0C447C}
+.tag-excel{background:#EAF3DE;color:#27500A}
+.tag-python{background:#FAEEDA;color:#633806}
+.proyecto-body h3{font-size:1rem;font-weight:500;color:var(--navy);margin-bottom:6px}
+.proyecto-body p{font-size:0.85rem;color:var(--slate);line-height:1.6}
+.proyecto-footer{display:flex;gap:6px;flex-wrap:wrap;margin-top:1rem}
+.tech-badge{font-size:0.72rem;padding:3px 10px;border-radius:100px;background:var(--cream);color:var(--slate);border:1px solid var(--border)}
+.proyecto-placeholder{background:var(--blue-mist);border-radius:16px;border:2px dashed var(--blue-pale);padding:2rem;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:200px}
+.proyecto-placeholder p{font-size:0.85rem;color:var(--blue-mid)}
+
+.proceso{background:var(--navy)}
+.proceso .section-tag{color:var(--blue-light)}
+.proceso h2{color:white}
+.proceso .section-lead{color:rgba(255,255,255,0.6)}
+.proceso-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;margin-top:3rem;position:relative}
+.proceso-grid::before{content:'';position:absolute;top:28px;left:15%;right:15%;height:1px;background:rgba(55,138,221,0.3)}
+.proceso-step{text-align:center;padding:0 1rem;position:relative;z-index:1}
+.step-num{width:56px;height:56px;border-radius:50%;background:var(--blue-mid);border:2px solid var(--blue);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;color:white;margin:0 auto 1rem}
+.proceso-step h4{font-size:0.9rem;font-weight:500;color:white;margin-bottom:6px}
+.proceso-step p{font-size:0.8rem;color:rgba(255,255,255,0.5);line-height:1.6}
+
+.contacto{background:var(--cream);text-align:center}
+.contacto-box{max-width:640px;margin:0 auto;background:var(--navy);border-radius:28px;padding:3.5rem}
+.contacto-box h2{color:white;margin-bottom:1rem}
+.contacto-box p{color:rgba(255,255,255,0.6);margin-bottom:2rem;font-size:0.95rem}
+.btn-white{background:white;color:var(--navy);padding:14px 36px;border-radius:100px;text-decoration:none;font-weight:600;font-size:0.92rem;display:inline-block;transition:all 0.2s}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,0.2)}
+.contacto-links{display:flex;justify-content:center;gap:2rem;margin-top:1.5rem}
+.contacto-links a{font-size:0.82rem;color:rgba(255,255,255,0.4);text-decoration:none;transition:color 0.2s}
+.contacto-links a:hover{color:white}
+
+footer{background:var(--navy);padding:2rem 5%;border-top:1px solid rgba(255,255,255,0.05)}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:'Playfair Display',serif;color:white;font-size:1rem;font-weight:400}
+.footer-links{display:flex;gap:2rem}
+.footer-links a{font-size:0.8rem;color:rgba(255,255,255,0.4);text-decoration:none;transition:color 0.2s}
+.footer-links a:hover{color:white}
+.footer-copy{font-size:0.75rem;color:rgba(255,255,255,0.25);width:100%;text-align:center;margin-top:1rem}
+
+.animate-in{opacity:0;transform:translateY(20px);animation:fadeUp 0.6s ease forwards}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:768px){
+  .hero{grid-template-columns:1fr;min-height:auto;padding:4rem 5%}
+  .hero-visual{display:none}
+  .ind-grid{grid-template-columns:1fr 1fr}
+  .proceso-grid{grid-template-columns:1fr 1fr}
+  .proceso-grid::before{display:none}
+  .nav-links{display:none}
+  h1{font-size:2rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Jhony Escobar</a>
+  <ul class="nav-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#proceso">Proceso</a></li>
+    <li><a href="#contacto" class="nav-cta">Hablemos</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="inicio">
+  <div class="hero-content animate-in">
+    <div class="hero-badge">Data Analytics · Automatización · Negocio</div>
+    <h1>
+      Datos que generan<br>
+      <em>decisiones reales</em>,<br>
+      no solo informes
+    </h1>
+    <p class="hero-desc">
+      Consultor con experiencia real en producción, finanzas y comercial. Transformo datos en ventajas competitivas con Power BI, Python, SQL, AppSheet y automatización avanzada.
+    </p>
+    <div class="hero-actions">
+      <a href="#contacto" class="btn-primary">Hablemos de tu proyecto →</a>
+      <a href="#portfolio" class="btn-ghost">Ver portfolio</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item">
+        <span class="trust-num">+8</span>
+        <span class="trust-label">Años de experiencia</span>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <span class="trust-num">3</span>
+        <span class="trust-label">Áreas de negocio</span>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <span class="trust-num">+200</span>
+        <span class="trust-label">Alumnos formados</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-icon">📊</div>
+        <div class="stat-val">Power BI</div>
+        <div class="stat-label">Dashboards interactivos</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🐍</div>
+        <div class="stat-val">Python</div>
+        <div class="stat-label">Análisis y automatización</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">📱</div>
+        <div class="stat-val">AppSheet</div>
+        <div class="stat-label">Apps sin código</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🗄️</div>
+        <div class="stat-val">SQL</div>
+        <div class="stat-label">Bases de datos</div>
+      </div>
+    </div>
+    <div class="tech-card">
+      <div class="tech-card-label">Stack completo</div>
+      <div class="tech-pills">
+        <span class="tech-pill">Power BI</span>
+        <span class="tech-pill">Tableau</span>
+        <span class="tech-pill">Data Studio</span>
+        <span class="tech-pill">Python</span>
+        <span class="tech-pill">SQL</span>
+        <span class="tech-pill">Excel VBA</span>
+        <span class="tech-pill">AppSheet</span>
+        <span class="tech-pill">n8n</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="diferencial" id="diferencial">
+  <div class="section-tag">Por qué soy diferente</div>
+  <h2>No solo soy técnico.<br>Entiendo <em>el negocio.</em></h2>
+  <p class="section-lead">He trabajado en producción, finanzas y comercial. Sé qué preguntas hace cada área y qué datos necesita para tomar mejores decisiones.</p>
+  <div class="dif-grid">
+    <div class="dif-card">
+      <div class="dif-icon">🏭</div>
+      <h3>Experiencia en producción</h3>
+      <p>KPIs operativos, control de procesos, eficiencia productiva y análisis de cuellos de botella desde dentro.</p>
+    </div>
+    <div class="dif-card">
+      <div class="dif-icon">💰</div>
+      <h3>Visión financiera</h3>
+      <p>Modelos de costes, análisis de rentabilidad, forecasting y reporting financiero que los CFOs entienden.</p>
+    </div>
+    <div class="dif-card">
+      <div class="dif-icon">📈</div>
+      <h3>Mentalidad comercial</h3>
+      <p>Análisis de ventas, segmentación de clientes, pipeline y dashboards orientados a resultados comerciales.</p>
+    </div>
+    <div class="dif-card">
+      <div class="dif-icon">⚡</div>
+      <h3>Soluciones que se usan</h3>
+      <p>No entrego informes. Entrego herramientas que tu equipo adopta y usa cada día para tomar decisiones.</p>
+    </div>
+  </div>
+</section>
+
+<section class="servicios" id="servicios">
+  <div class="section-tag">Qué ofrezco</div>
+  <h2>Servicios de <em>consultoría y datos</em></h2>
+  <p class="section-lead">Desde el análisis hasta la automatización completa. Para empresas que quieren crecer basándose en datos.</p>
+  <div class="servicios-grid">
+    <div class="servicio-card">
+      <span class="servicio-popular">Más demandado</span>
+      <div class="servicio-icon">📊</div>
+      <h3>Dashboards y Business Intelligence</h3>
+      <p>Visualización de datos profesional con Power BI, Tableau o Google Data Studio, conectado a tus fuentes reales.</p>
+      <ul>
+        <li>Dashboards interactivos y en tiempo real</li>
+        <li>KPIs por área: ventas, finanzas, operaciones</li>
+        <li>Conexión a bases de datos y APIs</li>
+        <li>Formación para tu equipo incluida</li>
+      </ul>
+    </div>
+    <div class="servicio-card">
+      <div class="servicio-icon">🤖</div>
+      <h3>Automatización de procesos</h3>
+      <p>Elimina tareas manuales con macros VBA, Python y n8n. Tiempo ahorrado = dinero ganado.</p>
+      <ul>
+        <li>Macros y VBA en Excel</li>
+        <li>Automatización con Python</li>
+        <li>Workflows con n8n</li>
+        <li>Integración entre herramientas</li>
+      </ul>
+    </div>
+    <div class="servicio-card">
+      <div class="servicio-icon">📱</div>
+      <h3>Aplicaciones con AppSheet</h3>
+      <p>Apps móviles y web sin código, conectadas a Google Sheets o bases de datos. Para equipos de campo, almacén o ventas.</p>
+      <ul>
+        <li>Apps de gestión de inventario</li>
+        <li>Control de visitas comerciales</li>
+        <li>Formularios y aprobaciones</li>
+        <li>Sincronización en tiempo real</li>
+      </ul>
+    </div>
+    <div class="servicio-card">
+      <div class="servicio-icon">🗄️</div>
+      <h3>Análisis de datos con Python y SQL</h3>
+      <p>Extracción, transformación y análisis de datos a escala. Desde bases de datos relacionales hasta APIs.</p>
+      <ul>
+        <li>Limpieza y transformación de datos</li>
+        <li>Análisis estadístico y predictivo</li>
+        <li>Reportes automatizados</li>
+        <li>Consultas SQL optimizadas</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="industrias" id="industrias">
+  <div class="section-tag">Experiencia sectorial</div>
+  <h2>He trabajado en <em>tu industria</em></h2>
+  <p class="section-lead">No generalizo. Entiendo los procesos, los KPIs y los retos reales de cada área.</p>
+  <div class="ind-grid">
+    <div class="ind-card">
+      <div class="ind-icon">🏭</div>
+      <h4>Producción e industria</h4>
+      <p>OEE, control de calidad, eficiencia de línea</p>
+    </div>
+    <div class="ind-card">
+      <div class="ind-icon">💼</div>
+      <h4>Finanzas y contabilidad</h4>
+      <p>P&L, forecasting, análisis de costes</p>
+    </div>
+    <div class="ind-card">
+      <div class="ind-icon">🛒</div>
+      <h4>Comercial y ventas</h4>
+      <p>Pipeline, segmentación, análisis de clientes</p>
+    </div>
+    <div class="ind-card">
+      <div class="ind-icon">📦</div>
+      <h4>Logística y operaciones</h4>
+      <p>Inventario, rotación, optimización de rutas</p>
+    </div>
+    <div class="ind-card">
+      <div class="ind-icon">🎯</div>
+      <h4>Marketing digital</h4>
+      <p>Analítica web, ROI de campañas, attribution</p>
+    </div>
+    <div class="ind-card">
+      <div class="ind-icon">🎓</div>
+      <h4>Formación corporativa</h4>
+      <p>Excel, Power BI y datos para equipos</p>
+    </div>
+  </div>
+</section>
+
+<section class="portfolio" id="portfolio">
+  <div class="section-tag">Portfolio</div>
+  <h2>Proyectos <em>reales</em></h2>
+  <p class="section-lead">Casos de uso concretos con impacto medible en el negocio.</p>
+  <div class="portfolio-grid">
+    <div class="proyecto-card">
+      <div class="proyecto-preview preview-powerbi">📊</div>
+      <div class="proyecto-body">
+        <span class="proyecto-tag tag-powerbi">Power BI</span>
+        <h3>Dashboard de ventas en tiempo real</h3>
+        <p>Panel de control para equipo comercial con seguimiento de pipeline, conversión por etapa y forecast mensual.</p>
+        <div class="proyecto-footer">
+          <span class="tech-badge">Power BI</span>
+          <span class="tech-badge">SQL</span>
+          <span class="tech-badge">DAX</span>
+        </div>
+      </div>
+    </div>
+    <div class="proyecto-card">
+      <div class="proyecto-preview preview-appsheet">📱</div>
+      <div class="proyecto-body">
+        <span class="proyecto-tag tag-appsheet">AppSheet</span>
+        <h3>App de control de inventario</h3>
+        <p>Aplicación móvil para gestión de almacén con entradas, salidas, alertas de stock mínimo y reportes automáticos.</p>
+        <div class="proyecto-footer">
+          <span class="tech-badge">AppSheet</span>
+          <span class="tech-badge">Google Sheets</span>
+          <span class="tech-badge">n8n</span>
+        </div>
+      </div>
+    </div>
+    <div class="proyecto-card">
+      <div class="proyecto-preview preview-excel">📋</div>
+      <div class="proyecto-body">
+        <span class="proyecto-tag tag-excel">Excel VBA</span>
+        <h3>Automatización de reportes financieros</h3>
+        <p>Macro que genera el reporte mensual de P&L en 30 segundos, eliminando 4 horas de trabajo manual cada mes.</p>
+        <div class="proyecto-footer">
+          <span class="tech-badge">Excel</span>
+          <span class="tech-badge">VBA</span>
+          <span class="tech-badge">Power Query</span>
+        </div>
+      </div>
+    </div>
+    <div class="proyecto-placeholder">
+      <div style="font-size:2rem;opacity:0.4">+</div>
+      <p>Más proyectos próximamente</p>
+    </div>
+  </div>
+</section>
+
+<section class="proceso" id="proceso">
+  <div class="section-tag">Cómo trabajo</div>
+  <h2>Del problema al <em>resultado</em></h2>
+  <p class="section-lead">Un proceso claro, sin sorpresas y orientado siempre al impacto en tu negocio.</p>
+  <div class="proceso-grid">
+    <div class="proceso-step">
+      <div class="step-num">1</div>
+      <h4>Diagnóstico</h4>
+      <p>Entiendo tu negocio, tus datos actuales y el problema que quieres resolver.</p>
+    </div>
+    <div class="proceso-step">
+      <div class="step-num">2</div>
+      <h4>Propuesta</h4>
+      <p>Diseño la solución más eficiente con alcance, herramientas y precio claro.</p>
+    </div>
+    <div class="proceso-step">
+      <div class="step-num">3</div>
+      <h4>Desarrollo</h4>
+      <p>Construyo la solución con entregas parciales y feedback continuo.</p>
+    </div>
+    <div class="proceso-step">
+      <div class="step-num">4</div>
+      <h4>Entrega y soporte</h4>
+      <p>Formación para tu equipo y soporte post-entrega incluido.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contacto" id="contacto">
+  <div class="contacto-box">
+    <div style="font-size:2rem;margin-bottom:1rem">💬</div>
+    <h2 style="font-size:1.8rem">Hablemos de<br><em>tu proyecto</em></h2>
+    <p>Cuéntame qué necesitas. En menos de 24h te respondo con una propuesta concreta.</p>
+    <a href="mailto:jhony@trabajoenexcel.com" class="btn-white">Enviar mensaje</a>
+    <div class="contacto-links">
+      <a href="https://www.linkedin.com/in/jhony-escobar" target="_blank">LinkedIn</a>
+      <a href="https://www.trabajoenexcel.com" target="_blank">trabajoenexcel.com</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Jhony Escobar</div>
+    <div class="footer-links">
+      <a href="#servicios">Servicios</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <div class="footer-copy">© 2026 · Jhony Escobar · Data Analytics & Business Automation · Granada, España</div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.animate-in').forEach((el,i)=>{
+  el.style.animationDelay=(i*0.15)+'s';
+});
+</script>
+</body>
+</html>
