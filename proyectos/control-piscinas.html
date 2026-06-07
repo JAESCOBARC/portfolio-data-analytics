@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Control Piscinas · Portfolio | Jhony Escobar</title>
+<meta name="description" content="Sistema ERP en AppSheet para gestión de piscinas deportivas. Inscripciones, stock y dashboard Looker Studio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1B4F72;
+  --blue-deep:#2471A3;
+  --blue-mid:#2E86C1;
+  --blue:#3498DB;
+  --blue-light:#7FB3D3;
+  --blue-pale:#AED6F1;
+  --blue-mist:#D6EAF8;
+  --cream:#F0F7FF;
+  --white:#ffffff;
+  --charcoal:#1c1c1c;
+  --slate:#4a4a4a;
+  --border:rgba(0,0,0,0.08);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;font-size:18px;background:var(--cream);color:var(--charcoal);line-height:1.7}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(27,79,114,0.97);backdrop-filter:blur(12px);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:1.1rem;color:white;text-decoration:none}
+.nav-back{font-size:0.85rem;color:rgba(255,255,255,0.7);text-decoration:none;display:flex;align-items:center;gap:6px;transition:color 0.2s}
+.nav-back:hover{color:white}
+.nav-back::before{content:'←'}
+
+.proyecto-hero{background:var(--navy);padding:4rem 5%;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;text-align:center}
+.proyecto-hero::before{content:'';position:absolute;top:-200px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(52,152,219,0.15) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.proyecto-sector{display:inline-flex;align-items:center;gap:8px;background:rgba(52,152,219,0.15);color:var(--blue-pale);border:1px solid rgba(52,152,219,0.3);padding:5px 14px;border-radius:100px;font-size:0.78rem;font-weight:500;margin-bottom:1.25rem}
+.proyecto-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:400;color:white;line-height:1.15;margin-bottom:1rem}
+.proyecto-hero h1 em{font-style:italic;color:var(--blue-light)}
+.proyecto-hero-desc{font-size:1rem;color:rgba(255,255,255,0.65);max-width:620px;line-height:1.8;margin-bottom:2rem}
+.proyecto-meta{display:flex;gap:2.5rem;flex-wrap:wrap;justify-content:center}
+.meta-item{display:flex;flex-direction:column;gap:4px}
+.meta-label{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.35)}
+.meta-value{font-size:0.9rem;color:rgba(255,255,255,0.85);font-weight:500}
+.tech-pills{display:flex;gap:8px;flex-wrap:wrap}
+.tech-pill{background:rgba(52,152,219,0.2);border:1px solid rgba(52,152,219,0.3);color:var(--blue-pale);padding:4px 12px;border-radius:100px;font-size:0.75rem}
+
+.proyecto-content{max-width:1100px;margin:0 auto;padding:4rem 5%}
+
+.bloques-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-bottom:3rem}
+.bloque{margin-bottom:0}
+.bloque-tag{font-size:0.72rem;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:var(--blue-mid);margin-bottom:0.75rem}
+.bloque h2{font-family:'DM Serif Display',serif;font-size:clamp(1.3rem,2vw,1.8rem);font-weight:400;color:var(--navy);line-height:1.25;margin-bottom:1rem}
+.bloque h2 em{font-style:italic;color:var(--blue-mid)}
+.bloque p{font-size:0.95rem;color:var(--slate);line-height:1.8}
+@media(max-width:768px){.bloques-grid{grid-template-columns:1fr}}
+
+.resultado-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1.5rem}
+.resultado-card{background:white;border:1px solid var(--blue-pale);border-radius:16px;padding:1.5rem;border-top:3px solid var(--blue-mid)}
+.resultado-card h4{font-family:'DM Serif Display',serif;font-size:1.4rem;color:var(--navy);margin-bottom:4px}
+.resultado-card p{font-size:0.82rem;color:var(--slate)}
+
+.dashboard-section{background:white;border-radius:20px;border:1px solid var(--blue-pale);overflow:hidden;margin-bottom:3.5rem}
+.dashboard-header{padding:1.5rem 2rem;border-bottom:1px solid var(--blue-mist)}
+.dashboard-header h3{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--navy)}
+.dashboard-header p{font-size:0.85rem;color:var(--slate);margin-top:4px}
+
+.screenshots-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;padding:2rem}
+.screenshot-item{border-radius:12px;overflow:hidden;border:1px solid var(--blue-mist)}
+.screenshot-item img{width:100%;display:block}
+.screenshot-caption{padding:0.75rem 1rem;font-size:0.8rem;color:var(--slate);background:var(--cream);border-top:1px solid var(--blue-mist)}
+@media(max-width:600px){.screenshots-grid{grid-template-columns:1fr}}
+
+.app-section{padding:2rem}
+.app-screenshots{display:flex;gap:1rem;overflow-x:auto;padding-bottom:0.5rem;-webkit-overflow-scrolling:touch}
+.app-screenshots::-webkit-scrollbar{height:4px}
+.app-screenshots::-webkit-scrollbar-track{background:var(--blue-mist);border-radius:2px}
+.app-screenshots::-webkit-scrollbar-thumb{background:var(--blue-light);border-radius:2px}
+.app-frame{flex:0 0 220px;border-radius:20px;overflow:hidden;border:1px solid var(--blue-mist);box-shadow:0 4px 16px rgba(27,79,114,0.08)}
+.app-frame img{width:100%;display:block}
+
+.proyecto-nav{display:flex;justify-content:space-between;align-items:center;padding:2rem 0;border-top:1px solid var(--blue-mist)}
+.btn-back{background:var(--navy);color:white;padding:12px 28px;border-radius:100px;text-decoration:none;font-size:0.9rem;font-weight:500;transition:all 0.2s;display:inline-flex;align-items:center;gap:8px}
+.btn-back:hover{background:var(--blue-mid)}
+.btn-back::before{content:'←'}
+.btn-contacto{background:var(--blue);color:white;padding:12px 28px;border-radius:100px;text-decoration:none;font-size:0.9rem;font-weight:500;transition:all 0.2s}
+.btn-contacto:hover{background:var(--blue-mid)}
+
+@media(max-width:768px){
+  .proyecto-hero{padding:3rem 5%}
+  .proyecto-meta{gap:1.5rem}
+  .proyecto-content{padding:2.5rem 5%}
+  .screenshots-grid{padding:1rem}
+  .app-section{padding:1rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-logo">Jhony Escobar</a>
+  <a href="../index.html#portfolio" class="nav-back">Volver al portfolio</a>
+</nav>
+
+<div class="proyecto-hero">
+  <div class="proyecto-sector">Deportes</div>
+  <h1>Control Piscinas<br><em>Sistema ERP completo</em></h1>
+  <p class="proyecto-hero-desc">Desarrollo de un sistema ERP en AppSheet para la gestión operativa de instalaciones deportivas: inscripciones mensuales, control de stock de tienda y visualización gerencial en tiempo real.</p>
+  <div class="proyecto-meta">
+    <div class="meta-item">
+      <span class="meta-label">Sector</span>
+      <span class="meta-value">Deportes</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Herramientas</span>
+      <div class="tech-pills">
+        <span class="tech-pill">AppSheet</span>
+        <span class="tech-pill">Google Sheets</span>
+        <span class="tech-pill">Looker Studio</span>
+      </div>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Tipo</span>
+      <span class="meta-value">ERP · Mobile App · BI</span>
+    </div>
+  </div>
+</div>
+
+<div class="proyecto-content">
+
+  <div class="bloques-grid">
+    <div class="bloque">
+      <div class="bloque-tag">El reto</div>
+      <h2>Gestión operativa<br><em>sin sistema centralizado</em></h2>
+      <p>Las instalaciones deportivas gestionaban las inscripciones mensuales, la tienda y el stock de forma manual, sin visibilidad del negocio en tiempo real. Era imposible detectar a tiempo problemas de retención de clientes o desviaciones en la rentabilidad operativa.</p>
+    </div>
+    <div class="bloque">
+      <div class="bloque-tag">La solución</div>
+      <h2>ERP móvil con<br><em>inteligencia de negocio</em></h2>
+      <p>Se construyó una aplicación ERP completa en AppSheet sobre Google Sheets, cubriendo facturación, tienda, inventario, clientes y proveedores. Como complemento data-driven, se desarrolló un dashboard en Looker Studio para que la gerencia pudiera visualizar la gestión operativa y tomar decisiones con datos.</p>
+    </div>
+  </div>
+
+  <div class="resultado-grid">
+    <div class="resultado-card">
+      <h4>ERP</h4>
+      <p>Sistema integral de gestión operativa desde el móvil</p>
+    </div>
+    <div class="resultado-card">
+      <h4>Retención</h4>
+      <p>KPIs de retención detectados y mejorados con datos</p>
+    </div>
+    <div class="resultado-card">
+      <h4>P&L real</h4>
+      <p>Control inmediato de ingresos, gastos y margen</p>
+    </div>
+    <div class="resultado-card">
+      <h4>Stock</h4>
+      <p>Control de inventario y compras integrado en la app</p>
+    </div>
+  </div>
+
+  <div class="bloque" style="margin-top:3.5rem;margin-bottom:1.5rem">
+    <div class="bloque-tag">Dashboard gerencial</div>
+    <h2>Visualización de <em>KPIs operativos</em></h2>
+    <p>Dashboard en Looker Studio con los indicadores clave del negocio: ingresos, gastos, margen y base de clientes activos.</p>
+  </div>
+
+  <div class="dashboard-section">
+    <div class="dashboard-header">
+      <h3>Dashboard · Atlantes — Control Operativo</h3>
+      <p>Looker Studio · KPIs financieros y de gestión</p>
+    </div>
+    <div class="screenshots-grid">
+      <div class="screenshot-item">
+        <img src="../assets/atlantes-dashboard.png" alt="Dashboard Atlantes con KPIs financieros" onerror="this.closest('.screenshot-item').style.display='none'">
+        <div class="screenshot-caption">Vista principal · Ingresos, gastos y margen en tiempo real</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bloque" style="margin-bottom:1.5rem">
+    <div class="bloque-tag">Aplicación móvil</div>
+    <h2>ERP en el <em>bolsillo del gestor</em></h2>
+    <p>La app cubre todos los módulos operativos: facturación, tienda, inventario, clientes, proveedores y catálogo. Accesible desde cualquier dispositivo, sin necesidad de ordenador.</p>
+  </div>
+
+  <div class="dashboard-section">
+    <div class="dashboard-header">
+      <h3>App · Atlantes Oficial</h3>
+      <p>AppSheet · Módulos operativos completos</p>
+    </div>
+    <div class="app-section">
+      <div class="app-screenshots">
+        <div class="app-frame">
+          <img src="../assets/atlantes-app-menu.png" alt="Menú principal AppSheet Atlantes" onerror="this.closest('.app-frame').style.display='none'">
+        </div>
+        <div class="app-frame">
+          <img src="../assets/atlantes-app-tienda.png" alt="Módulo tienda AppSheet" onerror="this.closest('.app-frame').style.display='none'">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proyecto-nav">
+    <a href="../index.html#portfolio" class="btn-back">Ver todos los proyectos</a>
+    <a href="../index.html#contacto" class="btn-contacto">¿Hablamos de tu proyecto? →</a>
+  </div>
+
+</div>
+
+</body>
+</html>
