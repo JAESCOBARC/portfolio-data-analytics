@@ -95,19 +95,22 @@ h2 em{font-style:italic;color:var(--blue-mid)}
 .dif-card p{font-size:0.88rem;color:rgba(255,255,255,0.55);line-height:1.7}
 
 .servicios{background:var(--cream)}
-.servicios-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:3rem}
-.servicio-card{background:white;border-radius:20px;border:1px solid var(--border);padding:2.25rem;transition:all 0.3s;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between}
-.servicio-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue-mid),var(--blue));opacity:0;transition:opacity 0.3s}
-.servicio-card:hover{transform:translateY(-4px);border-color:var(--blue-pale)}
-.servicio-card:hover::before{opacity:1}
-.servicio-card-body{flex:1}
-.servicio-icon{width:48px;height:48px;border-radius:14px;background:var(--blue-mist);border:1px solid var(--blue-pale);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-top:1.5rem;align-self:flex-start}
-.servicio-card h3{font-family:'DM Serif Display',serif;font-size:1.35rem;font-weight:400;color:var(--navy);margin-bottom:0.75rem}
-.servicio-card p{font-size:1rem;color:var(--slate);line-height:1.7}
-.servicio-card ul{list-style:none;margin-top:1rem;display:flex;flex-direction:column;gap:8px}
-.servicio-card ul li{font-size:0.95rem;color:var(--slate);display:flex;align-items:flex-start;gap:8px}
-.servicio-card ul li::before{content:'✓';color:var(--blue-mid);font-weight:600;flex-shrink:0;margin-top:1px}
-.servicio-popular{position:absolute;top:0.6rem;right:1.25rem;background:var(--blue-mist);color:var(--blue-mid);padding:4px 12px;border-radius:100px;font-size:0.72rem;font-weight:500}
+.servicios-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;margin-top:3rem}
+.servicio-card{background:white;border-radius:20px;border:1px solid var(--blue-pale);padding:2.25rem;transition:all 0.3s;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.servicio-card::after{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue-mid),var(--blue))}
+.servicio-card:nth-child(2)::after{background:linear-gradient(90deg,var(--blue),var(--blue-light))}
+.servicio-card:nth-child(3)::after{background:linear-gradient(90deg,var(--blue-deep),var(--blue-mid))}
+.servicio-card:nth-child(4)::after{background:linear-gradient(90deg,var(--navy),var(--blue-deep))}
+.servicio-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(46,134,193,0.12)}
+.servicio-num{font-family:'DM Serif Display',serif;font-size:3rem;font-weight:400;color:var(--blue-mist);line-height:1;margin-bottom:0.5rem;letter-spacing:-0.02em}
+.servicio-card h3{font-family:'DM Serif Display',serif;font-size:1.3rem;font-weight:400;color:var(--navy);margin-bottom:0.75rem;line-height:1.25}
+.servicio-card p{font-size:0.97rem;color:var(--slate);line-height:1.75}
+.servicio-card ul{list-style:none;margin-top:1.25rem;display:flex;flex-direction:column;gap:8px}
+.servicio-card ul li{font-size:0.92rem;color:var(--blue-deep);display:flex;align-items:flex-start;gap:10px;padding-bottom:8px;border-bottom:1px solid var(--blue-mist)}
+.servicio-card ul li:last-child{border-bottom:none;padding-bottom:0}
+.servicio-card ul li::before{content:'→';color:var(--blue-mid);font-weight:400;flex-shrink:0}
+.servicio-popular{position:absolute;top:0.6rem;right:1.25rem;background:var(--blue-mid);color:white;padding:4px 12px;border-radius:100px;font-size:0.7rem;font-weight:500}
+.servicio-icon{display:none}
 
 .industrias{background:white}
 .ind-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.5rem}
@@ -310,6 +313,7 @@ footer{background:var(--navy);padding:2rem 5%;border-top:1px solid rgba(255,255,
   <div class="servicios-grid">
     <div class="servicio-card">
       <span class="servicio-popular">Más demandado</span>
+      <div class="servicio-num">01</div>
       <div class="servicio-card-body">
         <h3>Dashboards y Business Intelligence</h3>
         <p>Visualización de datos profesional con Power BI, Tableau o Google Data Studio, conectado a tus fuentes reales.</p>
@@ -320,9 +324,9 @@ footer{background:var(--navy);padding:2rem 5%;border-top:1px solid rgba(255,255,
           <li>Formación para tu equipo incluida</li>
         </ul>
       </div>
-      <div class="servicio-icon">📊</div>
     </div>
     <div class="servicio-card">
+      <div class="servicio-num">02</div>
       <div class="servicio-card-body">
         <h3>Automatización de procesos</h3>
         <p>Elimina tareas manuales con macros VBA, Python y n8n. Tiempo ahorrado = dinero ganado.</p>
@@ -333,9 +337,9 @@ footer{background:var(--navy);padding:2rem 5%;border-top:1px solid rgba(255,255,
           <li>Integración entre herramientas</li>
         </ul>
       </div>
-      <div class="servicio-icon">🤖</div>
     </div>
     <div class="servicio-card">
+      <div class="servicio-num">03</div>
       <div class="servicio-card-body">
         <h3>Aplicaciones con AppSheet</h3>
         <p>Apps móviles y web sin código, conectadas a Google Sheets o bases de datos. Para equipos de campo, almacén o ventas.</p>
@@ -346,9 +350,9 @@ footer{background:var(--navy);padding:2rem 5%;border-top:1px solid rgba(255,255,
           <li>Sincronización en tiempo real</li>
         </ul>
       </div>
-      <div class="servicio-icon">📱</div>
     </div>
     <div class="servicio-card">
+      <div class="servicio-num">04</div>
       <div class="servicio-card-body">
         <h3>Análisis de datos con Python y SQL</h3>
         <p>Extracción, transformación y análisis de datos a escala. Desde bases de datos relacionales hasta APIs.</p>
@@ -359,7 +363,6 @@ footer{background:var(--navy);padding:2rem 5%;border-top:1px solid rgba(255,255,
           <li>Consultas SQL optimizadas</li>
         </ul>
       </div>
-      <div class="servicio-icon">🗄️</div>
     </div>
   </div>
 </section>
