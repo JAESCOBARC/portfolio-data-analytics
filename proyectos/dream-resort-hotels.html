@@ -32,13 +32,13 @@ nav{position:sticky;top:0;z-index:100;background:rgba(27,79,114,0.97);backdrop-f
 .nav-back:hover{color:white}
 .nav-back::before{content:'←'}
 
-.proyecto-hero{background:var(--navy);padding:4rem 5%;position:relative;overflow:hidden}
+.proyecto-hero{background:var(--navy);padding:4rem 5%;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;text-align:center}
 .proyecto-hero::before{content:'';position:absolute;top:-200px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(52,152,219,0.15) 0%,transparent 70%);border-radius:50%;pointer-events:none}
 .proyecto-sector{display:inline-flex;align-items:center;gap:8px;background:rgba(52,152,219,0.15);color:var(--blue-pale);border:1px solid rgba(52,152,219,0.3);padding:5px 14px;border-radius:100px;font-size:0.78rem;font-weight:500;margin-bottom:1.25rem}
 .proyecto-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:400;color:white;line-height:1.15;margin-bottom:1rem}
 .proyecto-hero h1 em{font-style:italic;color:var(--blue-light)}
 .proyecto-hero-desc{font-size:1rem;color:rgba(255,255,255,0.65);max-width:600px;line-height:1.8;margin-bottom:2rem}
-.proyecto-meta{display:flex;gap:2.5rem;flex-wrap:wrap}
+.proyecto-meta{display:flex;gap:2.5rem;flex-wrap:wrap;justify-content:center}
 .meta-item{display:flex;flex-direction:column;gap:4px}
 .meta-label{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.35)}
 .meta-value{font-size:0.9rem;color:rgba(255,255,255,0.85);font-weight:500}
@@ -47,11 +47,13 @@ nav{position:sticky;top:0;z-index:100;background:rgba(27,79,114,0.97);backdrop-f
 
 .proyecto-content{max-width:1100px;margin:0 auto;padding:4rem 5%}
 
-.bloque{margin-bottom:3.5rem}
+.bloques-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-bottom:3rem}
+.bloque{margin-bottom:0}
 .bloque-tag{font-size:0.72rem;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:var(--blue-mid);margin-bottom:0.75rem}
-.bloque h2{font-family:'DM Serif Display',serif;font-size:clamp(1.5rem,2.5vw,2rem);font-weight:400;color:var(--navy);line-height:1.25;margin-bottom:1rem}
+.bloque h2{font-family:'DM Serif Display',serif;font-size:clamp(1.3rem,2vw,1.8rem);font-weight:400;color:var(--navy);line-height:1.25;margin-bottom:1rem}
 .bloque h2 em{font-style:italic;color:var(--blue-mid)}
-.bloque p{font-size:0.97rem;color:var(--slate);line-height:1.8;max-width:720px}
+.bloque p{font-size:0.95rem;color:var(--slate);line-height:1.8}
+@media(max-width:768px){.bloques-grid{grid-template-columns:1fr}}
 
 .resultado-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1.5rem}
 .resultado-card{background:white;border:1px solid var(--blue-pale);border-radius:16px;padding:1.5rem;border-top:3px solid var(--blue-mid)}
@@ -112,16 +114,17 @@ nav{position:sticky;top:0;z-index:100;background:rgba(27,79,114,0.97);backdrop-f
 
 <div class="proyecto-content">
 
-  <div class="bloque">
-    <div class="bloque-tag">El reto</div>
-    <h2>Una cadena hotelera sin<br><em>visibilidad de sus datos</em></h2>
-    <p>Dream Resort Hotels necesitaba dar el salto hacia una gestión basada en datos. La dirección tomaba decisiones sin visibilidad centralizada de los indicadores clave del negocio. El objetivo era crear un dashboard que la gerencia pudiera usar de forma autónoma para monitorizar el rendimiento de toda la cadena.</p>
-  </div>
-
-  <div class="bloque">
-    <div class="bloque-tag">La solución</div>
-    <h2>Toma de requerimientos y<br><em>diseño del dashboard</em></h2>
-    <p>Se realizó un proceso de levantamiento de KPIs con la gerencia para identificar los indicadores más relevantes para el negocio hotelero: ocupación, RevPAR, ADR, satisfacción del cliente y rentabilidad por establecimiento. El resultado fue un dashboard en Tableau con actualización automática y acceso inmediato para la toma de decisiones.</p>
+  <div class="bloques-grid">
+    <div class="bloque">
+      <div class="bloque-tag">El reto</div>
+      <h2>Una cadena hotelera sin<br><em>visibilidad de sus datos</em></h2>
+      <p>Dream Resort Hotels necesitaba dar el salto hacia una gestión basada en datos. La dirección tomaba decisiones sin visibilidad centralizada de los indicadores clave del negocio. El objetivo era crear un dashboard que la gerencia pudiera usar de forma autónoma para monitorizar el rendimiento de toda la cadena.</p>
+    </div>
+    <div class="bloque">
+      <div class="bloque-tag">La solución</div>
+      <h2>Toma de requerimientos y<br><em>diseño del dashboard</em></h2>
+      <p>Se realizó un proceso de levantamiento de KPIs con la gerencia para identificar los indicadores más relevantes para el negocio hotelero: ocupación, RevPAR, ADR, satisfacción del cliente y rentabilidad por establecimiento. El resultado fue un dashboard en Tableau con actualización automática y acceso inmediato para la toma de decisiones.</p>
+    </div>
   </div>
 
   <div class="resultado-grid">
