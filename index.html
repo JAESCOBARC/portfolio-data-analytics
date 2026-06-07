@@ -123,7 +123,7 @@ h2 em{font-style:italic;color:var(--blue-mid)}
 
 .portfolio{background:var(--cream)}
 .portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:3rem}
-.proyecto-card{background:white;border-radius:20px;border:1px solid var(--border);overflow:hidden;transition:all 0.3s}
+.proyecto-card{background:white;border-radius:20px;border:1px solid var(--border);overflow:hidden;transition:all 0.3s;text-decoration:none;display:block;color:inherit}
 .proyecto-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(24,95,165,0.1)}
 .proyecto-preview{height:160px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;position:relative;overflow:hidden}
 .preview-powerbi{background:linear-gradient(135deg,#1B4F72,#2E86C1)}
@@ -390,19 +390,22 @@ footer{background:var(--navy);padding:1.25rem 5%;border-top:1px solid rgba(255,2
   <h2>Proyectos <em>reales</em></h2>
   <p class="section-lead">Casos de uso concretos con impacto medible en el negocio.</p>
   <div class="portfolio-grid">
-    <div class="proyecto-card">
-      <div class="proyecto-preview preview-powerbi">📊</div>
+    <a href="proyectos/dream-resort-hotels.html" class="proyecto-card">
+      <div class="proyecto-preview preview-powerbi" style="background:linear-gradient(135deg,#1B4F72,#2E86C1);font-size:1rem;color:rgba(255,255,255,0.9);font-family:'DM Serif Display',serif;flex-direction:column;gap:6px">
+        <span style="font-size:2rem">🏨</span>
+        <span>Dream Resort Hotels</span>
+      </div>
       <div class="proyecto-body">
-        <span class="proyecto-tag tag-powerbi">Power BI</span>
-        <h3>Dashboard de ventas en tiempo real</h3>
-        <p>Panel de control para equipo comercial con seguimiento de pipeline, conversión por etapa y forecast mensual.</p>
+        <span class="proyecto-tag tag-powerbi">Tableau · Hostelería</span>
+        <h3>Dashboard de gestión hotelera</h3>
+        <p>KPIs ejecutivos para la dirección de una cadena hotelera con actualización automática y toma de decisiones en tiempo real.</p>
         <div class="proyecto-footer">
-          <span class="tech-badge">Power BI</span>
-          <span class="tech-badge">SQL</span>
-          <span class="tech-badge">DAX</span>
+          <span class="tech-badge">Tableau</span>
+          <span class="tech-badge">Excel</span>
+          <span class="tech-badge">KPIs Hoteleros</span>
         </div>
       </div>
-    </div>
+    </a>
     <div class="proyecto-card">
       <div class="proyecto-preview preview-appsheet">📱</div>
       <div class="proyecto-body">

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dream Resort Hotels · Portfolio | Jhony Escobar</title>
+<meta name="description" content="Dashboard de gestión hotelera para Dream Resort Hotels. Excel, Tableau, KPIs de hostelería.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1B4F72;
+  --blue-deep:#2471A3;
+  --blue-mid:#2E86C1;
+  --blue:#3498DB;
+  --blue-light:#7FB3D3;
+  --blue-pale:#AED6F1;
+  --blue-mist:#D6EAF8;
+  --cream:#F0F7FF;
+  --white:#ffffff;
+  --charcoal:#1c1c1c;
+  --slate:#4a4a4a;
+  --border:rgba(0,0,0,0.08);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;font-size:18px;background:var(--cream);color:var(--charcoal);line-height:1.7}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(27,79,114,0.97);backdrop-filter:blur(12px);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:1.1rem;color:white;text-decoration:none}
+.nav-back{font-size:0.85rem;color:rgba(255,255,255,0.7);text-decoration:none;display:flex;align-items:center;gap:6px;transition:color 0.2s}
+.nav-back:hover{color:white}
+.nav-back::before{content:'←'}
+
+.proyecto-hero{background:var(--navy);padding:4rem 5%;position:relative;overflow:hidden}
+.proyecto-hero::before{content:'';position:absolute;top:-200px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(52,152,219,0.15) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.proyecto-sector{display:inline-flex;align-items:center;gap:8px;background:rgba(52,152,219,0.15);color:var(--blue-pale);border:1px solid rgba(52,152,219,0.3);padding:5px 14px;border-radius:100px;font-size:0.78rem;font-weight:500;margin-bottom:1.25rem}
+.proyecto-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:400;color:white;line-height:1.15;margin-bottom:1rem}
+.proyecto-hero h1 em{font-style:italic;color:var(--blue-light)}
+.proyecto-hero-desc{font-size:1rem;color:rgba(255,255,255,0.65);max-width:600px;line-height:1.8;margin-bottom:2rem}
+.proyecto-meta{display:flex;gap:2.5rem;flex-wrap:wrap}
+.meta-item{display:flex;flex-direction:column;gap:4px}
+.meta-label{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.35)}
+.meta-value{font-size:0.9rem;color:rgba(255,255,255,0.85);font-weight:500}
+.tech-pills{display:flex;gap:8px;flex-wrap:wrap}
+.tech-pill{background:rgba(52,152,219,0.2);border:1px solid rgba(52,152,219,0.3);color:var(--blue-pale);padding:4px 12px;border-radius:100px;font-size:0.75rem}
+
+.proyecto-content{max-width:1100px;margin:0 auto;padding:4rem 5%}
+
+.bloque{margin-bottom:3.5rem}
+.bloque-tag{font-size:0.72rem;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:var(--blue-mid);margin-bottom:0.75rem}
+.bloque h2{font-family:'DM Serif Display',serif;font-size:clamp(1.5rem,2.5vw,2rem);font-weight:400;color:var(--navy);line-height:1.25;margin-bottom:1rem}
+.bloque h2 em{font-style:italic;color:var(--blue-mid)}
+.bloque p{font-size:0.97rem;color:var(--slate);line-height:1.8;max-width:720px}
+
+.resultado-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1.5rem}
+.resultado-card{background:white;border:1px solid var(--blue-pale);border-radius:16px;padding:1.5rem;border-top:3px solid var(--blue-mid)}
+.resultado-card h4{font-family:'DM Serif Display',serif;font-size:1.4rem;color:var(--navy);margin-bottom:4px}
+.resultado-card p{font-size:0.82rem;color:var(--slate)}
+
+.dashboard-section{background:white;border-radius:20px;border:1px solid var(--blue-pale);overflow:hidden;margin-bottom:3.5rem}
+.dashboard-header{padding:1.5rem 2rem;border-bottom:1px solid var(--blue-mist)}
+.dashboard-header h3{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--navy)}
+.dashboard-header p{font-size:0.85rem;color:var(--slate);margin-top:4px}
+.dashboard-embed{padding:1.5rem;background:var(--cream)}
+.tableau-container{position:relative;width:100%;overflow:hidden}
+
+.proyecto-nav{display:flex;justify-content:space-between;align-items:center;padding:2rem 0;border-top:1px solid var(--blue-mist)}
+.btn-back{background:var(--navy);color:white;padding:12px 28px;border-radius:100px;text-decoration:none;font-size:0.9rem;font-weight:500;transition:all 0.2s;display:inline-flex;align-items:center;gap:8px}
+.btn-back:hover{background:var(--blue-mid)}
+.btn-back::before{content:'←'}
+.btn-contacto{background:var(--blue);color:white;padding:12px 28px;border-radius:100px;text-decoration:none;font-size:0.9rem;font-weight:500;transition:all 0.2s}
+.btn-contacto:hover{background:var(--blue-mid)}
+
+@media(max-width:768px){
+  .proyecto-hero{padding:3rem 5%}
+  .proyecto-meta{gap:1.5rem}
+  .proyecto-content{padding:2.5rem 5%}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-logo">Jhony Escobar</a>
+  <a href="../index.html#portfolio" class="nav-back">Volver al portfolio</a>
+</nav>
+
+<div class="proyecto-hero">
+  <div class="proyecto-sector">Hostelería</div>
+  <h1>Dream Resort Hotels<br><em>Dashboard de gestión</em></h1>
+  <p class="proyecto-hero-desc">Diseño e implementación de un dashboard ejecutivo para que la dirección de la cadena hotelera pudiera gestionar el negocio de forma data-driven, con KPIs en tiempo real y actualización automática.</p>
+  <div class="proyecto-meta">
+    <div class="meta-item">
+      <span class="meta-label">Sector</span>
+      <span class="meta-value">Hostelería</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Herramientas</span>
+      <div class="tech-pills">
+        <span class="tech-pill">Tableau</span>
+        <span class="tech-pill">Excel</span>
+        <span class="tech-pill">KPIs Hoteleros</span>
+      </div>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Tipo</span>
+      <span class="meta-value">Business Intelligence</span>
+    </div>
+  </div>
+</div>
+
+<div class="proyecto-content">
+
+  <div class="bloque">
+    <div class="bloque-tag">El reto</div>
+    <h2>Una cadena hotelera sin<br><em>visibilidad de sus datos</em></h2>
+    <p>Dream Resort Hotels necesitaba dar el salto hacia una gestión basada en datos. La dirección tomaba decisiones sin visibilidad centralizada de los indicadores clave del negocio. El objetivo era crear un dashboard que la gerencia pudiera usar de forma autónoma para monitorizar el rendimiento de toda la cadena.</p>
+  </div>
+
+  <div class="bloque">
+    <div class="bloque-tag">La solución</div>
+    <h2>Toma de requerimientos y<br><em>diseño del dashboard</em></h2>
+    <p>Se realizó un proceso de levantamiento de KPIs con la gerencia para identificar los indicadores más relevantes para el negocio hotelero: ocupación, RevPAR, ADR, satisfacción del cliente y rentabilidad por establecimiento. El resultado fue un dashboard en Tableau con actualización automática y acceso inmediato para la toma de decisiones.</p>
+  </div>
+
+  <div class="resultado-grid">
+    <div class="resultado-card">
+      <h4>100%</h4>
+      <p>Visibilidad en tiempo real de KPIs de la cadena</p>
+    </div>
+    <div class="resultado-card">
+      <h4>Automático</h4>
+      <p>Actualización de datos sin intervención manual</p>
+    </div>
+    <div class="resultado-card">
+      <h4>Data-driven</h4>
+      <p>Decisiones basadas en datos desde el primer día</p>
+    </div>
+  </div>
+
+  <div class="bloque" style="margin-top:3.5rem">
+    <div class="bloque-tag">Dashboard interactivo</div>
+    <h2>Explora el <em>resultado final</em></h2>
+    <p>Dashboard publicado en Tableau Public. Puedes interactuar con todos los filtros y visualizaciones.</p>
+  </div>
+
+  <div class="dashboard-section">
+    <div class="dashboard-header">
+      <h3>Dashboard · Dream Resort Hotels</h3>
+      <p>Tableau Public · Actualización automática</p>
+    </div>
+    <div class="dashboard-embed">
+      <div class='tableauPlaceholder' id='viz1780868847956' style='position:relative'>
+        <noscript><a href='#'><img alt='Dashboard 1' src='https://public.tableau.com/static/images/CA/CASOHOTELFINAL/Dashboard1/1_rss.png' style='border:none'/></a></noscript>
+        <object class='tableauViz' style='display:none;'>
+          <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F'/>
+          <param name='embed_code_version' value='3'/>
+          <param name='site_root' value=''/>
+          <param name='name' value='CASOHOTELFINAL/Dashboard1'/>
+          <param name='tabs' value='no'/>
+          <param name='toolbar' value='yes'/>
+          <param name='static_image' value='https://public.tableau.com/static/images/CA/CASOHOTELFINAL/Dashboard1/1.png'/>
+          <param name='animate_transition' value='yes'/>
+          <param name='display_static_image' value='yes'/>
+          <param name='display_spinner' value='yes'/>
+          <param name='display_overlay' value='yes'/>
+          <param name='display_count' value='yes'/>
+          <param name='language' value='es-ES'/>
+        </object>
+      </div>
+      <script type='text/javascript'>
+        var divElement = document.getElementById('viz1780868847956');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+        if(divElement.offsetWidth > 800){vizElement.style.width='1366px';vizElement.style.height='795px';}
+        else if(divElement.offsetWidth > 500){vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';}
+        else{vizElement.style.width='100%';vizElement.style.height='1577px';}
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+      </script>
+    </div>
+  </div>
+
+  <div class="proyecto-nav">
+    <a href="../index.html#portfolio" class="btn-back">Ver todos los proyectos</a>
+    <a href="../index.html#contacto" class="btn-contacto">¿Hablamos de tu proyecto? →</a>
+  </div>
+
+</div>
+
+</body>
+</html>
