@@ -96,17 +96,18 @@ h2 em{font-style:italic;color:var(--blue-mid)}
 
 .servicios{background:var(--cream)}
 .servicios-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:3rem}
-.servicio-card{background:white;border-radius:20px;border:1px solid var(--border);padding:2rem;transition:all 0.3s;position:relative;overflow:hidden}
+.servicio-card{background:white;border-radius:20px;border:1px solid var(--border);padding:2.25rem;transition:all 0.3s;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between}
 .servicio-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue-mid),var(--blue));opacity:0;transition:opacity 0.3s}
-.servicio-card:hover{transform:translateY(-4px);border-color:var(--blue-mist)}
+.servicio-card:hover{transform:translateY(-4px);border-color:var(--blue-pale)}
 .servicio-card:hover::before{opacity:1}
-.servicio-icon{width:48px;height:48px;border-radius:14px;background:var(--blue-mist);border:1px solid var(--blue-pale);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1.25rem}
-.servicio-card h3{font-family:'DM Serif Display',serif;font-size:1.2rem;font-weight:400;color:var(--navy);margin-bottom:0.75rem}
-.servicio-card p{font-size:0.95rem;color:var(--slate);line-height:1.7}
-.servicio-card ul{list-style:none;margin-top:1rem;display:flex;flex-direction:column;gap:6px}
-.servicio-card ul li{font-size:0.9rem;color:var(--slate);display:flex;align-items:flex-start;gap:8px}
+.servicio-card-body{flex:1}
+.servicio-icon{width:48px;height:48px;border-radius:14px;background:var(--blue-mist);border:1px solid var(--blue-pale);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-top:1.5rem;align-self:flex-start}
+.servicio-card h3{font-family:'DM Serif Display',serif;font-size:1.35rem;font-weight:400;color:var(--navy);margin-bottom:0.75rem}
+.servicio-card p{font-size:1rem;color:var(--slate);line-height:1.7}
+.servicio-card ul{list-style:none;margin-top:1rem;display:flex;flex-direction:column;gap:8px}
+.servicio-card ul li{font-size:0.95rem;color:var(--slate);display:flex;align-items:flex-start;gap:8px}
 .servicio-card ul li::before{content:'✓';color:var(--blue-mid);font-weight:600;flex-shrink:0;margin-top:1px}
-.servicio-popular{position:absolute;top:1.25rem;right:1.25rem;background:var(--blue-mist);color:var(--blue-mid);padding:4px 12px;border-radius:100px;font-size:0.7rem;font-weight:500}
+.servicio-popular{position:absolute;top:1.25rem;right:1.25rem;background:var(--blue-mist);color:var(--blue-mid);padding:4px 12px;border-radius:100px;font-size:0.72rem;font-weight:500}
 
 .industrias{background:white}
 .ind-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.5rem}
@@ -309,48 +310,56 @@ footer{background:var(--navy);padding:2rem 5%;border-top:1px solid rgba(255,255,
   <div class="servicios-grid">
     <div class="servicio-card">
       <span class="servicio-popular">Más demandado</span>
+      <div class="servicio-card-body">
+        <h3>Dashboards y Business Intelligence</h3>
+        <p>Visualización de datos profesional con Power BI, Tableau o Google Data Studio, conectado a tus fuentes reales.</p>
+        <ul>
+          <li>Dashboards interactivos y en tiempo real</li>
+          <li>KPIs por área: ventas, finanzas, operaciones</li>
+          <li>Conexión a bases de datos y APIs</li>
+          <li>Formación para tu equipo incluida</li>
+        </ul>
+      </div>
       <div class="servicio-icon">📊</div>
-      <h3>Dashboards y Business Intelligence</h3>
-      <p>Visualización de datos profesional con Power BI, Tableau o Google Data Studio, conectado a tus fuentes reales.</p>
-      <ul>
-        <li>Dashboards interactivos y en tiempo real</li>
-        <li>KPIs por área: ventas, finanzas, operaciones</li>
-        <li>Conexión a bases de datos y APIs</li>
-        <li>Formación para tu equipo incluida</li>
-      </ul>
     </div>
     <div class="servicio-card">
+      <div class="servicio-card-body">
+        <h3>Automatización de procesos</h3>
+        <p>Elimina tareas manuales con macros VBA, Python y n8n. Tiempo ahorrado = dinero ganado.</p>
+        <ul>
+          <li>Macros y VBA en Excel</li>
+          <li>Automatización con Python</li>
+          <li>Workflows con n8n</li>
+          <li>Integración entre herramientas</li>
+        </ul>
+      </div>
       <div class="servicio-icon">🤖</div>
-      <h3>Automatización de procesos</h3>
-      <p>Elimina tareas manuales con macros VBA, Python y n8n. Tiempo ahorrado = dinero ganado.</p>
-      <ul>
-        <li>Macros y VBA en Excel</li>
-        <li>Automatización con Python</li>
-        <li>Workflows con n8n</li>
-        <li>Integración entre herramientas</li>
-      </ul>
     </div>
     <div class="servicio-card">
+      <div class="servicio-card-body">
+        <h3>Aplicaciones con AppSheet</h3>
+        <p>Apps móviles y web sin código, conectadas a Google Sheets o bases de datos. Para equipos de campo, almacén o ventas.</p>
+        <ul>
+          <li>Apps de gestión de inventario</li>
+          <li>Control de visitas comerciales</li>
+          <li>Formularios y aprobaciones</li>
+          <li>Sincronización en tiempo real</li>
+        </ul>
+      </div>
       <div class="servicio-icon">📱</div>
-      <h3>Aplicaciones con AppSheet</h3>
-      <p>Apps móviles y web sin código, conectadas a Google Sheets o bases de datos. Para equipos de campo, almacén o ventas.</p>
-      <ul>
-        <li>Apps de gestión de inventario</li>
-        <li>Control de visitas comerciales</li>
-        <li>Formularios y aprobaciones</li>
-        <li>Sincronización en tiempo real</li>
-      </ul>
     </div>
     <div class="servicio-card">
+      <div class="servicio-card-body">
+        <h3>Análisis de datos con Python y SQL</h3>
+        <p>Extracción, transformación y análisis de datos a escala. Desde bases de datos relacionales hasta APIs.</p>
+        <ul>
+          <li>Limpieza y transformación de datos</li>
+          <li>Análisis estadístico y predictivo</li>
+          <li>Reportes automatizados</li>
+          <li>Consultas SQL optimizadas</li>
+        </ul>
+      </div>
       <div class="servicio-icon">🗄️</div>
-      <h3>Análisis de datos con Python y SQL</h3>
-      <p>Extracción, transformación y análisis de datos a escala. Desde bases de datos relacionales hasta APIs.</p>
-      <ul>
-        <li>Limpieza y transformación de datos</li>
-        <li>Análisis estadístico y predictivo</li>
-        <li>Reportes automatizados</li>
-        <li>Consultas SQL optimizadas</li>
-      </ul>
     </div>
   </div>
 </section>
