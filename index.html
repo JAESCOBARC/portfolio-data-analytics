@@ -114,11 +114,12 @@ h2 em{font-style:italic;color:var(--blue-mid)}
 
 .industrias{background:white}
 .ind-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.5rem}
-.ind-card{background:var(--blue-mist);border-radius:16px;padding:1.5rem;text-align:center;transition:all 0.3s;border:1px solid var(--blue-pale)}
-.ind-card:hover{background:var(--blue-pale);transform:translateY(-2px)}
-.ind-icon{font-size:1.8rem;margin-bottom:0.75rem}
-.ind-card h4{font-size:0.9rem;font-weight:500;color:var(--navy);margin-bottom:4px}
-.ind-card p{font-size:0.8rem;color:var(--blue-deep)}
+.ind-card{background:white;border-radius:16px;padding:1.75rem;transition:all 0.3s;border:1px solid var(--blue-pale);position:relative;overflow:hidden}
+.ind-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--blue-mid),var(--blue-light))}
+.ind-card:hover{background:var(--blue-mist);transform:translateY(-2px);box-shadow:0 8px 24px rgba(46,134,193,0.1)}
+.ind-icon{display:none}
+.ind-card h4{font-family:'DM Serif Display',serif;font-size:1.2rem;font-weight:400;color:var(--navy);margin-bottom:6px;line-height:1.2}
+.ind-card p{font-size:0.95rem;color:var(--blue-deep);line-height:1.6}
 
 .portfolio{background:var(--cream)}
 .portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:3rem}
@@ -372,36 +373,12 @@ footer{background:var(--navy);padding:2rem 5%;border-top:1px solid rgba(255,255,
   <h2>He trabajado en <em>tu industria</em></h2>
   <p class="section-lead">No generalizo. Entiendo los procesos, los KPIs y los retos reales de cada área.</p>
   <div class="ind-grid">
-    <div class="ind-card">
-      <div class="ind-icon">🏭</div>
-      <h4>Producción e industria</h4>
-      <p>OEE, control de calidad, eficiencia de línea</p>
-    </div>
-    <div class="ind-card">
-      <div class="ind-icon">💼</div>
-      <h4>Finanzas y contabilidad</h4>
-      <p>P&L, forecasting, análisis de costes</p>
-    </div>
-    <div class="ind-card">
-      <div class="ind-icon">🛒</div>
-      <h4>Comercial y ventas</h4>
-      <p>Pipeline, segmentación, análisis de clientes</p>
-    </div>
-    <div class="ind-card">
-      <div class="ind-icon">📦</div>
-      <h4>Logística y operaciones</h4>
-      <p>Inventario, rotación, optimización de rutas</p>
-    </div>
-    <div class="ind-card">
-      <div class="ind-icon">🎯</div>
-      <h4>Marketing digital</h4>
-      <p>Analítica web, ROI de campañas, attribution</p>
-    </div>
-    <div class="ind-card">
-      <div class="ind-icon">🎓</div>
-      <h4>Formación corporativa</h4>
-      <p>Excel, Power BI y datos para equipos</p>
-    </div>
+    <div class="ind-card"><h4>Producción e industria</h4><p>OEE, control de calidad, eficiencia de línea</p></div>
+    <div class="ind-card"><h4>Finanzas y contabilidad</h4><p>P&L, forecasting, análisis de costes</p></div>
+    <div class="ind-card"><h4>Comercial y ventas</h4><p>Pipeline, segmentación, análisis de clientes</p></div>
+    <div class="ind-card"><h4>Logística y operaciones</h4><p>Inventario, rotación, optimización de rutas</p></div>
+    <div class="ind-card"><h4>Marketing digital</h4><p>Analítica web, ROI de campañas, attribution</p></div>
+    <div class="ind-card"><h4>Formación corporativa</h4><p>Excel, Power BI y datos para equipos</p></div>
   </div>
 </section>
 
