@@ -3,95 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Control Piscinas · Portfolio | Jhony Escobar</title>
-<meta name="description" content="Sistema ERP en AppSheet para gestión de piscinas deportivas. Inscripciones, stock y dashboard Looker Studio.">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"%3E%3Crect x="1.5" y="1.5" width="61" height="61" rx="14" fill="%230B0E12" stroke="%233CD6F2" stroke-opacity=".35" stroke-width="2"/%3E%3Cg fill="none" stroke="%233CD6F2" stroke-width="7" stroke-linejoin="miter"%3E%3Cpath d="M29 15v24a9 9 0 0 1-18 0" stroke-linecap="butt"/%3E%3Cpath d="M53 15H38v34h15M38 32h12"/%3E%3C/g%3E%3C/svg%3E">
+<title>Caso Control Piscinas: ERP en AppSheet | Jhony Escobar</title>
+<meta name="description" content="Caso real: ERP móvil en AppSheet para instalaciones deportivas, con inscripciones, tienda y stock, y un dashboard gerencial de KPIs en Looker Studio.">
+<link rel="canonical" href="https://www.jhonyescobar.com/proyectos/control-piscinas.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Jhony Escobar · Data Analytics">
+<meta property="og:title" content="Caso Control Piscinas: ERP en AppSheet | Jhony Escobar">
+<meta property="og:description" content="Caso real: ERP móvil en AppSheet para instalaciones deportivas, con inscripciones, tienda y stock, y un dashboard gerencial de KPIs en Looker Studio.">
+<meta property="og:url" content="https://www.jhonyescobar.com/proyectos/control-piscinas.html">
+<meta property="og:image" content="https://www.jhonyescobar.com/og/control-piscinas.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Caso Control Piscinas: ERP en AppSheet | Jhony Escobar">
+<meta name="twitter:description" content="Caso real: ERP móvil en AppSheet para instalaciones deportivas, con inscripciones, tienda y stock, y un dashboard gerencial de KPIs en Looker Studio.">
+<meta name="twitter:image" content="https://www.jhonyescobar.com/og/control-piscinas.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/estilos/base.css">
+<script src="/componentes/tracking.js" defer></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"></noscript>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://www.jhonyescobar.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Caso Control Piscinas",
+      "item": "https://www.jhonyescobar.com/proyectos/control-piscinas.html"
+    }
+  ]
+}
+</script>
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --bg:#0B0E12;
-  --bg-field:#0E1217;
-  --panel-1:#12171D;
-  --panel-2:#171D25;
-  --panel-3:#1D242E;
-  --line:#232B36;
-  --line-strong:#2F3946;
-  --text:#EAF1FB;
-  --text-2:#9DB0CB;
-  --text-3:#6F84A4;
-  --accent:#3CD6F2;
-  --accent-hover:#66E0F6;
-  --accent-dark:#17B2CF;
-  --on-accent:#03141A;
-  --accent-soft:rgba(60,214,242,.12);
-  --accent-border:rgba(60,214,242,.4);
-  --nav-bg:rgba(11,14,18,.8);
-  --glow-1:rgba(160,190,230,.10);
-  --glow-2:rgba(160,190,230,.04);
-  --red:#F2565B;
-  --red-soft:rgba(242,86,91,.12);
-  --amber:#F2B84B;
-  --amber-soft:rgba(242,184,75,.12);
-  --blue:#7FB0FF;
-  --blue-soft:rgba(127,176,255,.12);
-  --font-display:'Inter Tight','Inter',sans-serif;
-  --font-body:'Inter',sans-serif;
-  --font-mono:'JetBrains Mono',ui-monospace,monospace;
-  --gutter:max(20px,5%);
-  --ease:cubic-bezier(.2,.7,.2,1);
-}
-html{scroll-behavior:smooth;background:var(--bg);color-scheme:dark}
-body{
-  font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--text);overflow-x:hidden;
-  background-color:var(--bg);
-  background-image:
-    radial-gradient(900px 520px at 22% -8%,var(--glow-1),transparent 62%),
-    radial-gradient(700px 400px at 85% 0%,var(--glow-2),transparent 60%);
-  background-repeat:no-repeat;
-  -webkit-font-smoothing:antialiased;
-}
-::selection{background:var(--accent);color:var(--on-accent)}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
-
-/* Barra superior */
-nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:0 var(--gutter);display:flex;align-items:center;justify-content:space-between;height:64px}
-.nav-logo{font-family:var(--font-display);font-size:17px;font-weight:800;letter-spacing:-0.045em;color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:10px}
-.nav-logo::before{content:'';width:18px;height:2px;background:var(--accent);border-radius:2px}
-
-/* Tipografía */
-h1,h2,h3,h4{font-family:var(--font-display);color:var(--text)}
-h1 em,h2 em,h3 em{font-style:normal;color:var(--accent)}
-
-/* Botones */
-.btn-primary,.nav-cta,.btn-contacto,.btn-whatsapp{background:var(--accent);color:var(--on-accent);font-family:var(--font-body);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;border-radius:8px;padding:14px 26px;text-decoration:none;display:inline-flex;align-items:center;gap:10px;border:1px solid var(--accent);transition:background .15s var(--ease),border-color .15s var(--ease)}
-.btn-primary:hover,.nav-cta:hover,.btn-contacto:hover,.btn-whatsapp:hover{background:var(--accent-hover);border-color:var(--accent-hover)}
-.btn-ghost,.btn-back{background:transparent;color:var(--text);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;border:1px solid var(--line-strong);border-radius:8px;padding:14px 26px;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:color .15s var(--ease),border-color .15s var(--ease)}
-.btn-ghost:hover,.btn-back:hover{color:var(--accent);border-color:var(--accent)}
-
-/* Chips */
-.chip,.tech-pill,.tech-badge,.proyecto-tag,.hero-badge,.proyecto-sector{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:11.5px;font-weight:500;line-height:1.4;color:var(--text-2);background:var(--panel-1);border:1px solid var(--line-strong);border-radius:999px;padding:4px 12px;font-variant-numeric:tabular-nums}
-
-/* Eyebrow */
-.section-tag,.bloque-tag{display:inline-block;font-family:var(--font-body);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);margin-bottom:14px}
-
-/* Etiquetas de tarjeta / datos */
-.meta-label,.tech-card-label{font-family:var(--font-mono);font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-3)}
-
-/* Ventana de app (puntos macOS dibujados con CSS) */
-.app-window{background:linear-gradient(180deg,var(--panel-2),var(--panel-1));border:1px solid var(--line-strong);border-radius:14px;box-shadow:0 30px 80px rgba(0,0,0,.45);overflow:hidden}
-.app-window::before{content:'';display:block;height:34px;border-bottom:1px solid var(--line);background:
-  radial-gradient(circle at 18px 17px,#F0605A 5px,transparent 5.5px),
-  radial-gradient(circle at 36px 17px,#F4BE3B 5px,transparent 5.5px),
-  radial-gradient(circle at 54px 17px,#43C74A 5px,transparent 5.5px),
-  var(--panel-2)}
-
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
-}
 
 .nav-back{font-size:13px;font-weight:500;color:var(--text-2);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color .15s var(--ease)}
 .nav-back:hover{color:var(--accent)}
@@ -117,7 +72,7 @@ h1 em,h2 em,h3 em{font-style:normal;color:var(--accent)}
 
 .resultado-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:16px}
 .resultado-card{background:var(--bg-field);border:1px solid var(--line);border-radius:12px;padding:20px 22px}
-.resultado-card h4{font-size:26px;font-weight:800;letter-spacing:-0.03em;line-height:1.05;color:var(--accent);margin-bottom:6px}
+.resultado-card h3{font-size:26px;font-weight:800;letter-spacing:-0.03em;line-height:1.05;color:var(--accent);margin-bottom:6px}
 .resultado-card p{font-family:var(--font-mono);font-size:12px;color:var(--text-3);line-height:1.6}
 
 .dashboard-section{margin-bottom:56px}
@@ -132,7 +87,7 @@ h1 em,h2 em,h3 em{font-style:normal;color:var(--accent)}
 
 .app-grid-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:22px}
 .app-photo-frame{border-radius:14px;overflow:hidden;border:1px solid var(--line-strong);background:var(--bg-field)}
-.app-photo-frame img{width:100%;display:block}
+.app-photo-frame img{height:auto;width:100%;display:block}
 .app-photo-caption{padding:10px 12px;font-family:var(--font-mono);font-size:11px;color:var(--text-3);border-top:1px solid var(--line);text-align:center}
 
 .proyecto-nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:28px 0 8px;border-top:1px solid var(--line)}
@@ -150,8 +105,8 @@ h1 em,h2 em,h3 em{font-style:normal;color:var(--accent)}
 <body>
 
 <nav>
-  <a href="../index.html" class="nav-logo">Jhony Escobar</a>
-  <a href="../index.html#portfolio" class="nav-back">Volver al portfolio</a>
+  <a href="/" class="nav-logo">Jhony Escobar</a>
+  <a href="/#portfolio" class="nav-back">Volver al portfolio</a>
 </nav>
 
 <div class="proyecto-hero">
@@ -195,19 +150,19 @@ h1 em,h2 em,h3 em{font-style:normal;color:var(--accent)}
 
   <div class="resultado-grid">
     <div class="resultado-card">
-      <h4>ERP</h4>
+      <h3>ERP</h3>
       <p>Sistema integral de gestión operativa desde el móvil</p>
     </div>
     <div class="resultado-card">
-      <h4>Retención</h4>
+      <h3>Retención</h3>
       <p>KPIs de retención detectados y mejorados con datos</p>
     </div>
     <div class="resultado-card">
-      <h4>P&L real</h4>
+      <h3>P&L real</h3>
       <p>Control inmediato de ingresos, gastos y margen</p>
     </div>
     <div class="resultado-card">
-      <h4>Stock</h4>
+      <h3>Stock</h3>
       <p>Control de inventario y compras integrado en la app</p>
     </div>
   </div>
@@ -223,7 +178,7 @@ h1 em,h2 em,h3 em{font-style:normal;color:var(--accent)}
       <h3>Dashboard · Atlantes — Control Operativo</h3>
       <p>Looker Studio · KPIs financieros y de gestión</p>
     </div>
-    <img class="dashboard-img" src="../dashsboard_atlantes_lookerstudio.JPG" alt="Dashboard Atlantes en Looker Studio con KPIs financieros">
+    <img class="dashboard-img" src="../dashsboard_atlantes_lookerstudio.JPG" width="1071" height="529" loading="lazy" alt="Dashboard Atlantes en Looker Studio con KPIs financieros">
   </div>
 
   <div class="bloque" style="margin-bottom:1.5rem">
@@ -239,26 +194,27 @@ h1 em,h2 em,h3 em{font-style:normal;color:var(--accent)}
     </div>
     <div class="app-grid-photos">
       <div class="app-photo-frame">
-        <img src="../appsheet_atlantes_piscina.png" alt="Menú principal Atlantes AppSheet">
+        <picture><source srcset="../appsheet_atlantes_piscina.webp" type="image/webp"><img src="../appsheet_atlantes_piscina.png" alt="Menú principal Atlantes AppSheet" width="800" height="1110" loading="lazy"></picture>
         <div class="app-photo-caption">Menú principal · 9 módulos operativos</div>
       </div>
       <div class="app-photo-frame">
-        <img src="../appsheet_atlantes_piscina_store.png" alt="Módulo Tienda Atlantes AppSheet">
+        <picture><source srcset="../appsheet_atlantes_piscina_store.webp" type="image/webp"><img src="../appsheet_atlantes_piscina_store.png" alt="Módulo Tienda Atlantes AppSheet" width="800" height="1110" loading="lazy"></picture>
         <div class="app-photo-caption">Tienda · Facturación, Inventario y Compras</div>
       </div>
       <div class="app-photo-frame">
-        <img src="../appsheet_atlantes_piscina_ventas.png" alt="Facturación Atlantes AppSheet">
+        <picture><source srcset="../appsheet_atlantes_piscina_ventas.webp" type="image/webp"><img src="../appsheet_atlantes_piscina_ventas.png" alt="Facturación Atlantes AppSheet" width="800" height="1110" loading="lazy"></picture>
         <div class="app-photo-caption">Facturación · Lista de ventas por cliente</div>
       </div>
     </div>
   </div>
 
   <div class="proyecto-nav">
-    <a href="../index.html#portfolio" class="btn-back">Ver todos los proyectos</a>
-    <a href="../index.html#contacto" class="btn-contacto">¿Hablamos de tu proyecto? →</a>
+    <a href="/#portfolio" class="btn-back">Ver todos los proyectos</a>
+    <a href="/#contacto" class="btn-contacto">¿Hablamos de tu proyecto? →</a>
   </div>
 
 </div>
 
+<script src="/componentes/footer.js"></script>
 </body>
 </html>

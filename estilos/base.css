@@ -1,0 +1,95 @@
+/* Estilos compartidos por todas las páginas: tokens de marca, tipografía, botones, chips, ventana de app y footer. */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0B0E12;
+  --bg-field:#0E1217;
+  --panel-1:#12171D;
+  --panel-2:#171D25;
+  --panel-3:#1D242E;
+  --line:#232B36;
+  --line-strong:#2F3946;
+  --text:#EAF1FB;
+  --text-2:#9DB0CB;
+  --text-3:#6F84A4;
+  --accent:#3CD6F2;
+  --accent-hover:#66E0F6;
+  --accent-dark:#17B2CF;
+  --on-accent:#03141A;
+  --accent-soft:rgba(60,214,242,.12);
+  --accent-border:rgba(60,214,242,.4);
+  --nav-bg:rgba(11,14,18,.8);
+  --glow-1:rgba(160,190,230,.10);
+  --glow-2:rgba(160,190,230,.04);
+  --red:#F2565B;
+  --red-soft:rgba(242,86,91,.12);
+  --amber:#F2B84B;
+  --amber-soft:rgba(242,184,75,.12);
+  --blue:#7FB0FF;
+  --blue-soft:rgba(127,176,255,.12);
+  --font-display:'Inter Tight','Inter',sans-serif;
+  --font-body:'Inter',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+  --gutter:max(20px,5%);
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+html{scroll-behavior:smooth;background:var(--bg);color-scheme:dark}
+body{
+  font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--text);overflow-x:hidden;
+  background-color:var(--bg);
+  background-image:
+    radial-gradient(900px 520px at 22% -8%,var(--glow-1),transparent 62%),
+    radial-gradient(700px 400px at 85% 0%,var(--glow-2),transparent 60%);
+  background-repeat:no-repeat;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--accent);color:var(--on-accent)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+/* Barra superior */
+nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:0 var(--gutter);display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{font-family:var(--font-display);font-size:17px;font-weight:800;letter-spacing:-0.045em;color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:10px}
+.nav-logo::before{content:'';width:18px;height:2px;background:var(--accent);border-radius:2px}
+
+/* Tipografía */
+h1,h2,h3,h4{font-family:var(--font-display);color:var(--text)}
+h1 em,h2 em,h3 em{font-style:normal;color:var(--accent)}
+
+/* Botones */
+.btn-primary,.nav-cta,.btn-contacto,.btn-whatsapp{background:var(--accent);color:var(--on-accent);font-family:var(--font-body);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;border-radius:8px;padding:14px 26px;text-decoration:none;display:inline-flex;align-items:center;gap:10px;border:1px solid var(--accent);transition:background .15s var(--ease),border-color .15s var(--ease)}
+.btn-primary:hover,.nav-cta:hover,.btn-contacto:hover,.btn-whatsapp:hover{background:var(--accent-hover);border-color:var(--accent-hover)}
+.btn-ghost,.btn-back{background:transparent;color:var(--text);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;border:1px solid var(--line-strong);border-radius:8px;padding:14px 26px;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:color .15s var(--ease),border-color .15s var(--ease)}
+.btn-ghost:hover,.btn-back:hover{color:var(--accent);border-color:var(--accent)}
+
+/* Chips */
+.chip,.tech-pill,.tech-badge,.proyecto-tag,.hero-badge,.proyecto-sector{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:11.5px;font-weight:500;line-height:1.4;color:var(--text-2);background:var(--panel-1);border:1px solid var(--line-strong);border-radius:999px;padding:4px 12px;font-variant-numeric:tabular-nums}
+
+/* Eyebrow */
+.section-tag,.bloque-tag{display:inline-block;font-family:var(--font-body);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);margin-bottom:14px}
+
+/* Etiquetas de tarjeta / datos */
+.meta-label,.tech-card-label{font-family:var(--font-mono);font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-3)}
+
+/* Ventana de app (puntos macOS dibujados con CSS) */
+.app-window{background:linear-gradient(180deg,var(--panel-2),var(--panel-1));border:1px solid var(--line-strong);border-radius:14px;box-shadow:0 30px 80px rgba(0,0,0,.45);overflow:hidden}
+.app-window::before{content:'';display:block;height:34px;border-bottom:1px solid var(--line);background:
+  radial-gradient(circle at 18px 17px,#F0605A 5px,transparent 5.5px),
+  radial-gradient(circle at 36px 17px,#F4BE3B 5px,transparent 5.5px),
+  radial-gradient(circle at 54px 17px,#43C74A 5px,transparent 5.5px),
+  var(--panel-2)}
+
+/* Footer compartido (componentes/footer.js) */
+.site-footer{padding:20px var(--gutter);border-top:1px solid var(--line)}
+.site-footer .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.site-footer .footer-logo{font-family:var(--font-display);font-size:15px;font-weight:800;letter-spacing:-0.045em;color:var(--accent);display:inline-flex;align-items:center;gap:10px}
+.site-footer .footer-logo::before{content:'';width:14px;height:2px;background:var(--accent);border-radius:2px}
+.site-footer .footer-links{display:flex;gap:24px;flex-wrap:wrap}
+.site-footer .footer-links a{font-size:13px;color:var(--text-2);text-decoration:none;transition:color .15s var(--ease)}
+.site-footer .footer-links a:hover{color:var(--accent)}
+.site-footer .footer-copy{font-family:var(--font-mono);font-size:11px;color:var(--text-3)}
+.site-footer .footer-logo{text-decoration:none}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+}
