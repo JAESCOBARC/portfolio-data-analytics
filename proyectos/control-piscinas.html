@@ -5,88 +5,141 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Control Piscinas · Portfolio | Jhony Escobar</title>
 <meta name="description" content="Sistema ERP en AppSheet para gestión de piscinas deportivas. Inscripciones, stock y dashboard Looker Studio.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"%3E%3Crect x="1.5" y="1.5" width="61" height="61" rx="14" fill="%230A0B0C" stroke="%239BE22D" stroke-opacity=".35" stroke-width="2"/%3E%3Cg fill="none" stroke="%239BE22D" stroke-width="7" stroke-linejoin="miter"%3E%3Cpath d="M29 15v24a9 9 0 0 1-18 0" stroke-linecap="butt"/%3E%3Cpath d="M53 15H38v34h15M38 32h12"/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --navy:#1B4F72;
-  --blue-deep:#2471A3;
-  --blue-mid:#2E86C1;
-  --blue:#3498DB;
-  --blue-light:#7FB3D3;
-  --blue-pale:#AED6F1;
-  --blue-mist:#D6EAF8;
-  --cream:#F0F7FF;
-  --white:#ffffff;
-  --charcoal:#1c1c1c;
-  --slate:#4a4a4a;
-  --border:rgba(0,0,0,0.08);
+  --bg:#0A0B0C;
+  --bg-field:#0E1012;
+  --panel-1:#121417;
+  --panel-2:#171A1E;
+  --panel-3:#1D2126;
+  --line:#23272C;
+  --line-strong:#30353B;
+  --text:#EEF0F2;
+  --text-2:#A6ACB3;
+  --text-3:#6C737B;
+  --lime:#9BE22D;
+  --lime-hover:#ADEE45;
+  --lime-dark:#7BC11C;
+  --on-lime:#0B1004;
+  --lime-soft:rgba(155,226,45,.12);
+  --red:#F2565B;
+  --red-soft:rgba(242,86,91,.12);
+  --amber:#F2B84B;
+  --amber-soft:rgba(242,184,75,.12);
+  --blue:#7FB0FF;
+  --blue-soft:rgba(127,176,255,.12);
+  --font-display:'Inter Tight','Inter',sans-serif;
+  --font-body:'Inter',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+  --gutter:max(20px,5%);
+  --ease:cubic-bezier(.2,.7,.2,1);
 }
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;font-size:18px;background:var(--cream);color:var(--charcoal);line-height:1.7}
+html{scroll-behavior:smooth;background:var(--bg);color-scheme:dark}
+body{
+  font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--text);overflow-x:hidden;
+  background-color:var(--bg);
+  background-image:
+    radial-gradient(900px 520px at 22% -8%,rgba(255,255,255,.10),transparent 62%),
+    radial-gradient(700px 400px at 85% 0%,rgba(255,255,255,.035),transparent 60%);
+  background-repeat:no-repeat;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--lime);color:var(--on-lime)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--lime);outline-offset:3px;border-radius:4px}
 
-nav{position:sticky;top:0;z-index:100;background:rgba(27,79,114,0.97);backdrop-filter:blur(12px);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:64px}
-.nav-logo{font-family:'DM Serif Display',serif;font-size:1.1rem;color:white;text-decoration:none}
-.nav-back{font-size:0.85rem;color:rgba(255,255,255,0.7);text-decoration:none;display:flex;align-items:center;gap:6px;transition:color 0.2s}
-.nav-back:hover{color:white}
-.nav-back::before{content:'←'}
+/* Barra superior */
+nav{position:sticky;top:0;z-index:100;background:rgba(10,11,12,.78);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:0 var(--gutter);display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{font-family:var(--font-display);font-size:17px;font-weight:800;letter-spacing:-0.045em;color:var(--lime);text-decoration:none;display:inline-flex;align-items:center;gap:10px}
+.nav-logo::before{content:'';width:18px;height:2px;background:var(--lime);border-radius:2px}
 
-.proyecto-hero{background:var(--navy);padding:4rem 5%;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;text-align:center}
-.proyecto-hero::before{content:'';position:absolute;top:-200px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(52,152,219,0.15) 0%,transparent 70%);border-radius:50%;pointer-events:none}
-.proyecto-sector{display:inline-flex;align-items:center;gap:8px;background:rgba(52,152,219,0.15);color:var(--blue-pale);border:1px solid rgba(52,152,219,0.3);padding:5px 14px;border-radius:100px;font-size:0.78rem;font-weight:500;margin-bottom:1.25rem}
-.proyecto-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:400;color:white;line-height:1.15;margin-bottom:1rem}
-.proyecto-hero h1 em{font-style:italic;color:var(--blue-light)}
-.proyecto-hero-desc{font-size:1rem;color:rgba(255,255,255,0.65);max-width:620px;line-height:1.8;margin-bottom:2rem}
-.proyecto-meta{display:flex;gap:2.5rem;flex-wrap:wrap;justify-content:center}
-.meta-item{display:flex;flex-direction:column;gap:4px}
-.meta-label{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.35)}
-.meta-value{font-size:0.9rem;color:rgba(255,255,255,0.85);font-weight:500}
-.tech-pills{display:flex;gap:8px;flex-wrap:wrap}
-.tech-pill{background:rgba(52,152,219,0.2);border:1px solid rgba(52,152,219,0.3);color:var(--blue-pale);padding:4px 12px;border-radius:100px;font-size:0.75rem}
+/* Tipografía */
+h1,h2,h3,h4{font-family:var(--font-display);color:var(--text)}
+h1 em,h2 em,h3 em{font-style:normal;color:var(--lime)}
 
-.proyecto-content{max-width:1100px;margin:0 auto;padding:4rem 5%}
+/* Botones */
+.btn-primary,.nav-cta,.btn-contacto,.btn-whatsapp{background:var(--lime);color:var(--on-lime);font-family:var(--font-body);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;border-radius:8px;padding:14px 26px;text-decoration:none;display:inline-flex;align-items:center;gap:10px;border:1px solid var(--lime);transition:background .15s var(--ease),border-color .15s var(--ease)}
+.btn-primary:hover,.nav-cta:hover,.btn-contacto:hover,.btn-whatsapp:hover{background:var(--lime-hover);border-color:var(--lime-hover)}
+.btn-ghost,.btn-back{background:transparent;color:var(--text);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;border:1px solid var(--line-strong);border-radius:8px;padding:14px 26px;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:color .15s var(--ease),border-color .15s var(--ease)}
+.btn-ghost:hover,.btn-back:hover{color:var(--lime);border-color:var(--lime)}
 
-.bloques-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-bottom:3rem}
-.bloque{margin-bottom:0}
-.bloque-tag{font-size:0.72rem;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:var(--blue-mid);margin-bottom:0.75rem}
-.bloque h2{font-family:'DM Serif Display',serif;font-size:clamp(1.3rem,2vw,1.8rem);font-weight:400;color:var(--navy);line-height:1.25;margin-bottom:1rem}
-.bloque h2 em{font-style:italic;color:var(--blue-mid)}
-.bloque p{font-size:0.95rem;color:var(--slate);line-height:1.8}
-@media(max-width:768px){.bloques-grid{grid-template-columns:1fr}}
+/* Chips */
+.chip,.tech-pill,.tech-badge,.proyecto-tag,.hero-badge,.proyecto-sector{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:11.5px;font-weight:500;line-height:1.4;color:var(--text-2);background:var(--panel-1);border:1px solid var(--line-strong);border-radius:999px;padding:4px 12px;font-variant-numeric:tabular-nums}
 
-.resultado-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1.5rem}
-.resultado-card{background:white;border:1px solid var(--blue-pale);border-radius:16px;padding:1.5rem;border-top:3px solid var(--blue-mid)}
-.resultado-card h4{font-family:'DM Serif Display',serif;font-size:1.4rem;color:var(--navy);margin-bottom:4px}
-.resultado-card p{font-size:0.82rem;color:var(--slate)}
+/* Eyebrow */
+.section-tag,.bloque-tag{display:inline-block;font-family:var(--font-body);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--lime);margin-bottom:14px}
 
-.dashboard-section{background:white;border-radius:20px;border:1px solid var(--blue-pale);overflow:hidden;margin-bottom:3.5rem}
-.dashboard-header{padding:1.5rem 2rem;border-bottom:1px solid var(--blue-mist)}
-.dashboard-header h3{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--navy)}
-.dashboard-header p{font-size:0.85rem;color:var(--slate);margin-top:4px}
+/* Etiquetas de tarjeta / datos */
+.meta-label,.tech-card-label{font-family:var(--font-mono);font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-3)}
 
-/* Dashboard screenshot */
+/* Ventana de app (puntos macOS dibujados con CSS) */
+.app-window{background:linear-gradient(180deg,var(--panel-2),var(--panel-1));border:1px solid var(--line-strong);border-radius:14px;box-shadow:0 30px 80px rgba(0,0,0,.45);overflow:hidden}
+.app-window::before{content:'';display:block;height:34px;border-bottom:1px solid var(--line);background:
+  radial-gradient(circle at 18px 17px,#F0605A 5px,transparent 5.5px),
+  radial-gradient(circle at 36px 17px,#F4BE3B 5px,transparent 5.5px),
+  radial-gradient(circle at 54px 17px,#43C74A 5px,transparent 5.5px),
+  var(--panel-2)}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+}
+
+.nav-back{font-size:13px;font-weight:500;color:var(--text-2);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color .15s var(--ease)}
+.nav-back:hover{color:var(--lime)}
+.nav-back::before{content:'←';font-family:var(--font-mono)}
+
+/* Hero del proyecto */
+.proyecto-hero{padding:72px var(--gutter) 56px;display:flex;flex-direction:column;align-items:center;text-align:center;border-bottom:1px solid var(--line)}
+.proyecto-sector{margin-bottom:22px}
+.proyecto-sector::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--lime);box-shadow:0 0 8px var(--lime)}
+.proyecto-hero h1{font-size:clamp(38px,6vw,68px);font-weight:800;letter-spacing:-0.03em;line-height:1.02;margin-bottom:20px}
+.proyecto-hero-desc{font-size:16px;color:var(--text-2);max-width:620px;line-height:1.6;margin-bottom:36px}
+.proyecto-meta{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+.meta-item{display:flex;flex-direction:column;align-items:flex-start;gap:8px;background:var(--bg-field);border:1px solid var(--line);border-radius:10px;padding:14px 18px;text-align:left}
+.meta-value{font-size:14px;font-weight:600;color:var(--text)}
+.tech-pills{display:flex;gap:6px;flex-wrap:wrap}
+
+.proyecto-content{max-width:1100px;margin:0 auto;padding:64px var(--gutter)}
+
+.bloques-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.bloques-grid .bloque{background:var(--panel-1);border:1px solid var(--line);border-radius:12px;padding:28px}
+.bloque h2{font-size:clamp(24px,2.8vw,32px);font-weight:800;letter-spacing:-0.03em;line-height:1.05;margin-bottom:14px}
+.bloque p{font-size:15px;color:var(--text-2);line-height:1.6}
+
+.resultado-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:16px}
+.resultado-card{background:var(--bg-field);border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+.resultado-card h4{font-size:26px;font-weight:800;letter-spacing:-0.03em;line-height:1.05;color:var(--lime);margin-bottom:6px}
+.resultado-card p{font-family:var(--font-mono);font-size:12px;color:var(--text-3);line-height:1.6}
+
+.dashboard-section{margin-bottom:56px}
+.dashboard-header{padding:16px 22px;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 16px}
+.dashboard-header h3{font-size:19px;font-weight:700;letter-spacing:-0.02em}
+.dashboard-header p{font-family:var(--font-mono);font-size:11.5px;color:var(--text-3);display:inline-flex;align-items:center;gap:8px}
+.dashboard-header p::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--lime);box-shadow:0 0 8px var(--lime)}
+.dashboard-embed{background:var(--bg);overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tableau-scroll{min-width:1000px}
+.tableau-container{position:relative;width:100%;overflow:hidden}
 .dashboard-img{width:100%;display:block}
 
-/* App screenshots grid */
-.app-grid-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;padding:2rem}
-.app-photo-frame{border-radius:24px;overflow:hidden;border:5px solid #1c1c1e;box-shadow:0 12px 40px rgba(0,0,0,0.18);position:relative}
-.app-photo-frame::before{content:'';display:block;height:22px;background:#1c1c1e}
+.app-grid-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:22px}
+.app-photo-frame{border-radius:14px;overflow:hidden;border:1px solid var(--line-strong);background:var(--bg-field)}
 .app-photo-frame img{width:100%;display:block}
-.app-photo-caption{padding:0.6rem 0.75rem;font-size:0.75rem;color:var(--slate);background:var(--cream);border-top:1px solid var(--blue-mist);text-align:center}
-@media(max-width:700px){.app-grid-photos{grid-template-columns:1fr;padding:1rem}}
+.app-photo-caption{padding:10px 12px;font-family:var(--font-mono);font-size:11px;color:var(--text-3);border-top:1px solid var(--line);text-align:center}
 
-.proyecto-nav{display:flex;justify-content:space-between;align-items:center;padding:2rem 0;border-top:1px solid var(--blue-mist)}
-.btn-back{background:var(--navy);color:white;padding:12px 28px;border-radius:100px;text-decoration:none;font-size:0.9rem;font-weight:500;transition:all 0.2s;display:inline-flex;align-items:center;gap:8px}
-.btn-back:hover{background:var(--blue-mid)}
-.btn-back::before{content:'←'}
-.btn-contacto{background:var(--blue);color:white;padding:12px 28px;border-radius:100px;text-decoration:none;font-size:0.9rem;font-weight:500;transition:all 0.2s}
-.btn-contacto:hover{background:var(--blue-mid)}
+.proyecto-nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:28px 0 8px;border-top:1px solid var(--line)}
+.btn-back::before{content:'←';font-family:var(--font-mono)}
 
 @media(max-width:768px){
-  .proyecto-hero{padding:3rem 5%}
-  .proyecto-meta{gap:1.5rem}
-  .proyecto-content{padding:2.5rem 5%}
+  .bloques-grid{grid-template-columns:1fr}
+  .proyecto-hero{padding:48px var(--gutter) 40px}
+  .proyecto-content{padding:40px var(--gutter)}
+  .app-grid-photos{grid-template-columns:1fr;padding:16px}
+  .proyecto-nav a{width:100%;justify-content:center}
 }
 </style>
 </head>
@@ -161,7 +214,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(27,79,114,0.97);backdrop-f
     <p>Dashboard en Looker Studio con los indicadores clave del negocio: ingresos, gastos, margen y base de clientes activos, con detalle mensual y seguimiento de nuevos vs. recurrentes.</p>
   </div>
 
-  <div class="dashboard-section">
+  <div class="dashboard-section app-window">
     <div class="dashboard-header">
       <h3>Dashboard · Atlantes — Control Operativo</h3>
       <p>Looker Studio · KPIs financieros y de gestión</p>
@@ -175,7 +228,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(27,79,114,0.97);backdrop-f
     <p>La app cubre todos los módulos operativos: facturación, tienda, inventario, clientes, proveedores y catálogo. Accesible desde cualquier dispositivo, sin necesidad de ordenador.</p>
   </div>
 
-  <div class="dashboard-section">
+  <div class="dashboard-section app-window">
     <div class="dashboard-header">
       <h3>App · Atlantes Oficial</h3>
       <p>AppSheet · Módulos operativos completos</p>
