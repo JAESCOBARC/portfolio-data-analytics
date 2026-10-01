@@ -9,9 +9,9 @@
         '<a href="/" class="footer-logo">Jhony Escobar</a>' +
         '<div class="footer-links">' +
           '<a href="/#servicios">Servicios</a>' +
-          '<a href="/#portfolio">Portfolio</a>' +
-          '<a href="/proyectos/dream-resort-hotels.html">Caso Dream Resort Hotels</a>' +
-          '<a href="/proyectos/control-piscinas.html">Caso Control Piscinas</a>' +
+          '<a href="/portfolio/">Portfolio</a>' +
+          '<a href="/portfolio/dream-resort-hotels/">Caso Dream Resort Hotels</a>' +
+          '<a href="/portfolio/control-piscinas/">Caso Control Piscinas</a>' +
           '<a href="/#faq">Preguntas frecuentes</a>' +
           '<a href="/#contacto">Contacto</a>' +
         '</div>' +

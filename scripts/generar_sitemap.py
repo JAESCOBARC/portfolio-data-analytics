@@ -14,9 +14,11 @@ RAIZ = Path(__file__).resolve().parent.parent
 # (archivo, url, changefreq, priority)
 PAGINAS = [
     ("index.html", "/", "monthly", "1.0"),
-    ("proyectos/dream-resort-hotels.html", "/proyectos/dream-resort-hotels.html", "yearly", "0.8"),
-    ("proyectos/control-piscinas.html", "/proyectos/control-piscinas.html", "yearly", "0.8"),
+    ("portfolio/index.html", "/portfolio/", "monthly", "0.9"),
+    ("portfolio/dream-resort-hotels/index.html", "/portfolio/dream-resort-hotels/", "yearly", "0.8"),
+    ("portfolio/control-piscinas/index.html", "/portfolio/control-piscinas/", "yearly", "0.8"),
 ]
+# proyectos/*.html quedaron como redirecciones noindex a las URLs de arriba: no van en el sitemap.
 
 
 def ultima_fecha(archivo):

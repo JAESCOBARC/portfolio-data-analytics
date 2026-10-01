@@ -78,6 +78,61 @@ h1 em,h2 em,h3 em{font-style:normal;color:var(--accent)}
   radial-gradient(circle at 54px 17px,#43C74A 5px,transparent 5.5px),
   var(--panel-2)}
 
+/* Componentes compartidos entre varias páginas (secciones, tarjetas de proyecto,
+   caja de contacto, enlace "volver"): viven aquí para que una página nueva
+   como /portfolio/ los herede sin tener que redefinirlos. */
+section{padding:72px var(--gutter)}
+.section-lead{font-size:16px;color:var(--text-2);max-width:580px;line-height:1.6}
+.nav-back{font-size:13px;font-weight:500;color:var(--text-2);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color .15s var(--ease)}
+.nav-back:hover{color:var(--accent)}
+.nav-back::before{content:'←';font-family:var(--font-mono)}
+
+.portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:40px}
+.proyecto-card{background:var(--panel-1);border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:border-color .2s var(--ease),transform .2s var(--ease);text-decoration:none;display:block;color:inherit}
+a.proyecto-card:hover{border-color:var(--line-strong);transform:translateY(-2px)}
+.proyecto-preview{height:170px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:28px 24px 20px;position:relative;background:linear-gradient(180deg,var(--panel-2),var(--panel-1));border-bottom:1px solid var(--line)}
+.proyecto-preview::before{content:'';position:absolute;top:0;left:0;right:0;height:28px;border-bottom:1px solid var(--line);background:
+  radial-gradient(circle at 16px 14px,#F0605A 4px,transparent 4.5px),
+  radial-gradient(circle at 31px 14px,#F4BE3B 4px,transparent 4.5px),
+  radial-gradient(circle at 46px 14px,#43C74A 4px,transparent 4.5px)}
+.preview-title{font-family:var(--font-display);font-size:28px;font-weight:800;letter-spacing:-0.03em;line-height:1.02;color:var(--text);text-align:center;margin-top:14px}
+.preview-meta{font-family:var(--font-mono);font-size:10.5px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-3)}
+.preview-meta::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);margin-right:8px;vertical-align:1px}
+.preview-meta.is-wip::before{background:var(--amber);box-shadow:none}
+.proyecto-body{padding:22px}
+.proyecto-tag{margin-bottom:12px}
+.proyecto-body h2,.proyecto-body h3{font-size:19px;font-weight:700;letter-spacing:-0.02em;line-height:1.2;margin-bottom:8px}
+.proyecto-body p{font-size:14px;color:var(--text-2);line-height:1.6}
+.proyecto-footer{display:flex;gap:6px;flex-wrap:wrap;margin-top:16px}
+.proyecto-placeholder{background:transparent;border:1px dashed var(--line-strong);border-radius:12px;padding:32px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:200px}
+.placeholder-plus{font-family:var(--font-mono);font-size:28px;color:var(--text-3);line-height:1}
+.proyecto-placeholder p{font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-3)}
+
+.contacto{text-align:center}
+.contacto-box{max-width:660px;margin:0 auto;padding-bottom:40px}
+.contacto-header{display:flex;align-items:center;justify-content:center;gap:18px;margin:36px 32px 16px}
+.contacto-avatar{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:top;border:1px solid var(--line-strong);filter:grayscale(1);flex-shrink:0}
+.contacto-box h2{margin-bottom:0}
+.contacto-box h2.contacto-title{font-size:clamp(28px,3.6vw,40px);text-align:left}
+.contacto-box p{color:var(--text-2);margin:0 32px 28px;font-size:16px}
+.btn-whatsapp{padding:16px 28px}
+.btn-whatsapp svg{width:18px;height:18px;fill:var(--on-accent);flex-shrink:0}
+.contacto-links{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 28px;margin:24px 32px 0}
+.contacto-links a{font-family:var(--font-mono);font-size:12.5px;color:var(--text-2);text-decoration:none;transition:color .15s var(--ease)}
+.contacto-links a:hover{color:var(--accent)}
+
+@media(max-width:768px){
+  section{padding:56px var(--gutter)}
+  .contacto-header{margin:28px 20px 14px}
+  .contacto-box p,.contacto-links{margin-left:20px;margin-right:20px}
+}
+@media(max-width:560px){
+  .portfolio-grid{grid-template-columns:1fr}
+  .contacto-header{flex-direction:column}
+  .contacto-box h2.contacto-title{text-align:center}
+  .btn-whatsapp{width:calc(100% - 40px);justify-content:center}
+}
+
 /* Footer compartido (componentes/footer.js) */
 .site-footer{padding:20px var(--gutter);border-top:1px solid var(--line)}
 .site-footer .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
