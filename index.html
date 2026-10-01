@@ -220,7 +220,6 @@
 .hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent)}
 h1{font-size:clamp(38px,6vw,68px);font-weight:800;letter-spacing:-0.03em;line-height:1.02;margin-bottom:24px}
 .hero-desc{font-size:16px;color:var(--text-2);line-height:1.6;max-width:520px;margin-bottom:32px}
-.hero-quote{font-family:var(--font-display);font-size:19px;font-weight:600;font-style:normal;color:var(--text);line-height:1.5;max-width:480px;margin:-8px 0 32px;padding-left:18px;border-left:3px solid var(--accent)}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 .hero-actions .btn-ghost::after{content:'→';font-family:var(--font-mono)}
 .hero-trust{grid-column:1;margin-top:-12px;display:flex;gap:28px;align-items:center;flex-wrap:wrap}
@@ -252,21 +251,6 @@ h2{font-size:clamp(28px,3.6vw,40px);font-weight:800;letter-spacing:-0.03em;line-
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* Diferencial */
-/* Presentación */
-.presentacion{padding-top:48px;padding-bottom:48px}
-.presentacion-grid{display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:start;margin-top:32px}
-.presentacion-photo{width:160px;height:160px;border-radius:50%;object-fit:cover;object-position:top;border:1px solid var(--line-strong);filter:grayscale(1);flex-shrink:0}
-.presentacion-body p{font-size:16px;color:var(--text-2);line-height:1.7;max-width:640px;margin-bottom:20px}
-.presentacion-body p a{color:var(--accent);text-decoration:underline}
-.presentacion-creds{list-style:none;display:flex;flex-direction:column;gap:10px;max-width:640px}
-.presentacion-creds li{font-size:14px;color:var(--text);line-height:1.5;padding-left:20px;position:relative}
-.presentacion-creds li::before{content:'';position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
-.presentacion-skills{margin-top:32px;border-top:1px solid var(--line);padding-top:24px}
-@media(max-width:600px){
-  .presentacion-grid{grid-template-columns:1fr;justify-items:center;text-align:center}
-  .presentacion-creds li{text-align:left}
-}
-
 .diferencial{padding-top:48px;padding-bottom:56px}
 .dif-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
 .dif-card{background:var(--bg-field);border:1px solid var(--line);border-radius:12px;padding:22px;transition:border-color .2s var(--ease)}
@@ -404,7 +388,6 @@ a.proyecto-card:hover{border-color:var(--line-strong);transform:translateY(-2px)
     <p class="hero-desc">
       Transformo datos en ventajas competitivas. Con más de 15 años de experiencia real en producción, finanzas y comercial, construyo dashboards, apps y automatizaciones que tu equipo usa cada día.
     </p>
-    <blockquote class="hero-quote">He aplicado análisis RFM y Pareto en un ecommerce real, logrando un 8% más de ventas y un 7% de ahorro en inversión publicitaria, en un negocio con más de 1M€ de facturación anual.</blockquote>
     <div class="hero-actions">
       <a href="#contacto" class="btn-primary">Hablemos de tu proyecto →</a>
       <a href="/portfolio/" class="btn-ghost">Ver portfolio</a>
@@ -465,42 +448,6 @@ a.proyecto-card:hover{border-color:var(--line-strong);transform:translateY(-2px)
     <div class="tech-strip-item"><img src="campañas_ecommerce_googleads.svg" alt="Google Ads" width="24" height="24"><span>Google Ads</span></div>
   </div>
 </div>
-
-<section class="presentacion" id="presentacion">
-  <div class="section-tag">Quién soy</div>
-  <h2>Presentación</h2>
-  <div class="presentacion-grid">
-    <img src="data-analytics-bussines-jhony-escobar.jpg" alt="Jhony Escobar" class="presentacion-photo" width="240" height="240" loading="lazy" onerror="this.style.display='none'">
-    <div class="presentacion-body">
-      <p>Soy Jhony Escobar, Data Analyst con base en Granada. Más de 15 años de experiencia en marketing digital, comercial, finanzas y producción, que combino con las técnicas de Data Analytics para generar valor real a partir de los datos. Co-creador del proyecto <a href="https://www.excelparatodos.com" target="_blank" rel="noopener">excelparatodos.com</a>, donde he desarrollado más de 200 plantillas y aplicaciones en AppSheet.</p>
-      <ul class="presentacion-creds">
-        <li>Microsoft Office Specialist · Excel Expert — Microsoft, 2023</li>
-        <li>En formación: Data Analytics Mastery — DS4B, 2025</li>
-        <li>Administrador Industrial (homologado en la Unión Europea) — Universidad Tecnológica de Pereira, estudiante distinguido</li>
-        <li>Scrum Foundation Professional Certificate — CertiProf, 2020</li>
-      </ul>
-    </div>
-  </div>
-  <div class="presentacion-skills">
-    <div class="meta-label" style="margin-bottom:12px">Herramientas y especialidades</div>
-    <div class="tech-pills">
-      <span class="tech-pill">Excel Experto</span>
-      <span class="tech-pill">VBA</span>
-      <span class="tech-pill">Power BI</span>
-      <span class="tech-pill">Tableau</span>
-      <span class="tech-pill">Looker Studio</span>
-      <span class="tech-pill">Power Pivot · ETL</span>
-      <span class="tech-pill">SQL</span>
-      <span class="tech-pill">Python</span>
-      <span class="tech-pill">AppSheet</span>
-      <span class="tech-pill">SAP / Business Object</span>
-      <span class="tech-pill">Análisis financiero</span>
-      <span class="tech-pill">Marketing digital</span>
-      <span class="tech-pill">Data storytelling</span>
-      <span class="tech-pill">Metodologías ágiles</span>
-    </div>
-  </div>
-</section>
 
 <section class="diferencial" id="diferencial">
   <div class="dif-grid">
