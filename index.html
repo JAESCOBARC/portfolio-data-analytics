@@ -222,7 +222,7 @@ h1{font-size:clamp(38px,6vw,68px);font-weight:800;letter-spacing:-0.03em;line-he
 .hero-desc{font-size:16px;color:var(--text-2);line-height:1.6;max-width:520px;margin-bottom:32px}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 .hero-actions .btn-ghost::after{content:'→';font-family:var(--font-mono)}
-.hero-trust{margin-top:44px;display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+.hero-trust{grid-column:1;margin-top:-12px;display:flex;gap:28px;align-items:center;flex-wrap:wrap}
 .trust-item{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
 .trust-num{font-family:var(--font-mono);font-variant-numeric:tabular-nums;font-size:28px;font-weight:700;color:var(--text);line-height:1;letter-spacing:-0.02em}
 .trust-label{font-family:var(--font-mono);font-size:10.5px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-3)}
@@ -392,22 +392,6 @@ a.proyecto-card:hover{border-color:var(--line-strong);transform:translateY(-2px)
       <a href="#contacto" class="btn-primary">Hablemos de tu proyecto →</a>
       <a href="/portfolio/" class="btn-ghost">Ver portfolio</a>
     </div>
-    <div class="hero-trust">
-      <div class="trust-item">
-        <span class="trust-num">+8</span>
-        <span class="trust-label">Años de experiencia</span>
-      </div>
-      <div class="trust-divider"></div>
-      <div class="trust-item">
-        <span class="trust-num">3</span>
-        <span class="trust-label">Áreas de negocio</span>
-      </div>
-      <div class="trust-divider"></div>
-      <div class="trust-item">
-        <span class="trust-num">+200</span>
-        <span class="trust-label">Alumnos formados</span>
-      </div>
-    </div>
   </div>
 
   <div class="hero-visual">
@@ -420,6 +404,23 @@ a.proyecto-card:hover{border-color:var(--line-strong);transform:translateY(-2px)
       <div class="section-tag">Por qué soy diferente</div>
       <h2 class="hero-dif-h3">No solo soy técnico.<br>Entiendo <em>el negocio.</em></h2>
       <p class="hero-dif-p">He trabajado en producción, finanzas y comercial. Sé qué preguntas hace cada área y qué datos necesita para tomar mejores decisiones.</p>
+    </div>
+  </div>
+
+  <div class="hero-trust">
+    <div class="trust-item">
+      <span class="trust-num">+8</span>
+      <span class="trust-label">Años de experiencia</span>
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-item">
+      <span class="trust-num">3</span>
+      <span class="trust-label">Áreas de negocio</span>
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-item">
+      <span class="trust-num">+200</span>
+      <span class="trust-label">Alumnos formados</span>
     </div>
   </div>
 </section>
