@@ -105,11 +105,14 @@
 .presentacion-creds li::before{content:'';position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
 .presentacion-skills{margin-top:32px;border-top:1px solid var(--line);padding-top:24px}
 .presentacion-historial{border-left:1px solid var(--line);padding-left:32px}
-.historial-list{list-style:none;display:flex;flex-direction:column;gap:16px}
-.historial-list li{display:flex;flex-direction:column;gap:2px;padding-bottom:14px;border-bottom:1px solid var(--line)}
-.historial-list li:last-child{border-bottom:none;padding-bottom:0}
+.historial-list{position:relative;list-style:none;display:flex;flex-direction:column;gap:28px;padding-left:26px}
+.historial-list::before{content:'';position:absolute;left:4px;top:6px;bottom:6px;width:1px;background:var(--line-strong)}
+.historial-list li{position:relative;display:flex;flex-direction:column;gap:3px}
+.historial-list li::before{content:'';position:absolute;left:-26px;top:3px;width:9px;height:9px;border-radius:50%;background:var(--bg-field);border:2px solid var(--line-strong)}
+.historial-list li.es-actual::before{border-color:var(--accent);box-shadow:0 0 8px var(--accent)}
 .historial-year{font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:0.05em;color:var(--accent);font-variant-numeric:tabular-nums}
 .historial-empresa{font-size:15px;color:var(--text);font-weight:600}
+.historial-cargo{font-size:13px;color:var(--text-2)}
 @media(max-width:900px){
   .presentacion-cols{grid-template-columns:1fr}
   .presentacion-historial{border-left:none;padding-left:0;border-top:1px solid var(--line);padding-top:24px}
@@ -181,11 +184,11 @@
     <div class="presentacion-historial">
       <div class="meta-label" style="margin-bottom:16px">Experiencia laboral</div>
       <ul class="historial-list">
-        <li><span class="historial-year">2018 — Actual</span><span class="historial-empresa">Perfumerías Coqueteo</span></li>
-        <li><span class="historial-year">2017 – 2018</span><span class="historial-empresa">Media Commerce Partners S.A.S</span></li>
-        <li><span class="historial-year">2016 – 2017</span><span class="historial-empresa">Audifarma S.A</span></li>
-        <li><span class="historial-year">2011 – 2016</span><span class="historial-empresa">Grupo Nutresa (Zenú)</span></li>
-        <li><span class="historial-year">2007 – 2011</span><span class="historial-empresa">Ayco Ltda</span></li>
+        <li class="es-actual"><span class="historial-year">2018 — Actual</span><span class="historial-empresa">Perfumerías Coqueteo</span><span class="historial-cargo">Ecommerce Manager Junior</span></li>
+        <li><span class="historial-year">2017 – 2018</span><span class="historial-empresa">Media Commerce Partners S.A.S</span><span class="historial-cargo">Analista de costos y proyectos</span></li>
+        <li><span class="historial-year">2016 – 2017</span><span class="historial-empresa">Audifarma S.A</span><span class="historial-cargo">Analista de costos y presupuestos</span></li>
+        <li><span class="historial-year">2011 – 2016</span><span class="historial-empresa">Grupo Nutresa (Zenú)</span><span class="historial-cargo">Auxiliar de información comercial</span></li>
+        <li><span class="historial-year">2007 – 2011</span><span class="historial-empresa">Ayco Ltda</span><span class="historial-cargo">Analista de métodos y tiempos</span></li>
       </ul>
     </div>
   </div>
