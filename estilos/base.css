@@ -138,6 +138,26 @@ a.proyecto-card:hover{border-color:var(--line-strong);transform:translateY(-2px)
   .btn-whatsapp{width:calc(100% - 40px);justify-content:center}
 }
 
+/* Tarjetas genéricas de enlace (hub/categorías de /servicios/) */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:40px}
+.card-link{background:var(--panel-1);border:1px solid var(--line);border-radius:12px;padding:26px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:10px;transition:border-color .2s var(--ease),transform .2s var(--ease)}
+.card-link:hover{border-color:var(--line-strong);transform:translateY(-2px)}
+.card-link .card-eyebrow{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-3)}
+.card-link h3{font-size:18px;font-weight:700;letter-spacing:-0.02em;line-height:1.25}
+.card-link p{font-size:14px;color:var(--text-2);line-height:1.6}
+.card-link .card-arrow{font-family:var(--font-mono);color:var(--accent);margin-top:auto;font-size:13px}
+
+/* Detalle de servicio (/servicios/<categoria>/<servicio>/) */
+.detalle-list{list-style:none;display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line);margin-top:24px;max-width:640px}
+.detalle-list li{font-size:15px;color:var(--text);display:flex;align-items:flex-start;gap:10px;padding:14px 0;border-bottom:1px solid var(--line)}
+.detalle-list li::before{content:'→';font-family:var(--font-mono);color:var(--accent);flex-shrink:0}
+.caso-relacionado{margin-top:40px;background:var(--bg-field);border:1px solid var(--line);border-radius:12px;padding:24px 28px;max-width:640px}
+.caso-relacionado .meta-label{margin-bottom:8px}
+.caso-relacionado a{color:var(--accent);text-decoration:underline;font-weight:600}
+.servicios-relacionados{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.servicios-relacionados a{font-family:var(--font-mono);font-size:12px;color:var(--text-2);background:var(--panel-1);border:1px solid var(--line-strong);border-radius:999px;padding:6px 14px;text-decoration:none;transition:color .15s var(--ease),border-color .15s var(--ease)}
+.servicios-relacionados a:hover{color:var(--accent);border-color:var(--accent)}
+
 /* Footer compartido (componentes/footer.js) */
 .site-footer{padding:20px var(--gutter);border-top:1px solid var(--line)}
 .site-footer .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
