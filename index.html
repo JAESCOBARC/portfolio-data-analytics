@@ -222,6 +222,40 @@
 .nav-links .nav-cta{color:var(--on-accent);padding:9px 16px;font-size:12px}
 .nav-links .nav-cta:hover{color:var(--on-accent)}
 
+/* Menú lateral móvil */
+.menu-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:none;border:none;cursor:pointer;padding:0}
+.menu-toggle span{width:22px;height:2px;background:var(--text);border-radius:2px;transition:transform .2s var(--ease),opacity .2s var(--ease)}
+.menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:199;opacity:0;pointer-events:none;transition:opacity .25s var(--ease)}
+.mobile-menu-overlay.open{opacity:1;pointer-events:auto}
+.mobile-menu{position:fixed;top:0;right:0;height:100vh;width:min(320px,86vw);background:var(--panel-1);border-left:1px solid var(--line-strong);z-index:200;transform:translateX(100%);transition:transform .25s var(--ease);overflow-y:auto;padding:8px 20px 40px}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu-top{display:flex;justify-content:flex-end}
+.menu-close{background:none;border:none;color:var(--text-2);font-size:26px;line-height:1;cursor:pointer;padding:6px 8px}
+.menu-close:hover{color:var(--accent)}
+.mobile-menu-link{display:block;padding:14px 4px;font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--text);text-decoration:none;border-bottom:1px solid var(--line)}
+.mobile-menu-link.mobile-menu-cta{color:var(--on-accent);background:var(--accent);border-radius:8px;text-align:center;margin-top:16px;border-bottom:none}
+.mobile-menu-group{border-bottom:1px solid var(--line)}
+.mobile-menu-group>summary{list-style:none;cursor:pointer;padding:14px 4px;font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--text);display:flex;justify-content:space-between;align-items:center}
+.mobile-menu-group>summary::-webkit-details-marker{display:none}
+.mobile-menu-group>summary::after{content:'+';font-family:var(--font-mono);color:var(--accent);font-size:18px;transition:transform .2s var(--ease)}
+.mobile-menu-group[open]>summary::after{transform:rotate(45deg)}
+.mobile-menu-sub{padding:0 0 10px 4px}
+.mobile-menu-all{display:block;padding:8px 0;font-family:var(--font-mono);font-size:12.5px;font-weight:600;color:var(--accent);text-decoration:none}
+.mobile-menu-cat{margin:2px 0;border-top:1px solid var(--line)}
+.mobile-menu-cat>summary{list-style:none;cursor:pointer;padding:10px 4px;font-size:13.5px;font-weight:600;color:var(--text-2);display:flex;justify-content:space-between;align-items:center}
+.mobile-menu-cat>summary::-webkit-details-marker{display:none}
+.mobile-menu-cat>summary::after{content:'+';font-family:var(--font-mono);color:var(--accent);font-size:14px}
+.mobile-menu-cat[open]>summary::after{content:'\2212'}
+.mobile-menu-cat a{display:block;padding:8px 4px 8px 14px;font-size:13px;color:var(--text-3);text-decoration:none}
+.mobile-menu-cat a:hover{color:var(--accent)}
+.mobile-menu-cat a.mobile-menu-catlink{color:var(--accent);font-weight:600;padding-left:4px}
+@media(max-width:768px){
+  .menu-toggle{display:flex}
+}
+
 /* Hero */
 .hero{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:56px;padding:64px var(--gutter) 56px;position:relative}
 .hero-badge{margin-bottom:22px}
@@ -271,6 +305,10 @@ h2{font-size:clamp(28px,3.6vw,40px);font-weight:800;letter-spacing:-0.03em;line-
 .servicios-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:40px}
 .servicio-card{background:var(--panel-1);border:1px solid var(--line);border-radius:12px;padding:28px;transition:border-color .2s var(--ease);position:relative;display:flex;flex-direction:column}
 .servicio-card:hover{border-color:var(--line-strong)}
+.servicio-card h3 a{color:inherit;text-decoration:none}
+.servicio-card h3 a:hover{color:var(--accent)}
+.servicio-ver-cat{display:inline-flex;margin-top:16px;font-family:var(--font-mono);font-size:12.5px;font-weight:600;color:var(--accent);text-decoration:none}
+.servicio-ver-cat:hover{text-decoration:underline}
 .servicio-num{font-family:var(--font-mono);font-variant-numeric:tabular-nums;font-size:12px;font-weight:700;letter-spacing:0.1em;color:var(--accent);margin-bottom:18px}
 .servicio-num::before{content:'// '}
 .servicio-card h3{font-size:19px;font-weight:700;letter-spacing:-0.02em;line-height:1.2;margin-bottom:10px}
@@ -279,6 +317,8 @@ h2{font-size:clamp(28px,3.6vw,40px);font-weight:800;letter-spacing:-0.03em;line-
 .servicio-card ul li{font-size:14px;color:var(--text);display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
 .servicio-card ul li:last-child{border-bottom:none;padding-bottom:0}
 .servicio-card ul li::before{content:'→';font-family:var(--font-mono);color:var(--accent);flex-shrink:0}
+.servicio-card ul li a{color:inherit;text-decoration:none}
+.servicio-card ul li a:hover{color:var(--accent);text-decoration:underline}
 .servicio-popular{position:absolute;top:24px;right:24px;font-family:var(--font-mono);font-size:11.5px;font-weight:500;color:var(--accent);background:var(--accent-soft);border:1px solid var(--accent-border);border-radius:999px;padding:3px 10px}
 .servicio-icon{display:none}
 
@@ -361,7 +401,7 @@ a.proyecto-card:hover{border-color:var(--line-strong);transform:translateY(-2px)
   .hero-dif-text{display:none}
   .proceso-grid{grid-template-columns:1fr 1fr}
   .proceso-grid::before{display:none}
-  .nav-links li:not(:last-child){display:none}
+  .nav-links{display:none}
   section{padding:56px var(--gutter)}
   .contacto-header{margin:28px 20px 14px}
   .contacto-box p,.contacto-links{margin-left:20px;margin-right:20px}
@@ -387,7 +427,84 @@ a.proyecto-card:hover{border-color:var(--line-strong);transform:translateY(-2px)
     <li><a href="#proceso">Proceso</a></li>
     <li><a href="#contacto" class="nav-cta">Hablemos</a></li>
   </ul>
+  <button type="button" class="menu-toggle" aria-label="Abrir menú" aria-controls="mobile-menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <div class="mobile-menu-top">
+    <button type="button" class="menu-close" aria-label="Cerrar menú">×</button>
+  </div>
+  <a href="/" class="mobile-menu-link">Inicio</a>
+  <details class="mobile-menu-group">
+    <summary>Servicios</summary>
+    <div class="mobile-menu-sub">
+      <a href="/servicios/" class="mobile-menu-all">Ver catálogo completo →</a>
+      <details class="mobile-menu-cat">
+        <summary>Marketing Digital</summary>
+        <a href="/servicios/marketing-digital/" class="mobile-menu-catlink">Ver categoría →</a>
+        <a href="/servicios/marketing-digital/creacion-paginas-web/">Creación de Páginas Web</a>
+        <a href="/servicios/marketing-digital/campanas-shopping/">Campañas Shopping</a>
+        <a href="/servicios/marketing-digital/optimizacion-tecnica-web/">Optimización Técnica de Proyectos Web</a>
+        <a href="/servicios/marketing-digital/seo-local/">SEO Local</a>
+      </details>
+      <details class="mobile-menu-cat">
+        <summary>Aplicaciones y Plantillas</summary>
+        <a href="/servicios/aplicaciones-y-plantillas/" class="mobile-menu-catlink">Ver categoría →</a>
+        <a href="/servicios/aplicaciones-y-plantillas/apps-inventario/">Apps de Inventario</a>
+        <a href="/servicios/aplicaciones-y-plantillas/app-facturacion/">App de Facturación</a>
+        <a href="/servicios/aplicaciones-y-plantillas/app-plan-negocio/">App Plan de Negocio</a>
+        <a href="/servicios/aplicaciones-y-plantillas/app-conciliador-bancario/">App Conciliador Bancario</a>
+        <a href="/servicios/aplicaciones-y-plantillas/plantillas-excel/">Plantillas Excel</a>
+      </details>
+      <details class="mobile-menu-cat">
+        <summary>Automatizaciones</summary>
+        <a href="/servicios/automatizaciones/" class="mobile-menu-catlink">Ver categoría →</a>
+        <a href="/servicios/automatizaciones/carruseles-instagram/">Máquina de Carruseles en Instagram</a>
+        <a href="/servicios/automatizaciones/chatbots-whatsapp-ia/">Chatbots de WhatsApp con IA</a>
+        <a href="/servicios/automatizaciones/automatizacion-reportes/">Automatización de Reportes</a>
+        <a href="/servicios/automatizaciones/vba-excel-macros/">VBA Excel (Macros)</a>
+        <a href="/servicios/automatizaciones/web-scraping/">Web Scraping</a>
+      </details>
+      <details class="mobile-menu-cat">
+        <summary>Dashboards y Business Intelligence</summary>
+        <a href="/servicios/dashboards-y-business-intelligence/" class="mobile-menu-catlink">Ver categoría →</a>
+        <a href="/servicios/dashboards-y-business-intelligence/dashboard-de-negocios/">Dashboard de Negocios</a>
+        <a href="/servicios/dashboards-y-business-intelligence/implementacion-data-driven/">Implementación Data Driven</a>
+        <a href="/servicios/dashboards-y-business-intelligence/reporting-marketing-ads/">Reporting de Marketing ADS</a>
+      </details>
+    </div>
+  </details>
+  <a href="/portfolio/" class="mobile-menu-link">Portfolio</a>
+  <a href="#proceso" class="mobile-menu-link">Proceso</a>
+  <a href="#contacto" class="mobile-menu-link mobile-menu-cta">Hablemos</a>
+</div>
+
+<script>
+(function(){
+  var toggle = document.querySelector('.menu-toggle');
+  var menu = document.getElementById('mobile-menu');
+  var overlay = document.getElementById('mobile-menu-overlay');
+  var closeBtn = document.querySelector('.menu-close');
+  function abrir(){
+    menu.classList.add('open'); overlay.classList.add('open');
+    toggle.setAttribute('aria-expanded','true'); menu.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+  }
+  function cerrar(){
+    menu.classList.remove('open'); overlay.classList.remove('open');
+    toggle.setAttribute('aria-expanded','false'); menu.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+  }
+  toggle.addEventListener('click', function(){ menu.classList.contains('open') ? cerrar() : abrir(); });
+  closeBtn.addEventListener('click', cerrar);
+  overlay.addEventListener('click', cerrar);
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', cerrar); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') cerrar(); });
+})();
+</script>
 
 <section class="hero" id="inicio">
   <div class="hero-content animate-in">
@@ -488,69 +605,61 @@ a.proyecto-card:hover{border-color:var(--line-strong);transform:translateY(-2px)
   <p class="section-lead">Desde el análisis hasta la automatización completa. Para empresas que quieren crecer basándose en datos. <a href="/servicios/" style="color:var(--accent);text-decoration:underline">Ver catálogo completo de servicios →</a></p>
   <div class="servicios-grid">
     <div class="servicio-card">
-      <span class="servicio-popular">Más demandado</span>
       <div class="servicio-num">01</div>
       <div class="servicio-card-body">
-        <h3>Dashboards y Business Intelligence</h3>
-        <p>Visualización de datos profesional con Power BI, Tableau o Google Data Studio, conectado a tus fuentes reales.</p>
+        <h3><a href="/servicios/marketing-digital/">Marketing Digital</a></h3>
+        <p>Presencia digital que convierte y se puede medir: desde crear tu web hasta optimizar las campañas que te traen clientes.</p>
         <ul>
-          <li>Dashboards interactivos y en tiempo real</li>
-          <li>KPIs por área: ventas, finanzas, operaciones</li>
-          <li>Conexión a bases de datos y APIs</li>
-          <li>Formación para tu equipo incluida</li>
+          <li><a href="/servicios/marketing-digital/creacion-paginas-web/">Creación de Páginas Web</a></li>
+          <li><a href="/servicios/marketing-digital/campanas-shopping/">Campañas Shopping</a></li>
+          <li><a href="/servicios/marketing-digital/optimizacion-tecnica-web/">Optimización Técnica de Proyectos Web</a></li>
+          <li><a href="/servicios/marketing-digital/seo-local/">SEO Local</a></li>
         </ul>
+        <a href="/servicios/marketing-digital/" class="servicio-ver-cat">Ver categoría →</a>
       </div>
     </div>
     <div class="servicio-card">
       <div class="servicio-num">02</div>
       <div class="servicio-card-body">
-        <h3>Automatización de procesos</h3>
-        <p>Elimina tareas manuales con macros VBA, Python y n8n. Tiempo ahorrado = dinero ganado.</p>
+        <h3><a href="/servicios/aplicaciones-y-plantillas/">Aplicaciones y Plantillas</a></h3>
+        <p>Herramientas a medida, sin programar desde cero: apps en AppSheet y plantillas Excel para los procesos que hoy gestionas a mano.</p>
         <ul>
-          <li>Macros y VBA en Excel</li>
-          <li>Automatización con Python</li>
-          <li>Workflows con n8n</li>
-          <li>Integración entre herramientas</li>
+          <li><a href="/servicios/aplicaciones-y-plantillas/apps-inventario/">Apps de Inventario</a></li>
+          <li><a href="/servicios/aplicaciones-y-plantillas/app-facturacion/">App de Facturación</a></li>
+          <li><a href="/servicios/aplicaciones-y-plantillas/app-plan-negocio/">App Plan de Negocio</a></li>
+          <li><a href="/servicios/aplicaciones-y-plantillas/app-conciliador-bancario/">App Conciliador Bancario</a></li>
+          <li><a href="/servicios/aplicaciones-y-plantillas/plantillas-excel/">Plantillas Excel</a></li>
         </ul>
+        <a href="/servicios/aplicaciones-y-plantillas/" class="servicio-ver-cat">Ver categoría →</a>
       </div>
     </div>
     <div class="servicio-card">
       <div class="servicio-num">03</div>
       <div class="servicio-card-body">
-        <h3>Aplicaciones con AppSheet</h3>
-        <p>Apps móviles y web sin código, conectadas a Google Sheets o bases de datos. Para equipos de campo, almacén o ventas.</p>
+        <h3><a href="/servicios/automatizaciones/">Automatizaciones</a></h3>
+        <p>Elimina tareas manuales y repetitivas con macros, scripts y workflows que trabajan mientras tú te enfocas en el negocio.</p>
         <ul>
-          <li>Apps de gestión de inventario</li>
-          <li>Control de visitas comerciales</li>
-          <li>Formularios y aprobaciones</li>
-          <li>Sincronización en tiempo real</li>
+          <li><a href="/servicios/automatizaciones/carruseles-instagram/">Máquina de Carruseles en Instagram</a></li>
+          <li><a href="/servicios/automatizaciones/chatbots-whatsapp-ia/">Chatbots de WhatsApp con IA</a></li>
+          <li><a href="/servicios/automatizaciones/automatizacion-reportes/">Automatización de Reportes</a></li>
+          <li><a href="/servicios/automatizaciones/vba-excel-macros/">VBA Excel (Macros)</a></li>
+          <li><a href="/servicios/automatizaciones/web-scraping/">Web Scraping</a></li>
         </ul>
+        <a href="/servicios/automatizaciones/" class="servicio-ver-cat">Ver categoría →</a>
       </div>
     </div>
     <div class="servicio-card">
+      <span class="servicio-popular">Más demandado</span>
       <div class="servicio-num">04</div>
       <div class="servicio-card-body">
-        <h3>Análisis de datos con Python y SQL</h3>
-        <p>Extracción, transformación y análisis de datos a escala. Desde bases de datos relacionales hasta APIs.</p>
+        <h3><a href="/servicios/dashboards-y-business-intelligence/">Dashboards y Business Intelligence</a></h3>
+        <p>Convierte tus datos en decisiones: dashboards ejecutivos, cultura data-driven y reporting de marketing centralizado.</p>
         <ul>
-          <li>Limpieza y transformación de datos</li>
-          <li>Análisis estadístico y predictivo</li>
-          <li>Reportes automatizados</li>
-          <li>Consultas SQL optimizadas</li>
+          <li><a href="/servicios/dashboards-y-business-intelligence/dashboard-de-negocios/">Dashboard de Negocios</a></li>
+          <li><a href="/servicios/dashboards-y-business-intelligence/implementacion-data-driven/">Implementación Data Driven</a></li>
+          <li><a href="/servicios/dashboards-y-business-intelligence/reporting-marketing-ads/">Reporting de Marketing ADS</a></li>
         </ul>
-      </div>
-    </div>
-    <div class="servicio-card">
-      <div class="servicio-num">05</div>
-      <div class="servicio-card-body">
-        <h3>Chatbots de WhatsApp con IA</h3>
-        <p>Asistentes que responden y venden por WhatsApp 24/7, construidos sobre n8n y conectados a tu negocio.</p>
-        <ul>
-          <li>Respuestas automáticas con IA</li>
-          <li>Integración con WhatsApp Business API</li>
-          <li>Conectado a tu catálogo, CRM o base de datos</li>
-          <li>Derivación a un agente humano cuando hace falta</li>
-        </ul>
+        <a href="/servicios/dashboards-y-business-intelligence/" class="servicio-ver-cat">Ver categoría →</a>
       </div>
     </div>
   </div>
