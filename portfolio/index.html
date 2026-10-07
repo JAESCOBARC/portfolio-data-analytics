@@ -209,42 +209,6 @@
   .pf-sk-grid{grid-template-columns:1fr}
 }
 
-/* ============ Work (accordion) ============ */
-.pf-wk-list{list-style:none;margin:36px 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
-.pf-wk{border:1px solid var(--line);border-radius:14px;background:var(--panel-1);overflow:hidden}
-.pf-wk[open]{border-color:var(--line-strong)}
-.pf-wk summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:16px;padding:20px 24px}
-.pf-wk summary::-webkit-details-marker{display:none}
-.pf-wk-num{font-family:var(--font-mono);font-size:13px;font-weight:700;color:var(--accent)}
-.pf-wk-title{flex:1;font-family:var(--font-display);font-size:19px;font-weight:700;letter-spacing:-.02em}
-.pf-wk-plus{font-family:var(--font-mono);font-size:18px;color:var(--accent);transition:transform .25s var(--ease)}
-.pf-wk[open] .pf-wk-plus{transform:rotate(45deg)}
-.pf-wk-body{padding:0 24px 28px;display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:start}
-.pf-wk-kick{font-family:var(--font-mono);font-size:11.5px;color:var(--text-3);margin-bottom:10px}
-.pf-wk-desc{font-size:15px;color:var(--text-2);line-height:1.65;margin-bottom:16px}
-.pf-wk-feat{list-style:none;margin:0 0 18px;padding:0;display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
-.pf-wk-feat li{font-size:13.5px;color:var(--text);padding:9px 0;border-bottom:1px solid var(--line);display:flex;gap:8px}
-.pf-wk-feat li::before{content:'→';color:var(--accent);font-family:var(--font-mono);flex-shrink:0}
-.pf-wk-tech{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
-.pf-wk-link{font-family:var(--font-mono);font-size:12.5px;font-weight:600;color:var(--accent);text-decoration:none}
-.pf-wk-link:hover{text-decoration:underline}
-.pf-wk-sketch{background:var(--bg-field);border:1px solid var(--line);border-radius:12px;min-height:220px;display:flex;flex-direction:column}
-.pf-wk-sketch-bar{display:flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-bottom:1px solid var(--line)}
-.pf-wk-sketch-bar i{width:7px;height:7px;border-radius:50%;background:var(--line-strong)}
-.pf-wk-sketch-bar span{margin-left:6px;font:500 10px/1 var(--font-mono);color:var(--text-3)}
-.pf-wk-sketch-pad{flex:1;padding:16px;display:flex;flex-direction:column;gap:10px;justify-content:center}
-.pf-wk-sk-box{background:var(--panel-1);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
-.pf-wk-sk-lbl{font:500 9px/1 var(--font-mono);text-transform:uppercase;color:var(--text-3);margin-bottom:8px}
-.pf-wk-sk-bar{height:7px;border-radius:4px;background:var(--line-strong);overflow:hidden}
-.pf-wk-sk-bar i{display:block;height:100%;background:var(--accent);animation:pf-grow 2.4s var(--ease) infinite alternate}
-@keyframes pf-grow{from{width:30%}to{width:88%}}
-.pf-wk-note{margin-top:8px;text-align:center;font:500 10px/1 var(--font-mono);text-transform:uppercase;color:var(--text-3)}
-@media(max-width:860px){
-  .pf-wk-body{grid-template-columns:1fr}
-  .pf-wk summary{padding:16px 18px}
-  .pf-wk-body{padding:0 18px 22px}
-}
-
 /* ============ Community / personal projects ============ */
 #work{padding-bottom:32px}
 #community{padding-top:32px}
@@ -480,79 +444,60 @@
   <h2 class="rv" style="--i:1">Cosas que <em>he construido.</em></h2>
   <p class="section-lead rv" style="--i:2">Casos reales, con enlace a cada caso completo (capturas y dashboard interactivo incluidos).</p>
 
-  <ul class="pf-wk-list rv" style="--i:3">
-    <li class="pf-wk" id="wk-dream-resort">
-      <details open>
-        <summary>
-          <span class="pf-wk-num">01</span>
-          <span class="pf-wk-title">Dashboard de gestión hotelera</span>
-          <span class="pf-wk-plus" aria-hidden="true">+</span>
-        </summary>
-        <div class="pf-wk-body">
-          <div>
-            <p class="pf-wk-kick">Dream Resort Hotels — Hostelería · Tableau</p>
-            <p class="pf-wk-desc">Dashboard ejecutivo para que la dirección de una cadena hotelera gestionara el negocio de forma data-driven: ocupación, RevPAR, ADR y rentabilidad por hotel, con actualización automática.</p>
-            <ul class="pf-wk-feat">
-              <li>Toma de requerimientos de KPIs con gerencia</li>
-              <li>Dashboard en Tableau con actualización automática</li>
-              <li>Publicado en Tableau Public, accesible para la dirección</li>
-            </ul>
-            <div class="pf-wk-tech">
-              <span class="tech-badge">Tableau</span>
-              <span class="tech-badge">Excel</span>
-              <span class="tech-badge">KPIs Hoteleros</span>
-            </div>
-            <a href="/portfolio/dream-resort-hotels/" class="pf-wk-link">Ver caso completo con dashboard interactivo →</a>
-          </div>
-          <div class="pf-wk-sketch" role="img" aria-label="Boceto ilustrativo del flujo de datos, no es una captura real">
-            <div class="pf-wk-sketch-bar"><i></i><i></i><i></i><span>tableau / hotel-kpis</span></div>
-            <div class="pf-wk-sketch-pad">
-              <div class="pf-wk-sk-box"><div class="pf-wk-sk-lbl">Ocupación</div><div class="pf-wk-sk-bar"><i style="animation-delay:0s"></i></div></div>
-              <div class="pf-wk-sk-box"><div class="pf-wk-sk-lbl">RevPAR / ADR</div><div class="pf-wk-sk-bar"><i style="animation-delay:.3s"></i></div></div>
-              <div class="pf-wk-sk-box"><div class="pf-wk-sk-lbl">Rentabilidad</div><div class="pf-wk-sk-bar"><i style="animation-delay:.6s"></i></div></div>
-            </div>
-            <p class="pf-wk-note">Boceto ilustrativo — no es una captura</p>
-          </div>
+  <div class="portfolio-grid rv" style="--i:3">
+    <a href="/portfolio/dream-resort-hotels/" class="proyecto-card">
+      <div class="proyecto-preview">
+        <span class="preview-title">Dream Resort<br>Hotels</span>
+        <span class="preview-meta">Hostelería · Tableau</span>
+      </div>
+      <div class="proyecto-body">
+        <span class="proyecto-tag tag-powerbi">Tableau · Hostelería</span>
+        <h3>Dashboard de gestión hotelera</h3>
+        <p>KPIs ejecutivos para la dirección de una cadena hotelera con actualización automática y toma de decisiones en tiempo real.</p>
+        <div class="proyecto-footer">
+          <span class="tech-badge">Tableau</span>
+          <span class="tech-badge">Excel</span>
+          <span class="tech-badge">KPIs Hoteleros</span>
         </div>
-      </details>
-    </li>
-
-    <li class="pf-wk" id="wk-control-piscinas">
-      <details>
-        <summary>
-          <span class="pf-wk-num">02</span>
-          <span class="pf-wk-title">Sistema ERP para instalaciones deportivas</span>
-          <span class="pf-wk-plus" aria-hidden="true">+</span>
-        </summary>
-        <div class="pf-wk-body">
-          <div>
-            <p class="pf-wk-kick">Control Piscinas — Deportes · AppSheet</p>
-            <p class="pf-wk-desc">ERP móvil completo en AppSheet sobre Google Sheets, cubriendo facturación, tienda, inventario, clientes y proveedores, con un dashboard gerencial en Looker Studio.</p>
-            <ul class="pf-wk-feat">
-              <li>App AppSheet con 9 módulos operativos</li>
-              <li>Dashboard en Looker Studio con KPIs financieros</li>
-              <li>Retención de clientes mejorada con datos</li>
-            </ul>
-            <div class="pf-wk-tech">
-              <span class="tech-badge">AppSheet</span>
-              <span class="tech-badge">Google Sheets</span>
-              <span class="tech-badge">Looker Studio</span>
-            </div>
-            <a href="/portfolio/control-piscinas/" class="pf-wk-link">Ver caso completo con capturas de la app →</a>
-          </div>
-          <div class="pf-wk-sketch" role="img" aria-label="Boceto ilustrativo de los módulos de la app, no es una captura real">
-            <div class="pf-wk-sketch-bar"><i></i><i></i><i></i><span>appsheet / erp</span></div>
-            <div class="pf-wk-sketch-pad">
-              <div class="pf-wk-sk-box"><div class="pf-wk-sk-lbl">Facturación</div><div class="pf-wk-sk-bar"><i style="animation-delay:0s"></i></div></div>
-              <div class="pf-wk-sk-box"><div class="pf-wk-sk-lbl">Inventario</div><div class="pf-wk-sk-bar"><i style="animation-delay:.3s"></i></div></div>
-              <div class="pf-wk-sk-box"><div class="pf-wk-sk-lbl">Clientes</div><div class="pf-wk-sk-bar"><i style="animation-delay:.6s"></i></div></div>
-            </div>
-            <p class="pf-wk-note">Boceto ilustrativo — no es una captura</p>
-          </div>
+      </div>
+    </a>
+    <a href="/portfolio/control-piscinas/" class="proyecto-card">
+      <div class="proyecto-preview">
+        <span class="preview-title">Control<br>Piscinas</span>
+        <span class="preview-meta">Deportes · AppSheet</span>
+      </div>
+      <div class="proyecto-body">
+        <span class="proyecto-tag tag-appsheet">AppSheet · Deportes</span>
+        <h3>Sistema ERP para instalaciones deportivas</h3>
+        <p>ERP móvil completo con gestión de inscripciones, tienda, stock y dashboard gerencial en Looker Studio para el control operativo en tiempo real.</p>
+        <div class="proyecto-footer">
+          <span class="tech-badge">AppSheet</span>
+          <span class="tech-badge">Google Sheets</span>
+          <span class="tech-badge">Looker Studio</span>
         </div>
-      </details>
-    </li>
-  </ul>
+      </div>
+    </a>
+    <div class="proyecto-card">
+      <div class="proyecto-preview">
+        <span class="preview-title">Próximo<br>proyecto</span>
+        <span class="preview-meta is-wip">En desarrollo</span>
+      </div>
+      <div class="proyecto-body">
+        <span class="proyecto-tag tag-excel">Excel VBA</span>
+        <h3>Automatización de reportes financieros</h3>
+        <p>Macro que genera el reporte mensual de P&L en 30 segundos, eliminando 4 horas de trabajo manual cada mes.</p>
+        <div class="proyecto-footer">
+          <span class="tech-badge">Excel</span>
+          <span class="tech-badge">VBA</span>
+          <span class="tech-badge">Power Query</span>
+        </div>
+      </div>
+    </div>
+    <div class="proyecto-placeholder">
+      <div class="placeholder-plus">+</div>
+      <p>Más proyectos próximamente</p>
+    </div>
+  </div>
 </section>
 
 <section id="community">
