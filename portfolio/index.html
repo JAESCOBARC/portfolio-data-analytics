@@ -791,10 +791,8 @@
     });
     tlSvg.setAttribute('viewBox', '0 0 ' + rootRect.width + ' ' + rootRect.height);
     var d = 'M ' + pts[0].x + ',' + pts[0].y;
-    for (var i = 0; i < pts.length - 1; i++) {
-      var p0 = pts[i], p1 = pts[i + 1];
-      var dx = (p1.x - p0.x) / 2;
-      d += ' C ' + (p0.x + dx) + ',' + p0.y + ' ' + (p1.x - dx) + ',' + p1.y + ' ' + p1.x + ',' + p1.y;
+    for (var i = 1; i < pts.length; i++) {
+      d += ' L ' + pts[i].x + ',' + pts[i].y;
     }
     tlPath.setAttribute('d', d);
   }
