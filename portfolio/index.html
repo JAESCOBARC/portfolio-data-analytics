@@ -193,34 +193,20 @@
 .pf-sk-chip{height:34px;padding:0 14px;border-radius:999px;font-size:13px;font-weight:600;background:var(--panel-1);border:1px solid var(--line-strong);color:var(--text-2);cursor:pointer;transition:background-color .2s var(--ease),color .2s var(--ease)}
 .pf-sk-chip:hover{color:var(--text)}
 .pf-sk-chip.is-active{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
-.pf-sk-body{display:grid;grid-template-columns:1fr 280px;gap:clamp(20px,2.4vw,36px);align-items:start;margin-top:28px}
-.pf-sk-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;list-style:none;margin:0;padding:0}
-.pf-el{position:relative;aspect-ratio:1/1.05;padding:9px 10px;border-radius:12px;background:var(--panel-1);border:1px solid var(--line);text-align:left;cursor:pointer;display:flex;flex-direction:column;justify-content:space-between;transition:background-color .2s var(--ease),border-color .2s var(--ease),opacity .2s var(--ease),transform .2s var(--ease)}
-.pf-el:hover,.pf-el.is-active{background:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
-.pf-el.is-dim{opacity:.25}
-.pf-el-n{font:500 9px/1 var(--font-mono);color:var(--text-3)}
-.pf-el:hover .pf-el-n,.pf-el.is-active .pf-el-n,.pf-el:hover .pf-el-f,.pf-el.is-active .pf-el-f{color:rgba(3,20,26,.6)}
-.pf-el-s{font-weight:700;font-size:clamp(17px,1.8vw,22px);letter-spacing:-.04em;line-height:1;color:var(--text)}
-.pf-el:hover .pf-el-s,.pf-el.is-active .pf-el-s{color:var(--on-accent)}
-.pf-el-name{font-size:10.5px;font-weight:600;line-height:1.15;color:var(--text-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.pf-el:hover .pf-el-name,.pf-el.is-active .pf-el-name{color:var(--on-accent)}
-.pf-el-f{font:500 8.5px/1 var(--font-mono);text-transform:uppercase;color:var(--text-3);white-space:nowrap}
-
-.pf-insp{position:sticky;top:120px;background:var(--panel-1);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:16px;min-height:300px}
-.pf-insp-head{display:flex;justify-content:space-between;font:500 10.5px/1 var(--font-mono);text-transform:uppercase;color:var(--text-3)}
-.pf-insp-badge{height:150px;border-radius:12px;background:var(--bg-field);display:grid;place-items:center;overflow:hidden}
-.pf-insp-badge img{width:52px;height:52px;object-fit:contain;filter:brightness(0) invert(1) opacity(.85)}
-.pf-insp-badge span{font-weight:800;font-size:40px;letter-spacing:-.05em;color:var(--accent)}
-.pf-insp h3{margin:0;font-weight:700;font-size:21px;letter-spacing:-.03em}
-.pf-insp-fam{margin:4px 0 0;font-size:13px;color:var(--text-3)}
-.pf-insp-desc{margin:0;padding-top:14px;border-top:1px solid var(--line);font-size:13.5px;color:var(--text-2);line-height:1.6}
-@media(max-width:860px){
-  .pf-sk-grid{grid-template-columns:repeat(4,1fr)}
-  .pf-sk-body{grid-template-columns:1fr}
-  .pf-insp{position:static}
-}
+.pf-sk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;list-style:none;margin:28px 0 0;padding:0}
+.pf-el{background:var(--panel-1);border:1px solid var(--line);border-radius:14px;padding:20px;transition:border-color .2s var(--ease),opacity .2s var(--ease)}
+.pf-el:hover{border-color:var(--line-strong)}
+.pf-el.is-dim{opacity:.3}
+.pf-el-top{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.pf-el-badge{flex-shrink:0;width:42px;height:42px;border-radius:10px;background:var(--bg-field);display:flex;align-items:center;justify-content:center}
+.pf-el-badge img{width:22px;height:22px;object-fit:contain;filter:brightness(0) invert(1) opacity(.85)}
+.pf-el-s{font-weight:700;font-size:16px;letter-spacing:-.03em;color:var(--accent)}
+.pf-el-head{min-width:0}
+.pf-el-name{font-size:15px;font-weight:700;letter-spacing:-.01em;color:var(--text);line-height:1.2}
+.pf-el-f{display:block;font:500 9.5px/1 var(--font-mono);text-transform:uppercase;letter-spacing:.04em;color:var(--text-3);margin-top:3px}
+.pf-el-desc{font-size:13px;color:var(--text-2);line-height:1.55;margin:0}
 @media(max-width:480px){
-  .pf-sk-grid{grid-template-columns:repeat(3,1fr)}
+  .pf-sk-grid{grid-template-columns:1fr}
 }
 
 /* ============ Work (accordion) ============ */
@@ -260,6 +246,8 @@
 }
 
 /* ============ Community / personal projects ============ */
+#work{padding-bottom:32px}
+#community{padding-top:32px}
 .pf-cm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:36px}
 .pf-cm-item{background:var(--panel-1);border:1px solid var(--line);border-radius:14px;padding:24px;transition:border-color .2s var(--ease)}
 .pf-cm-item:hover{border-color:var(--line-strong)}
@@ -273,30 +261,36 @@
 .pf-cm-link{font-family:var(--font-mono);font-size:12.5px;font-weight:600;color:var(--accent);text-decoration:none}
 .pf-cm-link:hover{text-decoration:underline}
 
-/* ============ Experience timeline ============ */
-.pf-tl{position:relative;margin-top:40px}
-.pf-tl::before{content:'';position:absolute;left:5px;top:6px;bottom:6px;width:1px;background:var(--line)}
-.pf-tl-fill{position:absolute;left:5px;top:6px;width:1px;background:var(--accent);transform-origin:top;transform:scaleY(0);transition:transform .3s linear}
-.pf-tl-ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:34px}
-.pf-st{position:relative;padding-left:32px;display:grid;grid-template-columns:120px 1fr;gap:24px}
-.pf-st-dot{position:absolute;left:0;top:4px;width:11px;height:11px;border-radius:50%;background:var(--bg-field);border:2px solid var(--line-strong);transition:border-color .3s var(--ease),box-shadow .3s var(--ease)}
+/* ============ Experience timeline (zig-zag grid) ============ */
+.pf-tl{margin-top:44px}
+.pf-tl-ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pf-st{position:relative;background:var(--panel-1);border:1px solid var(--line);border-radius:14px;padding:22px 20px;transition:border-color .2s var(--ease),transform .2s var(--ease)}
+.pf-st:hover{border-color:var(--line-strong)}
+.pf-st-dot{display:block;width:9px;height:9px;border-radius:50%;background:var(--bg-field);border:2px solid var(--line-strong);margin-bottom:16px;transition:border-color .3s var(--ease),box-shadow .3s var(--ease)}
 .pf-st.is-lit .pf-st-dot{border-color:var(--accent);box-shadow:0 0 8px var(--accent)}
-.pf-st-year{font-family:var(--font-mono);font-size:12.5px;font-weight:600;color:var(--text-3);padding-top:2px}
-.pf-st-kind{display:inline-block;font:600 10px/1 var(--font-mono);text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin-bottom:8px}
-.pf-st h3{font-size:18px;font-weight:700;letter-spacing:-.02em;margin-bottom:4px}
-.pf-st-place{font-size:13.5px;color:var(--text-3);margin-bottom:10px}
+.pf-st-year{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--accent);margin-bottom:8px}
+.pf-st-kind{display:inline-block;font:600 10px/1 var(--font-mono);text-transform:uppercase;letter-spacing:.06em;color:var(--text-3);margin-bottom:8px}
+.pf-st h3{font-size:17px;font-weight:700;letter-spacing:-.02em;margin-bottom:4px;line-height:1.2}
+.pf-st-place{font-size:13px;color:var(--text-3);margin-bottom:10px}
 .pf-st ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
-.pf-st li{font-size:13.5px;color:var(--text-2);line-height:1.5;padding-left:16px;position:relative}
+.pf-st li{font-size:13px;color:var(--text-2);line-height:1.5;padding-left:16px;position:relative}
 .pf-st li::before{content:'';position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:50%;background:var(--line-strong)}
-.pf-tl-next{padding-left:32px}
-.pf-tl-next a{display:flex;flex-wrap:wrap;align-items:center;gap:16px;text-decoration:none}
-.pf-tl-next small{display:block;font:500 11px/1 var(--font-mono);text-transform:uppercase;color:var(--text-3);margin-bottom:4px}
-.pf-tl-next p{margin:0;font-family:var(--font-display);font-size:22px;font-weight:700;letter-spacing:-.02em;color:var(--text)}
+@media(min-width:900px){
+  .pf-st:nth-child(even){transform:translateY(26px)}
+}
+.pf-tl-next{grid-column:1 / -1;background:var(--bg-field);border:1px solid var(--line-strong);border-radius:14px;padding:28px 32px}
+.pf-tl-next a{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;text-decoration:none}
+.pf-tl-next small{display:block;font:500 11px/1 var(--font-mono);text-transform:uppercase;color:var(--text-3);margin-bottom:6px}
+.pf-tl-next p{margin:0;font-family:var(--font-display);font-size:26px;font-weight:700;letter-spacing:-.02em;color:var(--text)}
 .pf-tl-next em{color:var(--accent);font-style:normal}
+.pf-tl-cta{padding:16px 32px;font-size:14px;flex-shrink:0}
+@media(max-width:899px){
+  .pf-tl-ol{grid-template-columns:repeat(2,1fr)}
+}
 @media(max-width:620px){
-  .pf-st{grid-template-columns:1fr;padding-left:26px}
-  .pf-tl::before,.pf-tl-fill{left:4px}
-  .pf-st-dot{left:-1px}
+  .pf-tl-ol{grid-template-columns:1fr}
+  .pf-tl-next{padding:24px 22px}
+  .pf-tl-next a{justify-content:flex-start}
 }
 
 /* ============ Achievements (horizontal scroll) ============ */
@@ -429,7 +423,7 @@
           <div><dt>Formación</dt><dd>Administrador Industrial · Universidad Tecnológica de Pereira</dd></div>
           <div><dt>Certificación</dt><dd>Data Analytics Mastery · DS4B, 2026</dd></div>
           <div><dt>Email</dt><dd><a href="mailto:jhonya2000@gmail.com">jhonya2000@gmail.com</a></dd></div>
-          <div><dt>Teléfono</dt><dd><a href="tel:+34641682371">+34 641 68 23 71</a></dd></div>
+          <div><dt>WhatsApp</dt><dd><a href="https://wa.me/34641682371?text=Hola%2C%20consulto%20por%20sus%20servicios%20de%20data%20analytics" target="_blank" rel="noopener">Escríbeme por WhatsApp</a></dd></div>
         </dl>
       </div>
       <blockquote class="pf-quote rv" style="--i:3">
@@ -446,7 +440,7 @@
       <div class="section-tag rv">Herramientas</div>
       <h2 class="rv" style="--i:1">Con lo que <em>trabajo</em></h2>
     </div>
-    <p class="section-lead rv" style="--i:2">Filtra por familia o pasa el cursor sobre cada herramienta para ver el detalle.</p>
+    <p class="section-lead rv" style="--i:2">Filtra por familia para ver las herramientas que uso en cada tipo de proyecto.</p>
   </div>
 
   <div class="pf-sk-chips rv" style="--i:3" id="pf-sk-chips">
@@ -458,39 +452,25 @@
     <button type="button" class="pf-sk-chip" data-family="Marketing">Marketing</button>
   </div>
 
-  <div class="pf-sk-body">
-    <ul class="pf-sk-grid" id="pf-sk-grid">
-      <li class="pf-el" data-family="BI" data-name="Power BI" data-symbol="Pb" data-desc="Dashboards interactivos conectados a múltiples fuentes de datos, con modelado y DAX." data-icon="/dashboard_con_power_bi.svg"><span class="pf-el-n">01</span><span class="pf-el-s">Pb</span><span class="pf-el-name">Power BI</span><span class="pf-el-f">BI</span></li>
-      <li class="pf-el" data-family="BI" data-name="Tableau" data-symbol="Tb" data-desc="Visualización ejecutiva publicada en Tableau Public y Server, el motor del caso Dream Resort Hotels." data-icon=""><span class="pf-el-n">02</span><span class="pf-el-s">Tb</span><span class="pf-el-name">Tableau</span><span class="pf-el-f">BI</span></li>
-      <li class="pf-el" data-family="BI" data-name="Looker Studio" data-symbol="Lk" data-desc="Reporting de marketing y de negocio conectado directamente a Google Ads y Analytics." data-icon="/looker.svg"><span class="pf-el-n">03</span><span class="pf-el-s">Lk</span><span class="pf-el-name">Looker Studio</span><span class="pf-el-f">BI</span></li>
-      <li class="pf-el" data-family="BI" data-name="Power Pivot · ETL" data-symbol="Pp" data-desc="Modelado de datos y transformación ETL dentro de Excel para análisis a gran escala." data-icon=""><span class="pf-el-n">04</span><span class="pf-el-s">Pp</span><span class="pf-el-name">Power Pivot</span><span class="pf-el-f">BI</span></li>
-      <li class="pf-el" data-family="BI" data-name="SAP / Business Object" data-symbol="Bo" data-desc="Extracción y reporting sobre sistemas corporativos SAP y Business Object." data-icon=""><span class="pf-el-n">05</span><span class="pf-el-s">Bo</span><span class="pf-el-name">Business Object</span><span class="pf-el-f">BI</span></li>
-
-      <li class="pf-el" data-family="Datos" data-name="SQL" data-symbol="Sq" data-desc="Consultas y optimización sobre bases de datos relacionales para análisis y reporting." data-icon=""><span class="pf-el-n">06</span><span class="pf-el-s">Sq</span><span class="pf-el-name">SQL</span><span class="pf-el-f">Datos</span></li>
-      <li class="pf-el" data-family="Datos" data-name="MySQL" data-symbol="My" data-desc="Diseño y consulta de bases de datos relacionales para proyectos de analítica." data-icon="/bases_de_datos_mysql.svg"><span class="pf-el-n">07</span><span class="pf-el-s">My</span><span class="pf-el-name">MySQL</span><span class="pf-el-f">Datos</span></li>
-      <li class="pf-el" data-family="Datos" data-name="Python" data-symbol="Py" data-desc="Limpieza, análisis estadístico y automatización de reportes con pandas y matplotlib." data-icon="/python_para_data_analytics.svg"><span class="pf-el-n">08</span><span class="pf-el-s">Py</span><span class="pf-el-name">Python</span><span class="pf-el-f">Datos</span></li>
-
-      <li class="pf-el" data-family="Automatización" data-name="AppSheet" data-symbol="As" data-desc="Apps móviles sin código conectadas a Google Sheets — el motor del ERP de Control Piscinas." data-icon=""><span class="pf-el-n">09</span><span class="pf-el-s">As</span><span class="pf-el-name">AppSheet</span><span class="pf-el-f">Automatización</span></li>
-      <li class="pf-el" data-family="Automatización" data-name="n8n" data-symbol="N8" data-desc="Workflows de automatización e integración entre herramientas y APIs." data-icon="/automatizaciones_con_n8n.svg"><span class="pf-el-n">10</span><span class="pf-el-s">N8</span><span class="pf-el-name">n8n</span><span class="pf-el-f">Automatización</span></li>
-      <li class="pf-el" data-family="Automatización" data-name="VBA" data-symbol="Vb" data-desc="Macros en Excel para eliminar tareas manuales y repetitivas." data-icon=""><span class="pf-el-n">11</span><span class="pf-el-s">Vb</span><span class="pf-el-name">VBA</span><span class="pf-el-f">Automatización</span></li>
-      <li class="pf-el" data-family="Automatización" data-name="Agentes de IA" data-symbol="Ai" data-desc="Automatizaciones conversacionales y agentes conectados a catálogos y CRMs." data-icon=""><span class="pf-el-n">12</span><span class="pf-el-s">Ai</span><span class="pf-el-name">Agentes IA</span><span class="pf-el-f">Automatización</span></li>
-
-      <li class="pf-el" data-family="Ofimática" data-name="Excel Experto" data-symbol="Xl" data-desc="Fórmulas avanzadas, tablas dinámicas y automatización — más de 200 plantillas creadas." data-icon="/plantillas_excel.svg"><span class="pf-el-n">13</span><span class="pf-el-s">Xl</span><span class="pf-el-name">Excel</span><span class="pf-el-f">Ofimática</span></li>
-      <li class="pf-el" data-family="Ofimática" data-name="Google Sheets" data-symbol="Gs" data-desc="Hojas de cálculo colaborativas como base de datos para apps en AppSheet." data-icon="/googlesheets.svg"><span class="pf-el-n">14</span><span class="pf-el-s">Gs</span><span class="pf-el-name">Google Sheets</span><span class="pf-el-f">Ofimática</span></li>
-
-      <li class="pf-el" data-family="Marketing" data-name="Google Analytics" data-symbol="Ga" data-desc="Analítica web para medir el impacto real de campañas y contenido." data-icon="/analisis_web_con_googleanalytics.svg"><span class="pf-el-n">15</span><span class="pf-el-s">Ga</span><span class="pf-el-name">Google Analytics</span><span class="pf-el-f">Marketing</span></li>
-      <li class="pf-el" data-family="Marketing" data-name="Google Ads" data-symbol="Gd" data-desc="Campañas Shopping optimizadas con segmentación RFM y análisis Pareto." data-icon="/campañas_ecommerce_googleads.svg"><span class="pf-el-n">16</span><span class="pf-el-s">Gd</span><span class="pf-el-name">Google Ads</span><span class="pf-el-f">Marketing</span></li>
-      <li class="pf-el" data-family="Marketing" data-name="PrestaShop" data-symbol="Ps" data-desc="Gestión y optimización de tiendas ecommerce sobre PrestaShop." data-icon=""><span class="pf-el-n">17</span><span class="pf-el-s">Ps</span><span class="pf-el-name">PrestaShop</span><span class="pf-el-f">Marketing</span></li>
-    </ul>
-
-    <aside class="pf-insp" id="pf-insp">
-      <div class="pf-insp-head"><span>Detalle</span><span id="pf-insp-fam">BI</span></div>
-      <div class="pf-insp-badge" id="pf-insp-badge"><span id="pf-insp-symbol">Pb</span></div>
-      <h3 id="pf-insp-name">Power BI</h3>
-      <p class="pf-insp-fam" id="pf-insp-family">BI &amp; Dashboards</p>
-      <p class="pf-insp-desc" id="pf-insp-desc">Dashboards interactivos conectados a múltiples fuentes de datos, con modelado y DAX.</p>
-    </aside>
-  </div>
+  <ul class="pf-sk-grid" id="pf-sk-grid">
+      <li class="pf-el" data-family="BI"><div class="pf-el-top"><div class="pf-el-badge"><img src="/dashboard_con_power_bi.svg" alt=""></div><div class="pf-el-head"><span class="pf-el-name">Power BI</span><span class="pf-el-f">BI</span></div></div><p class="pf-el-desc">Dashboards interactivos conectados a múltiples fuentes de datos, con modelado y DAX.</p></li>
+      <li class="pf-el" data-family="BI"><div class="pf-el-top"><div class="pf-el-badge"><span class="pf-el-s">Tb</span></div><div class="pf-el-head"><span class="pf-el-name">Tableau</span><span class="pf-el-f">BI</span></div></div><p class="pf-el-desc">Visualización ejecutiva publicada en Tableau Public y Server, el motor del caso Dream Resort Hotels.</p></li>
+      <li class="pf-el" data-family="BI"><div class="pf-el-top"><div class="pf-el-badge"><img src="/looker.svg" alt=""></div><div class="pf-el-head"><span class="pf-el-name">Looker Studio</span><span class="pf-el-f">BI</span></div></div><p class="pf-el-desc">Reporting de marketing y de negocio conectado directamente a Google Ads y Analytics.</p></li>
+      <li class="pf-el" data-family="BI"><div class="pf-el-top"><div class="pf-el-badge"><span class="pf-el-s">Pp</span></div><div class="pf-el-head"><span class="pf-el-name">Power Pivot</span><span class="pf-el-f">BI</span></div></div><p class="pf-el-desc">Modelado de datos y transformación ETL dentro de Excel para análisis a gran escala.</p></li>
+      <li class="pf-el" data-family="BI"><div class="pf-el-top"><div class="pf-el-badge"><span class="pf-el-s">Bo</span></div><div class="pf-el-head"><span class="pf-el-name">Business Object</span><span class="pf-el-f">BI</span></div></div><p class="pf-el-desc">Extracción y reporting sobre sistemas corporativos SAP y Business Object.</p></li>
+      <li class="pf-el" data-family="Datos"><div class="pf-el-top"><div class="pf-el-badge"><span class="pf-el-s">Sq</span></div><div class="pf-el-head"><span class="pf-el-name">SQL</span><span class="pf-el-f">Datos</span></div></div><p class="pf-el-desc">Consultas y optimización sobre bases de datos relacionales para análisis y reporting.</p></li>
+      <li class="pf-el" data-family="Datos"><div class="pf-el-top"><div class="pf-el-badge"><img src="/bases_de_datos_mysql.svg" alt=""></div><div class="pf-el-head"><span class="pf-el-name">MySQL</span><span class="pf-el-f">Datos</span></div></div><p class="pf-el-desc">Diseño y consulta de bases de datos relacionales para proyectos de analítica.</p></li>
+      <li class="pf-el" data-family="Datos"><div class="pf-el-top"><div class="pf-el-badge"><img src="/python_para_data_analytics.svg" alt=""></div><div class="pf-el-head"><span class="pf-el-name">Python</span><span class="pf-el-f">Datos</span></div></div><p class="pf-el-desc">Limpieza, análisis estadístico y automatización de reportes con pandas y matplotlib.</p></li>
+      <li class="pf-el" data-family="Automatización"><div class="pf-el-top"><div class="pf-el-badge"><span class="pf-el-s">As</span></div><div class="pf-el-head"><span class="pf-el-name">AppSheet</span><span class="pf-el-f">Automatización</span></div></div><p class="pf-el-desc">Apps móviles sin código conectadas a Google Sheets — el motor del ERP de Control Piscinas.</p></li>
+      <li class="pf-el" data-family="Automatización"><div class="pf-el-top"><div class="pf-el-badge"><img src="/automatizaciones_con_n8n.svg" alt=""></div><div class="pf-el-head"><span class="pf-el-name">n8n</span><span class="pf-el-f">Automatización</span></div></div><p class="pf-el-desc">Workflows de automatización e integración entre herramientas y APIs.</p></li>
+      <li class="pf-el" data-family="Automatización"><div class="pf-el-top"><div class="pf-el-badge"><span class="pf-el-s">Vb</span></div><div class="pf-el-head"><span class="pf-el-name">VBA</span><span class="pf-el-f">Automatización</span></div></div><p class="pf-el-desc">Macros en Excel para eliminar tareas manuales y repetitivas.</p></li>
+      <li class="pf-el" data-family="Automatización"><div class="pf-el-top"><div class="pf-el-badge"><span class="pf-el-s">Ai</span></div><div class="pf-el-head"><span class="pf-el-name">Agentes IA</span><span class="pf-el-f">Automatización</span></div></div><p class="pf-el-desc">Automatizaciones conversacionales y agentes conectados a catálogos y CRMs.</p></li>
+      <li class="pf-el" data-family="Ofimática"><div class="pf-el-top"><div class="pf-el-badge"><img src="/plantillas_excel.svg" alt=""></div><div class="pf-el-head"><span class="pf-el-name">Excel</span><span class="pf-el-f">Ofimática</span></div></div><p class="pf-el-desc">Fórmulas avanzadas, tablas dinámicas y automatización — más de 200 plantillas creadas.</p></li>
+      <li class="pf-el" data-family="Ofimática"><div class="pf-el-top"><div class="pf-el-badge"><img src="/googlesheets.svg" alt=""></div><div class="pf-el-head"><span class="pf-el-name">Google Sheets</span><span class="pf-el-f">Ofimática</span></div></div><p class="pf-el-desc">Hojas de cálculo colaborativas como base de datos para apps en AppSheet.</p></li>
+      <li class="pf-el" data-family="Marketing"><div class="pf-el-top"><div class="pf-el-badge"><img src="/analisis_web_con_googleanalytics.svg" alt=""></div><div class="pf-el-head"><span class="pf-el-name">Google Analytics</span><span class="pf-el-f">Marketing</span></div></div><p class="pf-el-desc">Analítica web para medir el impacto real de campañas y contenido.</p></li>
+      <li class="pf-el" data-family="Marketing"><div class="pf-el-top"><div class="pf-el-badge"><img src="/campañas_ecommerce_googleads.svg" alt=""></div><div class="pf-el-head"><span class="pf-el-name">Google Ads</span><span class="pf-el-f">Marketing</span></div></div><p class="pf-el-desc">Campañas Shopping optimizadas con segmentación RFM y análisis Pareto.</p></li>
+      <li class="pf-el" data-family="Marketing"><div class="pf-el-top"><div class="pf-el-badge"><span class="pf-el-s">Ps</span></div><div class="pf-el-head"><span class="pf-el-name">PrestaShop</span><span class="pf-el-f">Marketing</span></div></div><p class="pf-el-desc">Gestión y optimización de tiendas ecommerce sobre PrestaShop.</p></li>
+  </ul>
 </section>
 
 <section id="work">
@@ -604,75 +584,83 @@
 <section id="experience">
   <div class="section-tag rv">Experiencia y formación</div>
   <h2 class="rv" style="--i:1">El camino hasta <em>ahora.</em></h2>
-  <p class="section-lead rv" style="--i:2">Formación y trabajo en una línea, del más antiguo al más reciente.</p>
+  <p class="section-lead rv" style="--i:2">Formación, certificaciones y trabajo, del más antiguo al más reciente.</p>
 
   <div class="pf-tl" id="pf-tl">
-    <span class="pf-tl-fill" id="pf-tl-fill" aria-hidden="true"></span>
     <ol class="pf-tl-ol">
       <li class="pf-st rv">
+        <span class="pf-st-dot" aria-hidden="true"></span>
+        <div class="pf-st-year">Formación</div>
+        <span class="pf-st-kind">Educación</span>
+        <h3>Administrador Industrial</h3>
+        <p class="pf-st-place">Universidad Tecnológica de Pereira — estudiante distinguido, homologado en la Unión Europea</p>
+      </li>
+      <li class="pf-st rv">
+        <span class="pf-st-dot" aria-hidden="true"></span>
         <div class="pf-st-year">2007 – 2011</div>
-        <div class="pf-st-body">
-          <span class="pf-st-kind">Experiencia</span>
-          <h3>Analista de métodos y tiempos</h3>
-          <p class="pf-st-place">Ayco Ltda</p>
-        </div>
-        <span class="pf-st-dot" aria-hidden="true"></span>
+        <span class="pf-st-kind">Experiencia</span>
+        <h3>Analista de métodos y tiempos</h3>
+        <p class="pf-st-place">Ayco Ltda</p>
       </li>
       <li class="pf-st rv">
+        <span class="pf-st-dot" aria-hidden="true"></span>
         <div class="pf-st-year">2011 – 2016</div>
-        <div class="pf-st-body">
-          <span class="pf-st-kind">Experiencia</span>
-          <h3>Auxiliar de información comercial</h3>
-          <p class="pf-st-place">Grupo Nutresa (Zenú)</p>
-        </div>
-        <span class="pf-st-dot" aria-hidden="true"></span>
+        <span class="pf-st-kind">Experiencia</span>
+        <h3>Auxiliar de información comercial</h3>
+        <p class="pf-st-place">Grupo Nutresa (Zenú)</p>
       </li>
       <li class="pf-st rv">
+        <span class="pf-st-dot" aria-hidden="true"></span>
         <div class="pf-st-year">2016 – 2017</div>
-        <div class="pf-st-body">
-          <span class="pf-st-kind">Experiencia</span>
-          <h3>Analista de costos y presupuestos</h3>
-          <p class="pf-st-place">Audifarma S.A</p>
-        </div>
-        <span class="pf-st-dot" aria-hidden="true"></span>
+        <span class="pf-st-kind">Experiencia</span>
+        <h3>Analista de costos y presupuestos</h3>
+        <p class="pf-st-place">Audifarma S.A</p>
       </li>
       <li class="pf-st rv">
+        <span class="pf-st-dot" aria-hidden="true"></span>
         <div class="pf-st-year">2017 – 2018</div>
-        <div class="pf-st-body">
-          <span class="pf-st-kind">Experiencia</span>
-          <h3>Analista de costos y proyectos</h3>
-          <p class="pf-st-place">Media Commerce Partners S.A.S</p>
-        </div>
-        <span class="pf-st-dot" aria-hidden="true"></span>
+        <span class="pf-st-kind">Experiencia</span>
+        <h3>Analista de costos y proyectos</h3>
+        <p class="pf-st-place">Media Commerce Partners S.A.S</p>
       </li>
       <li class="pf-st rv">
+        <span class="pf-st-dot" aria-hidden="true"></span>
         <div class="pf-st-year">2018 – 2026</div>
-        <div class="pf-st-body">
-          <span class="pf-st-kind">Experiencia</span>
-          <h3>Ecommerce Manager Junior</h3>
-          <p class="pf-st-place">Perfumerías Coqueteo</p>
-          <ul>
-            <li>Análisis RFM y Pareto aplicados a campañas Shopping: +8% ventas, −7% inversión publicitaria</li>
-          </ul>
-        </div>
-        <span class="pf-st-dot" aria-hidden="true"></span>
+        <span class="pf-st-kind">Experiencia</span>
+        <h3>Ecommerce Manager Junior</h3>
+        <p class="pf-st-place">Perfumerías Coqueteo</p>
+        <ul>
+          <li>Análisis RFM y Pareto en campañas Shopping: +8% ventas, −7% inversión publicitaria</li>
+        </ul>
       </li>
       <li class="pf-st rv">
-        <div class="pf-st-year">Jul 2026</div>
-        <div class="pf-st-body">
-          <span class="pf-st-kind">Certificación</span>
-          <h3>Data Analytics Mastery</h3>
-          <p class="pf-st-place">DS4B</p>
-        </div>
         <span class="pf-st-dot" aria-hidden="true"></span>
+        <div class="pf-st-year">2020</div>
+        <span class="pf-st-kind">Certificación</span>
+        <h3>Scrum Foundation Professional Certificate</h3>
+        <p class="pf-st-place">CertiProf</p>
       </li>
-      <li class="pf-st pf-tl-next rv">
+      <li class="pf-st rv">
+        <span class="pf-st-dot" aria-hidden="true"></span>
+        <div class="pf-st-year">2023</div>
+        <span class="pf-st-kind">Certificación</span>
+        <h3>Microsoft Office Specialist · Excel Expert</h3>
+        <p class="pf-st-place">Microsoft</p>
+      </li>
+      <li class="pf-st rv">
+        <span class="pf-st-dot" aria-hidden="true"></span>
+        <div class="pf-st-year">Jul 2026</div>
+        <span class="pf-st-kind">Certificación</span>
+        <h3>Data Analytics Mastery</h3>
+        <p class="pf-st-place">DS4B</p>
+      </li>
+      <li class="pf-tl-next rv">
         <a href="#contacto">
           <div>
             <small>Disponible · Próxima parada</small>
             <p>¿Tu <em>equipo?</em></p>
           </div>
-          <span class="btn-primary">Hablemos →</span>
+          <span class="btn-primary pf-tl-cta">Hablemos →</span>
         </a>
       </li>
     </ol>
@@ -741,38 +729,10 @@
     });
   }
 
-  // Skills: filter chips + inspector
+  // Skills: filter chips
   var grid = document.getElementById('pf-sk-grid');
   var chips = document.querySelectorAll('.pf-sk-chip');
-  var insp = {
-    symbol: document.getElementById('pf-insp-symbol'),
-    badge: document.getElementById('pf-insp-badge'),
-    name: document.getElementById('pf-insp-name'),
-    family: document.getElementById('pf-insp-family'),
-    famTop: document.getElementById('pf-insp-fam'),
-    desc: document.getElementById('pf-insp-desc')
-  };
   var tiles = grid ? grid.querySelectorAll('.pf-el') : [];
-
-  function showTile(tile){
-    tiles.forEach(function(t){ t.classList.remove('is-active'); });
-    tile.classList.add('is-active');
-    var icon = tile.getAttribute('data-icon');
-    insp.symbol.textContent = tile.getAttribute('data-symbol');
-    insp.badge.innerHTML = icon
-      ? '<img src="' + icon + '" alt="">'
-      : '<span>' + tile.getAttribute('data-symbol') + '</span>';
-    insp.name.textContent = tile.getAttribute('data-name');
-    insp.family.textContent = tile.getAttribute('data-family');
-    insp.famTop.textContent = tile.getAttribute('data-family');
-    insp.desc.textContent = tile.getAttribute('data-desc');
-  }
-
-  tiles.forEach(function(tile){
-    tile.addEventListener('mouseenter', function(){ showTile(tile); });
-    tile.addEventListener('focus', function(){ showTile(tile); });
-  });
-  if (tiles.length) showTile(tiles[0]);
 
   chips.forEach(function(chip){
     chip.addEventListener('click', function(){
@@ -786,28 +746,13 @@
     });
   });
 
-  // Timeline fill
-  var tl = document.getElementById('pf-tl');
-  var tlFill = document.getElementById('pf-tl-fill');
+  // Timeline dot glow
   var steps = document.querySelectorAll('.pf-st');
-  if (tl && 'IntersectionObserver' in window) {
+  if ('IntersectionObserver' in window) {
     var ioTl = new IntersectionObserver(function(entries){
       entries.forEach(function(e){ if (e.isIntersecting) e.target.classList.add('is-lit'); });
     }, { threshold: 0.4 });
     steps.forEach(function(s){ ioTl.observe(s); });
-
-    function updateFill(){
-      var rect = tl.getBoundingClientRect();
-      var vh = window.innerHeight;
-      var total = rect.height;
-      var visible = Math.min(total, Math.max(0, vh * 0.7 - rect.top));
-      var ratio = total > 0 ? Math.min(1, visible / total) : 0;
-      tlFill.style.height = total + 'px';
-      tlFill.style.transform = 'scaleY(' + ratio + ')';
-    }
-    window.addEventListener('scroll', updateFill, { passive: true });
-    window.addEventListener('resize', updateFill);
-    updateFill();
   }
 
   // Sub-nav scroll-spy
