@@ -3,7 +3,7 @@
 // 2. Los clics de contacto se envían a dataLayer como evento "contact_click"
 //    con contact_method = whatsapp | email | linkedin, listos para usar en GTM/GA4.
 (function () {
-  var GTM_ID = ''; // p. ej. 'GTM-XXXXXXX'
+  var GTM_ID = 'GTM-N9XLDFCS';
 
   window.dataLayer = window.dataLayer || [];
 
