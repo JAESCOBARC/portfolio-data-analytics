@@ -43,6 +43,10 @@ PAGINAS = [
     ("servicios/dashboards-y-business-intelligence/dashboard-de-negocios/index.html", "/servicios/dashboards-y-business-intelligence/dashboard-de-negocios/", "yearly", "0.7"),
     ("servicios/dashboards-y-business-intelligence/implementacion-data-driven/index.html", "/servicios/dashboards-y-business-intelligence/implementacion-data-driven/", "yearly", "0.7"),
     ("servicios/dashboards-y-business-intelligence/reporting-marketing-ads/index.html", "/servicios/dashboards-y-business-intelligence/reporting-marketing-ads/", "yearly", "0.7"),
+    ("aviso-legal/index.html", "/aviso-legal/", "yearly", "0.3"),
+    ("privacidad/index.html", "/privacidad/", "yearly", "0.3"),
+    ("en/legal-notice/index.html", "/en/legal-notice/", "yearly", "0.3"),
+    ("en/privacy-policy/index.html", "/en/privacy-policy/", "yearly", "0.3"),
 ]
 # proyectos/*.html quedaron como redirecciones noindex a las URLs de arriba: no van en el sitemap.
 
