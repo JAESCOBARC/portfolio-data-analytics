@@ -243,6 +243,12 @@ a.proyecto-card:hover{border-color:var(--line-strong);transform:translateY(-2px)
 .site-footer .footer-legal{display:flex;gap:16px;flex-wrap:wrap}
 .site-footer .footer-legal a{font-family:var(--font-mono);font-size:11px;color:var(--text-3);text-decoration:none;transition:color .15s var(--ease)}
 .site-footer .footer-legal a:hover{color:var(--accent)}
+@media(max-width:640px){
+  .site-footer .footer-primary{flex-direction:column;justify-content:center;text-align:center}
+  .site-footer .footer-links{justify-content:center}
+  .site-footer .footer-secondary{flex-direction:column;justify-content:center;text-align:center}
+  .site-footer .footer-legal{justify-content:center}
+}
 
 /* Contenido legal (Aviso Legal / Privacidad) */
 .legal-content{max-width:720px;margin-top:32px}
